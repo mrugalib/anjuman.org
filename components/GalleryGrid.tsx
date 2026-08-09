@@ -1,13 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { X, CaretLeft, CaretRight } from "@phosphor-icons/react/dist/ssr";
 import { galleryFilters, galleryItems, type GalleryCategory } from "@/lib/data";
 
 export default function GalleryGrid() {
   const [active, setActive] = useState<GalleryCategory | "all">("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
   const items = active === "all" ? galleryItems : galleryItems.filter((g) => g.category === active);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (openIndex === null) return;
@@ -17,7 +21,12 @@ export default function GalleryGrid() {
       if (e.key === "ArrowLeft") setOpenIndex((i) => (i === null ? i : (i - 1 + items.length) % items.length));
     }
     document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
   }, [openIndex, items.length]);
 
   return (
@@ -78,7 +87,7 @@ export default function GalleryGrid() {
         ))}
       </div>
 
-      {openIndex !== null && items[openIndex] && (
+      {mounted && openIndex !== null && items[openIndex] && createPortal(
         <div
           role="dialog"
           aria-modal="true"
@@ -128,7 +137,8 @@ export default function GalleryGrid() {
             onClick={(e) => e.stopPropagation()}
             className="max-h-[85vh] max-w-full rounded-lg object-contain shadow-2xl"
           />
-        </div>
+        </div>,
+        document.body,
       )}
     </div>
   );
