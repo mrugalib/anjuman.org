@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-ink: #1c2b22;
+  --color-ink-soft: #3a473f;
+  --color-muted: #5f6f65;
+  --color-faint: #8a9a90;
+  --color-deep: #14351f;
+  --color-deep-2: #0f2318;
+  --color-brand: #1c7a44;
+  --color-brand-hover: #22935a;
+  --color-tint: #eef6f0;
+  --color-hairline: #e1eae3;
+  --color-accent: #e8862c;
+  --color-accent-hover: #d6741e;
+
+  --radius-card: 14px;
+
+  --font-sans: var(--font-jakarta), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  --header-h: 6rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+html.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #fff;
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Placeholder image slot: swap for real photography */
+.img-slot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #7fa08c;
+  background: linear-gradient(135deg, #e4efe8 0%, #eef6f0 100%);
+}
+.img-slot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, rgba(28, 122, 68, 0.06) 25%, transparent 25%, transparent 75%, rgba(28, 122, 68, 0.06) 75%),
+    linear-gradient(45deg, rgba(28, 122, 68, 0.06) 25%, transparent 25%, transparent 75%, rgba(28, 122, 68, 0.06) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+.img-slot--dark {
+  color: rgba(255, 255, 255, 0.55);
+  background: linear-gradient(135deg, #1c3a28 0%, #0f2318 100%);
+}
+.img-slot--dark::before {
+  background-image:
+    linear-gradient(45deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.04) 75%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.04) 75%);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+.img-slot__label {
+  position: relative;
+  padding: 0 16px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Scroll-reveal, driven by IntersectionObserver in components/Reveal.tsx */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Hero entrance: staggered fade-up on load, no JS needed */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-in {
+  opacity: 0;
+  animation: hero-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-in {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* Staggered grid entrance (founder cards, etc.), driven by an .is-visible toggle */
+.stagger-grid > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stagger-grid.is-visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.stagger-grid > *:nth-child(1) {
+  transition-delay: 0ms;
+}
+.stagger-grid > *:nth-child(2) {
+  transition-delay: 90ms;
+}
+.stagger-grid > *:nth-child(3) {
+  transition-delay: 180ms;
+}
+.stagger-grid > *:nth-child(4) {
+  transition-delay: 270ms;
+}
+.stagger-grid > *:nth-child(5) {
+  transition-delay: 360ms;
+}
+.stagger-grid > *:nth-child(6) {
+  transition-delay: 450ms;
+}
+.stagger-grid > *:nth-child(7) {
+  transition-delay: 540ms;
+}
+.stagger-grid > *:nth-child(8) {
+  transition-delay: 630ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  .stagger-grid > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* News tab panel crossfade on switch (keyed remount) */
+@keyframes tab-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tab-fade {
+  animation: tab-fade-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tab-fade {
+    animation: none;
+  }
 }
