@@ -3,40 +3,12 @@ import { quickLinks } from "@/lib/data";
 import PrayerTimesList from "./PrayerTimesList";
 import T from "./T";
 
-function buildCalendarDays(today: Date) {
-  const year = today.getFullYear();
-  const month = today.getMonth();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const firstWeekday = new Date(year, month, 1).getDay();
-
-  const blanks = Array.from({ length: firstWeekday }, (_, i) => ({
-    key: `blank-${i}`,
-    n: null as number | null,
-    isToday: false,
-    isFriday: false,
-  }));
-
-  const days = Array.from({ length: daysInMonth }, (_, i) => {
-    const n = i + 1;
-    return {
-      key: `day-${n}`,
-      n,
-      isToday: n === today.getDate(),
-      isFriday: (firstWeekday + i) % 7 === 5,
-    };
-  });
-
-  return [...blanks, ...days];
-}
-
 const hijriFormatter = new Intl.DateTimeFormat("en-US-u-ca-islamic", { month: "long", year: "numeric" });
 const hijriDayFormatter = new Intl.DateTimeFormat("en-US-u-ca-islamic", {
   day: "numeric",
   month: "long",
   year: "numeric",
 });
-const gregorianFormatter = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" });
-
 function formatHijri(date: Date) {
   const parts = hijriFormatter.formatToParts(date);
   const month = parts.find((p) => p.type === "month")?.value ?? "";
@@ -99,7 +71,7 @@ function buildHijriCalendarDays(today: Date) {
 
 const weekdayLabels = ["S", "M", "T", "W", "T", "F", "S"];
 
-function CalendarGrid({ days }: { days: ReturnType<typeof buildCalendarDays> }) {
+function CalendarGrid({ days }: { days: ReturnType<typeof buildHijriCalendarDays> }) {
   return (
     <>
       <div className="mb-1.5 grid grid-cols-7 gap-1 text-center text-[11px] text-faint">
@@ -131,7 +103,6 @@ function CalendarGrid({ days }: { days: ReturnType<typeof buildCalendarDays> }) 
 
 export default function Widgets() {
   const today = new Date();
-  const calendarDays = buildCalendarDays(today);
   const hijriCalendarDays = buildHijriCalendarDays(today);
 
   return (
@@ -154,13 +125,6 @@ export default function Widgets() {
         </h3>
         <div className="mb-3 text-center text-[13px] font-bold text-deep">{formatHijri(today)}</div>
         <CalendarGrid days={hijriCalendarDays} />
-
-        <div className="my-4 border-t border-hairline" />
-
-        <div className="mb-3 text-center text-[13px] font-bold text-deep">
-          {gregorianFormatter.format(today)}
-        </div>
-        <CalendarGrid days={calendarDays} />
       </div>
 
       <div className="rounded-card border border-brand bg-brand p-5.5">

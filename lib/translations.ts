@@ -51,6 +51,16 @@ export const translations = {
   founder_about: { en: "About", bn: "সম্পর্কে" },
   founder_flipBack: { en: "Flip back", bn: "ফিরিয়ে দিন" },
 
+  videoShowcase_heading: { en: "Video Showcase", bn: "ভিডিও শোকেস" },
+  videoShowcase_subheading: {
+    en: "Watch highlights from our programmes, gatherings and welfare work.",
+    bn: "আমাদের কর্মসূচি, সমাবেশ ও কল্যাণমূলক কাজের ঝলক দেখুন।",
+  },
+  videoShowcase_live: { en: "Live Broadcast", bn: "লাইভ সম্প্রচার" },
+  videoShowcase_liveNow: { en: "LIVE", bn: "লাইভ" },
+  videoShowcase_offline: { en: "Offline — showing last broadcast", bn: "অফলাইন — সর্বশেষ সম্প্রচার দেখানো হচ্ছে" },
+  videoShowcase_previous: { en: "Previous Videos", bn: "পূর্ববর্তী ভিডিও" },
+
   news_heading: { en: "News & Updates", bn: "সংবাদ ও আপডেট" },
 
   widgets_prayerTimes: { en: "Daily Prayer Timings", bn: "দৈনিক নামাজের সময়" },

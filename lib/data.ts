@@ -873,6 +873,70 @@ export const socialLinks = [
   { label: "WhatsApp", href: "https://whatsapp.com/channel/0029VaeBn9iCMY0E0fjd8Y3B" },
 ];
 
+// Video showcase (homepage, shown after the calendar/prayer-times widgets).
+// To attach a video: drop the file in `public/videos/` and reference it here as
+// "/videos/your-file.mp4", or use a full https:// URL to an externally hosted mp4
+// (an HLS/RTMP live player URL also works for `liveBroadcast.videoUrl` if the video
+// element's source supports it). `poster` is the still image shown before playback
+// starts — put it in `public/images/`.
+export type ShowcaseVideo = {
+  title: string;
+  description: string;
+  videoUrl: string;
+  poster: string;
+};
+
+// Toggle `isLive` to true when a broadcast is actively streaming; when false the
+// card shows an "Offline" state and plays the last recorded broadcast instead.
+export type LiveBroadcast = ShowcaseVideo & { isLive: boolean };
+
+export const liveBroadcast: LiveBroadcast = {
+  title: "Friday Khutbah — Live",
+  description: "Live broadcast from the Darbar-e-Alia congregation hall.",
+  videoUrl: "/videos/hero-drone.mp4",
+  poster: "/images/hero/drone-poster.jpg",
+  isLive: false,
+};
+
+export const videoShowcase: ShowcaseVideo[] = [
+  {
+    title: "Darbar-e-Alia — Aerial View",
+    description: "A drone flyover of the Darbar-e-Alia complex, showcasing the trust's spiritual home.",
+    videoUrl: "/videos/hero-drone.mp4",
+    poster: "/images/hero/drone-poster.jpg",
+  },
+  {
+    title: "Annual Gathering Highlights",
+    description: "Moments from the Trust's annual congregation and community programmes.",
+    videoUrl: "/videos/hero-drone.mp4",
+    poster: "/images/hero/drone-poster.jpg",
+  },
+  {
+    title: "Education & Welfare in Action",
+    description: "A look at the schools, madrasas and relief work supported across our committees.",
+    videoUrl: "/videos/hero-drone.mp4",
+    poster: "/images/hero/drone-poster.jpg",
+  },
+  {
+    title: "Gausia Committee Coordination Meeting",
+    description: "Chapter representatives gather in Chattogram to review the year's programmes.",
+    videoUrl: "/videos/hero-drone.mp4",
+    poster: "/images/hero/drone-poster.jpg",
+  },
+  {
+    title: "Research Centre — Publications Launch",
+    description: "Highlights from the Research Centre's latest publication launch event.",
+    videoUrl: "/videos/hero-drone.mp4",
+    poster: "/images/hero/drone-poster.jpg",
+  },
+  {
+    title: "Dawate Khair Relief Distribution",
+    description: "Emergency relief and welfare distribution across the wider Sylhet region.",
+    videoUrl: "/videos/hero-drone.mp4",
+    poster: "/images/hero/drone-poster.jpg",
+  },
+];
+
 export const mainNav = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
