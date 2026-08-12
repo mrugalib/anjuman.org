@@ -42,8 +42,8 @@ export default function SiteHeader() {
       className="sticky top-0 z-40 border-b border-hairline bg-white/96 backdrop-blur-sm [overflow-anchor:none]"
     >
       <EventCountdown />
-      <div className="mx-auto flex h-16 max-w-[1180px] items-center justify-between gap-2 px-4 py-3 sm:h-18 sm:gap-6 sm:px-5 md:px-10">
-        <Link href="/" className="flex min-w-0 shrink items-center gap-2 sm:shrink-0 sm:gap-3">
+      <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-2 px-4 py-3 sm:h-18 sm:gap-6 sm:px-5 md:px-10">
+        <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
           <Image
             src="/images/anjuman-logo.jpg"
             alt="Anjuman-E Rahmania Ahmadia Sunnia Trust logo"
@@ -52,22 +52,17 @@ export default function SiteHeader() {
             className="h-9 w-9 shrink-0 object-contain sm:h-[42px] sm:w-[42px]"
             priority
           />
-          <span className="flex min-w-0 flex-col leading-tight">
-            <strong className="truncate text-[13px] font-extrabold text-deep sm:text-[14.5px]">
-              Anjuman-E Rahmania
-            </strong>
-            <span className="truncate text-[9px] font-bold tracking-[0.04em] text-[#4f8f6a] sm:text-[10px] sm:tracking-[0.06em]">
-              AHMADIA SUNNIA TRUST
-            </span>
-          </span>
+          <strong className="whitespace-nowrap text-[11px] leading-tight font-extrabold tracking-[0.02em] text-brand sm:text-[15px]">
+            ANJUMAN-E-RAHMANIA AHMADIA SUNNIA TRUST
+          </strong>
         </Link>
 
-        <nav aria-label="Primary" className="hidden flex-1 justify-center gap-7 lg:flex">
+        <nav aria-label="Primary" className="hidden flex-1 justify-center gap-6 pl-12 lg:flex">
           {mainNav.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={`border-b-2 py-2 text-[14.5px] font-semibold ${
+              className={`border-b-2 py-2 text-[14.5px] font-semibold whitespace-nowrap ${
                 isActive(item.href)
                   ? "border-brand text-brand"
                   : "border-transparent text-ink hover:border-brand hover:text-brand"
