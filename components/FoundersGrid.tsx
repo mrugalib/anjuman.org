@@ -39,7 +39,7 @@ export default function FoundersGrid() {
       </div>
       <div
         ref={ref}
-        className={`stagger-grid mx-auto grid max-w-4xl grid-cols-2 gap-8 sm:gap-10 lg:grid-cols-4 lg:gap-16 ${visible ? "is-visible" : ""}`}
+        className={`stagger-grid grid grid-cols-2 gap-1.5 sm:gap-2 lg:grid-cols-4 ${visible ? "is-visible" : ""}`}
       >
         {founders.map((f, i) => (
           <FounderCard3D key={f.name} founder={f} index={i} />

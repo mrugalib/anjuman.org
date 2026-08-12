@@ -4,6 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ActivityTabs from "@/components/ActivityTabs";
+import { activityCategories } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Activities · Anjuman-E Rahmania Ahmadia Sunnia Trust",
@@ -24,9 +25,11 @@ export default function ActivitiesPage() {
         />
 
         <div className="mx-auto max-w-[1180px] px-5 pb-16 md:px-10 md:pb-24">
-          <Reveal className="mt-16 md:mt-24">
-            <ActivityTabs />
-          </Reveal>
+          {activityCategories.map((category) => (
+            <Reveal key={category.key} id={category.key} className="mt-16 [scroll-margin-top:var(--header-h)] md:mt-24">
+              <ActivityTabs initialKey={category.key} />
+            </Reveal>
+          ))}
         </div>
       </main>
       <SiteFooter />

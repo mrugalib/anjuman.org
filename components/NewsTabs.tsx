@@ -1,47 +1,20 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { newsCategories } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 
 export default function NewsTabs() {
   const { t } = useLanguage();
-  const [active, setActive] = useState(newsCategories[0].key);
-  const category = newsCategories.find((c) => c.key === active) ?? newsCategories[0];
+  const category = newsCategories[0];
 
   return (
     <div>
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+      <div className="mb-8">
         <h2 className="text-2xl font-extrabold text-deep">{t("news_heading")}</h2>
-
-        <div
-          role="tablist"
-          aria-label="News categories"
-          className="flex gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {newsCategories.map((c) => {
-            const selected = c.key === active;
-            return (
-              <button
-                key={c.key}
-                role="tab"
-                aria-selected={selected}
-                onClick={() => setActive(c.key)}
-                className={`shrink-0 rounded-full border px-3 py-1.5 text-[12px] font-bold transition-colors ${
-                  selected
-                    ? "border-brand bg-brand text-white"
-                    : "border-hairline bg-white text-muted hover:border-brand hover:text-brand"
-                }`}
-              >
-                {c.label}
-              </button>
-            );
-          })}
-        </div>
       </div>
 
-      <div key={category.key} role="tabpanel" className="tab-fade grid grid-cols-1 gap-6 lg:grid-cols-[1.3fr_1fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.3fr_1fr]">
         <Link
           href={`/news/${category.featured.slug}`}
           className="group flex flex-col overflow-hidden rounded-card border border-hairline transition-shadow hover:shadow-[0_12px_32px_rgba(15,53,31,0.12)]"

@@ -1,45 +1,18 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import { activityCategories } from "@/lib/data";
 
 export default function ActivityTabs({ initialKey }: { initialKey?: string } = {}) {
-  const [active, setActive] = useState(initialKey ?? activityCategories[0].key);
-  const category = activityCategories.find((c) => c.key === active) ?? activityCategories[0];
+  const category = activityCategories.find((c) => c.key === initialKey) ?? activityCategories[0];
 
   return (
     <div>
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+      <div className="mb-8">
         <h2 className="text-2xl font-extrabold text-deep">{category.label}</h2>
-
-        <div
-          role="tablist"
-          aria-label="Activity committees"
-          className="flex gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {activityCategories.map((c) => {
-            const selected = c.key === active;
-            return (
-              <button
-                key={c.key}
-                role="tab"
-                aria-selected={selected}
-                onClick={() => setActive(c.key)}
-                className={`shrink-0 rounded-full border px-3 py-1.5 text-[12px] font-bold transition-colors ${
-                  selected
-                    ? "border-brand bg-brand text-white"
-                    : "border-hairline bg-white text-muted hover:border-brand hover:text-brand"
-                }`}
-              >
-                {c.label}
-              </button>
-            );
-          })}
-        </div>
       </div>
 
-      <div key={category.key} role="tabpanel" className="tab-fade grid grid-cols-1 gap-6 lg:grid-cols-[1.3fr_1fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.3fr_1fr]">
         <Link
           href={`/activities/${category.featured.slug}`}
           className="group flex flex-col overflow-hidden rounded-card border border-hairline transition-shadow hover:shadow-[0_12px_32px_rgba(15,53,31,0.12)]"

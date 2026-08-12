@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { List, X } from "@phosphor-icons/react/dist/ssr";
-import { mainNav } from "@/lib/data";
+import { CaretDown, List, X } from "@phosphor-icons/react/dist/ssr";
+import { activityCategories, mainNav } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 import { navLabelKeys } from "@/lib/translations";
 import EventCountdown from "./EventCountdown";
@@ -67,27 +67,54 @@ export default function SiteHeader() {
         </Link>
 
         <nav aria-label="Primary" className="hidden flex-1 justify-center gap-6 pl-12 lg:flex">
-          {mainNav.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className={`group border-b-2 py-2 text-[14.5px] font-semibold whitespace-nowrap ${
-                isActive(item.href) ? "border-brand text-brand" : "border-transparent text-ink hover:border-brand"
-              }`}
-            >
-              <span className="relative block h-[18px] overflow-hidden">
-                <span className="block leading-[18px] transition-transform duration-300 ease-out group-hover:-translate-y-[18px]">
-                  {navLabel(item)}
-                </span>
-                <span
-                  aria-hidden
-                  className="absolute inset-0 block translate-y-[18px] leading-[18px] text-brand transition-transform duration-300 ease-out group-hover:translate-y-0"
+          {mainNav.map((item) => {
+            const isActivities = item.href === "/activities";
+            return (
+              <div key={item.label} className={isActivities ? "group/menu relative" : undefined}>
+                <Link
+                  href={item.href}
+                  className={`group flex items-center gap-1 border-b-2 py-2 text-[14.5px] font-semibold whitespace-nowrap ${
+                    isActive(item.href) ? "border-brand text-brand" : "border-transparent text-ink hover:border-brand"
+                  }`}
                 >
-                  {navLabel(item)}
-                </span>
-              </span>
-            </Link>
-          ))}
+                  <span className="relative block h-[18px] overflow-hidden">
+                    <span className="block leading-[18px] transition-transform duration-300 ease-out group-hover:-translate-y-[18px]">
+                      {navLabel(item)}
+                    </span>
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 block translate-y-[18px] leading-[18px] text-brand transition-transform duration-300 ease-out group-hover:translate-y-0"
+                    >
+                      {navLabel(item)}
+                    </span>
+                  </span>
+                  {isActivities && (
+                    <CaretDown
+                      size={12}
+                      weight="bold"
+                      className="mt-0.5 shrink-0 transition-transform duration-200 group-hover/menu:rotate-180"
+                    />
+                  )}
+                </Link>
+
+                {isActivities && (
+                  <div className="invisible absolute top-full left-1/2 z-10 -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-hover/menu:visible group-hover/menu:opacity-100 group-focus-within/menu:visible group-focus-within/menu:opacity-100">
+                    <div className="w-60 rounded-xl border border-hairline bg-white p-1.5 shadow-[0_12px_32px_rgba(15,53,31,0.14)]">
+                      {activityCategories.map((c) => (
+                        <Link
+                          key={c.key}
+                          href={`/activities#${c.key}`}
+                          className="block rounded-lg px-3 py-2 text-[13px] font-semibold text-ink hover:bg-tint hover:text-brand"
+                        >
+                          {c.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
@@ -141,18 +168,36 @@ export default function SiteHeader() {
           aria-label="Primary mobile"
           className="flex max-h-[calc(100vh-4rem)] flex-col gap-1 overflow-y-auto border-b border-hairline bg-white px-5 py-4 shadow-lg sm:max-h-[calc(100vh-4.5rem)] lg:hidden"
         >
-          {mainNav.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className={`rounded-md px-2 py-2.5 text-[14.5px] font-semibold ${
-                isActive(item.href) ? "text-brand" : "text-ink hover:text-brand"
-              }`}
-            >
-              {navLabel(item)}
-            </Link>
-          ))}
+          {mainNav.map((item) => {
+            const isActivities = item.href === "/activities";
+            return (
+              <div key={item.label}>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={`block rounded-md px-2 py-2.5 text-[14.5px] font-semibold ${
+                    isActive(item.href) ? "text-brand" : "text-ink hover:text-brand"
+                  }`}
+                >
+                  {navLabel(item)}
+                </Link>
+                {isActivities && (
+                  <div className="mb-1 ml-2 flex flex-col gap-0.5 border-l border-hairline pl-3">
+                    {activityCategories.map((c) => (
+                      <Link
+                        key={c.key}
+                        href={`/activities#${c.key}`}
+                        onClick={() => setOpen(false)}
+                        className="rounded-md px-2 py-2 text-[13px] font-semibold text-muted hover:text-brand"
+                      >
+                        {c.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
           <div role="group" aria-label="Language" className="mt-2 flex items-center gap-1 border-t border-hairline pt-3">
             <button
               type="button"

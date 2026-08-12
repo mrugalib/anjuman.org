@@ -37,7 +37,7 @@ export const founders = [
     role: "Chief Patron",
     msg: "Oversees the Trust's spiritual guidance and represents Anjuman at national interfaith forums.",
     image: "/images/founders/syed-muhammad-taher-shah.png",
-    tagline: "Spiritual guidance & interfaith representation",
+    tagline: "Current spiritual leader offering guidance and overseeing worldwide institutional networks.",
     bio: "Oversees the Trust's spiritual guidance and represents Anjuman-E Rahmania at national interfaith forums, upholding the Ahle Sunnat wal Jamaat tradition across the sub-continent.",
     location: "Chattogram, Bangladesh",
     committee: "Chief Patronage",
