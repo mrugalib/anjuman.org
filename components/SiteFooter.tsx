@@ -51,12 +51,14 @@ export default function SiteFooter() {
           <div className="mb-3.5 flex items-center gap-2.5">
             <Image
               src="/images/anjuman-logo.jpg"
-              alt="Anjuman-E Rahmania logo"
+              alt="Anjuman-E Rahmania Ahmadia Sunnia Trust logo"
               width={36}
               height={36}
-              className="h-9 w-9 object-contain"
+              className="h-9 w-9 shrink-0 object-contain"
             />
-            <strong className="text-[15px] font-extrabold text-white">Anjuman-E Rahmania</strong>
+            <strong className="text-[10.5px] leading-tight font-extrabold tracking-[0.01em] whitespace-nowrap text-white sm:text-[12px]">
+              ANJUMAN-E-RAHMANIA AHMADIA SUNNIA TRUST
+            </strong>
           </div>
           <p className="mb-4 max-w-80 text-[13px] leading-relaxed text-[#a9c2b4]">
             Established 1926 in Rangoon (Burma) for the Muslim Mashab and Millat, reconstituted 29 August

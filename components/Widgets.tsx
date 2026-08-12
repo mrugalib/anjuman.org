@@ -1,22 +1,138 @@
 import { MoonStars, CalendarBlank, Link as LinkIcon } from "@phosphor-icons/react/dist/ssr";
-import { prayerTimes, quickLinks } from "@/lib/data";
+import { quickLinks } from "@/lib/data";
+import PrayerTimesList from "./PrayerTimesList";
 import T from "./T";
 
-const TODAY = 12;
+function buildCalendarDays(today: Date) {
+  const year = today.getFullYear();
+  const month = today.getMonth();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstWeekday = new Date(year, month, 1).getDay();
 
-function buildCalendarDays() {
-  return Array.from({ length: 28 }, (_, i) => {
+  const blanks = Array.from({ length: firstWeekday }, (_, i) => ({
+    key: `blank-${i}`,
+    n: null as number | null,
+    isToday: false,
+    isFriday: false,
+  }));
+
+  const days = Array.from({ length: daysInMonth }, (_, i) => {
     const n = i + 1;
     return {
+      key: `day-${n}`,
       n,
-      isToday: n === TODAY,
-      isFriday: i % 7 === 5,
+      isToday: n === today.getDate(),
+      isFriday: (firstWeekday + i) % 7 === 5,
     };
   });
+
+  return [...blanks, ...days];
+}
+
+const hijriFormatter = new Intl.DateTimeFormat("en-US-u-ca-islamic", { month: "long", year: "numeric" });
+const hijriDayFormatter = new Intl.DateTimeFormat("en-US-u-ca-islamic", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+const gregorianFormatter = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" });
+
+function formatHijri(date: Date) {
+  const parts = hijriFormatter.formatToParts(date);
+  const month = parts.find((p) => p.type === "month")?.value ?? "";
+  const year = parts.find((p) => p.type === "year")?.value ?? "";
+  return `${month} ${year}`;
+}
+
+function formatHijriDay(date: Date) {
+  const parts = hijriDayFormatter.formatToParts(date);
+  const day = parts.find((p) => p.type === "day")?.value ?? "";
+  const month = parts.find((p) => p.type === "month")?.value ?? "";
+  const year = parts.find((p) => p.type === "year")?.value ?? "";
+  return `${day} ${month}, ${year}`;
+}
+
+function getHijriDayOfMonth(date: Date) {
+  const parts = hijriDayFormatter.formatToParts(date);
+  return Number(parts.find((p) => p.type === "day")?.value ?? 1);
+}
+
+function isSameDay(a: Date, b: Date) {
+  return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+}
+
+function buildHijriCalendarDays(today: Date) {
+  const todayHijriDay = getHijriDayOfMonth(today);
+
+  const firstOfMonth = new Date(today);
+  firstOfMonth.setDate(firstOfMonth.getDate() - (todayHijriDay - 1));
+
+  const monthLabel = formatHijri(firstOfMonth);
+  let length = 0;
+  const cursor = new Date(firstOfMonth);
+  while (length < 30 && formatHijri(cursor) === monthLabel) {
+    length++;
+    cursor.setDate(cursor.getDate() + 1);
+  }
+
+  const firstWeekday = firstOfMonth.getDay();
+  const blanks = Array.from({ length: firstWeekday }, (_, i) => ({
+    key: `hblank-${i}`,
+    n: null as number | null,
+    isToday: false,
+    isFriday: false,
+  }));
+
+  const days = Array.from({ length }, (_, i) => {
+    const date = new Date(firstOfMonth);
+    date.setDate(date.getDate() + i);
+    return {
+      key: `hday-${i}`,
+      n: i + 1,
+      isToday: isSameDay(date, today),
+      isFriday: date.getDay() === 5,
+    };
+  });
+
+  return [...blanks, ...days];
+}
+
+const weekdayLabels = ["S", "M", "T", "W", "T", "F", "S"];
+
+function CalendarGrid({ days }: { days: ReturnType<typeof buildCalendarDays> }) {
+  return (
+    <>
+      <div className="mb-1.5 grid grid-cols-7 gap-1 text-center text-[11px] text-faint">
+        {weekdayLabels.map((d, i) => (
+          <span key={i}>{d}</span>
+        ))}
+      </div>
+      <div className="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-ink-soft">
+        {days.map((d) => (
+          <span
+            key={d.key}
+            className={`rounded-md py-1.5 ${
+              d.n === null
+                ? ""
+                : d.isToday
+                  ? "bg-brand font-extrabold text-white"
+                  : d.isFriday
+                    ? "text-brand"
+                    : ""
+            }`}
+          >
+            {d.n ?? ""}
+          </span>
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default function Widgets() {
-  const calendarDays = buildCalendarDays();
+  const today = new Date();
+  const calendarDays = buildCalendarDays(today);
+  const hijriCalendarDays = buildHijriCalendarDays(today);
 
   return (
     <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -25,16 +141,10 @@ export default function Widgets() {
           <MoonStars size={16} className="text-brand" weight="fill" />
           <T k="widgets_prayerTimes" />
         </h3>
-        <div className="mb-3 text-xs text-faint">10 Jamadiul Awwal, 1447 &middot; Dhaka, Bangladesh</div>
-        {prayerTimes.map((p) => (
-          <div
-            key={p.name}
-            className="flex justify-between border-b border-tint py-2.5 text-[13px] last:border-b-0"
-          >
-            <span className="font-semibold text-deep">{p.name}</span>
-            <span className="font-bold text-brand">{p.time}</span>
-          </div>
-        ))}
+        <div className="mb-3 text-xs text-faint">
+          {formatHijriDay(today)} &middot; Dhaka, Bangladesh
+        </div>
+        <PrayerTimesList />
       </div>
 
       <div className="rounded-card border border-hairline p-5.5">
@@ -42,24 +152,15 @@ export default function Widgets() {
           <CalendarBlank size={16} className="text-brand" />
           <T k="widgets_calendar" />
         </h3>
-        <div className="mb-3 text-center text-[13px] font-bold text-deep">Rabiul Awwal 1447</div>
-        <div className="mb-1.5 grid grid-cols-7 gap-1 text-center text-[11px] text-faint">
-          {["S", "M", "T", "W", "T", "F", "S"].map((d, i) => (
-            <span key={i}>{d}</span>
-          ))}
+        <div className="mb-3 text-center text-[13px] font-bold text-deep">{formatHijri(today)}</div>
+        <CalendarGrid days={hijriCalendarDays} />
+
+        <div className="my-4 border-t border-hairline" />
+
+        <div className="mb-3 text-center text-[13px] font-bold text-deep">
+          {gregorianFormatter.format(today)}
         </div>
-        <div className="grid grid-cols-7 gap-1 text-center text-xs font-semibold text-ink-soft">
-          {calendarDays.map((d) => (
-            <span
-              key={d.n}
-              className={`rounded-md py-1.5 ${
-                d.isToday ? "bg-brand font-extrabold text-white" : d.isFriday ? "text-brand" : ""
-              }`}
-            >
-              {d.n}
-            </span>
-          ))}
-        </div>
+        <CalendarGrid days={calendarDays} />
       </div>
 
       <div className="rounded-card border border-brand bg-brand p-5.5">
