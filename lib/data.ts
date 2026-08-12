@@ -146,6 +146,27 @@ export const newsCategories: NewsCategory[] = [
           "The drive was funded entirely through Sadaqah contributions collected over the preceding two months.",
         ],
       },
+      {
+        title: "Eid Gift Packages Delivered to Orphans",
+        slug: "eid-gift-packages-delivered-to-orphans",
+        date: "Jun 28, 2026",
+        heroImage: stock("mosque-interior-1.jpg"),
+        gallery: [
+          stock("mosque-interior-1.jpg"),
+          stock("relief-aid-distribution.jpg"),
+          stock("congregation-baitul-mukarram.jpg"),
+        ],
+        highlights: [
+          "New clothes and small gifts delivered ahead of Eid",
+          "Reached orphans supported across Trust-affiliated homes",
+          "Coordinated by the welfare desk and local volunteers",
+        ],
+        body: [
+          "Ahead of this year's Eid, the Trust's welfare desk delivered gift packages of new clothes and small gifts to orphans supported across its affiliated homes.",
+          "Local volunteers helped coordinate the packing and delivery over the final week of Ramadan.",
+          "The programme has run every year since the Trust's welfare desk was established, and organisers say demand has grown alongside the number of children supported.",
+        ],
+      },
     ],
   },
   {
@@ -214,6 +235,27 @@ export const newsCategories: NewsCategory[] = [
           "A free after-school tutoring program has launched for students preparing for board and religious examinations, staffed by volunteer teachers and senior students.",
           "Sessions run twice weekly at Trust-affiliated madrasas across Chattogram, with plans to expand to further districts later this year.",
           "Organisers say early sign-up numbers have exceeded expectations, and are now recruiting additional volunteer tutors.",
+        ],
+      },
+      {
+        title: "Board Approves New Exam Scholarship Track",
+        slug: "board-approves-new-exam-scholarship-track",
+        date: "May 22, 2026",
+        heroImage: stock("quran-page.jpg"),
+        gallery: [
+          stock("quran-page.jpg"),
+          stock("education-classroom.jpg"),
+          stock("calligraphy-learning.jpg"),
+        ],
+        highlights: [
+          "New scholarship track for top religious exam performers",
+          "Open to students at all affiliated madrasas",
+          "First awards to be presented at next year's assembly",
+        ],
+        body: [
+          "The Education Board has approved a new scholarship track recognising top performers in religious examinations across affiliated madrasas.",
+          "The track is open to students at every affiliated institution, with award criteria published to administrators this month.",
+          "The first round of awards under the new track will be presented at next year's scholarship assembly.",
         ],
       },
     ],
@@ -286,6 +328,27 @@ export const newsCategories: NewsCategory[] = [
           "Organisers welcome new questions year-round for consideration in upcoming sessions.",
         ],
       },
+      {
+        title: "Tafsir Circle Begins New Chapter Study",
+        slug: "tafsir-circle-begins-new-chapter-study",
+        date: "Jul 13, 2026",
+        heroImage: stock("mosque-interior-1.jpg"),
+        gallery: [
+          stock("mosque-interior-1.jpg"),
+          stock("quran-manuscript.jpg"),
+          stock("quran-page.jpg"),
+        ],
+        highlights: [
+          "New chapter-by-chapter tafsir circle opened to all attendees",
+          "Meets weekly following the Maghrib congregation",
+          "Notes distributed for those unable to attend in person",
+        ],
+        body: [
+          "The Tarjuman committee has opened a new chapter-by-chapter tafsir circle, welcoming attendees of all backgrounds to join the weekly sessions.",
+          "The circle meets weekly following the Maghrib congregation, led by one of the Trust's resident scholars.",
+          "Written notes from each session are distributed afterward for those unable to attend in person.",
+        ],
+      },
     ],
   },
   {
@@ -356,6 +419,27 @@ export const newsCategories: NewsCategory[] = [
           "The welfare committee plans to publish distribution reports quarterly going forward for full transparency with donors.",
         ],
       },
+      {
+        title: "Reader Letters: A Century of Service",
+        slug: "reader-letters-a-century-of-service",
+        date: "Jun 30, 2026",
+        heroImage: stock("calligraphy-learning.jpg"),
+        gallery: [
+          stock("calligraphy-learning.jpg"),
+          stock("calligraphy-classic.jpg"),
+          stock("mosque-exterior-sunset.jpg"),
+        ],
+        highlights: [
+          "Selected reader letters marking the Trust's centenary",
+          "Submissions gathered from across the mailing list",
+          "Full collection to run across three upcoming issues",
+        ],
+        body: [
+          "This edition's reader letters column features submissions marking the Trust's approaching centenary, gathered from readers across the mailing list.",
+          "Contributors shared memories of the Trust's institutions and the impact of its relief and education work on their families.",
+          "The full collection of letters will run across three upcoming issues of Da'wat-e-Khair.",
+        ],
+      },
     ],
   },
   {
@@ -424,6 +508,27 @@ export const newsCategories: NewsCategory[] = [
           "A new Friday sermon series has begun across Gawsia Committee-affiliated masjids, focusing on themes of community responsibility and spiritual renewal.",
           "The series will run for eight weeks, with guest speakers rotating between chapters.",
           "Congregants can find the full speaker schedule posted at each affiliated masjid's noticeboard.",
+        ],
+      },
+      {
+        title: "New Madrasah and Orphanage Open in Sub-Continent",
+        slug: "new-madrasah-and-orphanage-open-in-sub-continent",
+        date: "May 15, 2026",
+        heroImage: stock("mosque-interior-3.jpg"),
+        gallery: [
+          stock("mosque-interior-3.jpg"),
+          stock("education-classroom.jpg"),
+          stock("mosque-exterior-sunset.jpg"),
+        ],
+        highlights: [
+          "Combined madrasah and orphanage facility now open",
+          "Built with support from affiliated chapters abroad",
+          "Provides boarding, schooling and religious education",
+        ],
+        body: [
+          "A combined madrasah and orphanage facility affiliated with the Gawsia Committee has opened, built with support from chapters across the sub-continent.",
+          "The facility provides boarding, general schooling and religious education for children in its care.",
+          "Committee officials say the facility will serve as a model for similar projects planned in other regions.",
         ],
       },
     ],
@@ -497,6 +602,21 @@ export const activityCategories: NewsCategory[] = [
           "Organisers say the drive places particular focus on bringing younger members onto chapter committees.",
         ],
       },
+      {
+        title: "Chapter Delegates Complete Leadership Training",
+        slug: "gausia-committee-chapter-leadership-training",
+        date: "Apr 22, 2026",
+        heroImage: stock("congregation-baitul-mukarram.jpg"),
+        gallery: [stock("congregation-baitul-mukarram.jpg"), stock("mosque-interior-2.jpg")],
+        highlights: [
+          "Delegates from every chapter completed the training programme",
+          "Covered chapter administration and community outreach",
+        ],
+        body: [
+          "Delegates from every Gausia Committee chapter completed a three-day leadership training programme covering chapter administration and community outreach.",
+          "The programme is now expected to run annually for newly elected chapter officers.",
+        ],
+      },
     ],
   },
   {
@@ -550,6 +670,21 @@ export const activityCategories: NewsCategory[] = [
         body: [
           "The Research Centre's ongoing project to digitise the Trust's historical records has passed the 3,000-document mark.",
           "Once complete, the digital archive will be made available to affiliated researchers and institutions for study.",
+        ],
+      },
+      {
+        title: "Centre Hosts Roundtable on Community Welfare Policy",
+        slug: "research-centre-roundtable-welfare-policy",
+        date: "Mar 30, 2026",
+        heroImage: stock("mosque-interior-2.jpg"),
+        gallery: [stock("mosque-interior-2.jpg"), stock("quran-manuscript.jpg")],
+        highlights: [
+          "Roundtable brought together researchers and chapter representatives",
+          "Discussed findings from the welfare trends study",
+        ],
+        body: [
+          "The Research Centre hosted a roundtable bringing together researchers and chapter representatives to discuss findings from its welfare trends study.",
+          "Participants exchanged views on how the findings could shape programme planning across affiliated institutions.",
         ],
       },
     ],
@@ -607,6 +742,21 @@ export const activityCategories: NewsCategory[] = [
           "Sessions focused on classroom methods and student welfare practices, led by senior educators from the board.",
         ],
       },
+      {
+        title: "Board Opens New Scholarship Applications Portal",
+        slug: "education-board-scholarship-applications-portal",
+        date: "Apr 14, 2026",
+        heroImage: stock("quran-page.jpg"),
+        gallery: [stock("quran-page.jpg"), stock("education-classroom.jpg")],
+        highlights: [
+          "New online portal for scholarship applications",
+          "Reduces paperwork for affiliated institution administrators",
+        ],
+        body: [
+          "The Education Board has launched a new online portal for scholarship applications, replacing the previous paper-based process.",
+          "Institution administrators say the portal significantly reduces the paperwork involved in submitting and tracking applications.",
+        ],
+      },
     ],
   },
   {
@@ -660,6 +810,21 @@ export const activityCategories: NewsCategory[] = [
         body: [
           "Dawate Khair's monthly food drive reached 500 families this month, with distribution coordinated through local mosque committees.",
           "The programme runs year-round, with volunteers assembling and delivering packages on the first weekend of every month.",
+        ],
+      },
+      {
+        title: "Emergency Relief Deployed After Flash Floods",
+        slug: "dawate-khair-emergency-relief-flash-floods",
+        date: "Apr 3, 2026",
+        heroImage: stock("water-well-pulley.jpg"),
+        gallery: [stock("water-well-pulley.jpg"), stock("mosque-exterior-sunset.jpg")],
+        highlights: [
+          "Emergency packages delivered within 48 hours of flooding",
+          "Coordinated with local union councils on the ground",
+        ],
+        body: [
+          "Dawate Khair deployed emergency relief packages within 48 hours of flash flooding in low-lying districts, working with local union councils to reach affected households.",
+          "The rapid response drew on the programme's standing emergency relief fund, kept in reserve for situations exactly like this one.",
         ],
       },
     ],

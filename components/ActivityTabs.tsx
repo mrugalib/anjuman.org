@@ -65,14 +65,14 @@ export default function ActivityTabs({ initialKey }: { initialKey?: string } = {
           </div>
         </Link>
 
-        <div className="flex flex-col gap-5">
+        <div className="flex h-full flex-col gap-5">
           {category.rest.map((item) => (
             <Link
               key={item.title}
               href={`/activities/${item.slug}`}
-              className="group flex overflow-hidden rounded-card border border-hairline transition-shadow hover:shadow-[0_12px_32px_rgba(15,53,31,0.12)]"
+              className="group flex flex-1 overflow-hidden rounded-card border border-hairline transition-shadow hover:shadow-[0_12px_32px_rgba(15,53,31,0.12)]"
             >
-              <div className="h-32 w-32 shrink-0 overflow-hidden">
+              <div className="w-32 min-h-32 shrink-0 self-stretch overflow-hidden">
                 <img
                   src={item.heroImage}
                   alt=""
