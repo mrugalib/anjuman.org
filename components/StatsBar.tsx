@@ -81,9 +81,13 @@ export default function StatsBar() {
           active ? "is-visible" : ""
         }`}
       >
-        {stats.map((s) => {
+        {stats.map((s, i) => {
+          const isLast = i === stats.length - 1;
           return (
-            <div key={s.label} className="bg-white px-5 py-6 text-center sm:py-7">
+            <div
+              key={s.label}
+              className={`bg-white px-5 py-6 text-center sm:py-7 ${isLast ? "col-span-2 md:col-span-1" : ""}`}
+            >
               <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
                 <CountUp value={s.value} active={active} />
               </div>
