@@ -43,7 +43,16 @@ export default function SiteHeader() {
     >
       <EventCountdown />
       <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between gap-2 px-4 py-3 sm:h-18 sm:gap-6 sm:px-5 md:px-10">
-        <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
+        <Link
+          href="/#top"
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              document.getElementById("top")?.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="flex shrink-0 items-center gap-2 sm:gap-3"
+        >
           <Image
             src="/images/anjuman-logo.jpg"
             alt="Anjuman-E Rahmania Ahmadia Sunnia Trust logo"

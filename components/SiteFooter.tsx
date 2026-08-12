@@ -56,7 +56,7 @@ export default function SiteFooter() {
               height={36}
               className="h-9 w-9 shrink-0 object-contain"
             />
-            <strong className="text-[10.5px] leading-tight font-extrabold tracking-[0.01em] whitespace-nowrap text-white sm:text-[12px]">
+            <strong className="text-[11px] leading-tight font-extrabold tracking-[0.02em] whitespace-nowrap text-white sm:text-[15px]">
               ANJUMAN-E-RAHMANIA AHMADIA SUNNIA TRUST
             </strong>
           </div>
