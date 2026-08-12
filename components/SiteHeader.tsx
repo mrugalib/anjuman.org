@@ -21,6 +21,12 @@ export default function SiteHeader() {
     const key = navLabelKeys[item.href];
     return key ? t(key) : item.label;
   };
+  const goToSection = (key: string) => (e: React.MouseEvent) => {
+    if (pathname === "/activities") {
+      e.preventDefault();
+      document.getElementById(key)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     const el = headerRef.current;
@@ -104,6 +110,7 @@ export default function SiteHeader() {
                         <Link
                           key={c.key}
                           href={`/activities#${c.key}`}
+                          onClick={goToSection(c.key)}
                           className="block rounded-lg px-3 py-2 text-[13px] font-semibold text-ink hover:bg-tint hover:text-brand"
                         >
                           {c.label}
@@ -187,7 +194,10 @@ export default function SiteHeader() {
                       <Link
                         key={c.key}
                         href={`/activities#${c.key}`}
-                        onClick={() => setOpen(false)}
+                        onClick={(e) => {
+                          setOpen(false);
+                          goToSection(c.key)(e);
+                        }}
                         className="rounded-md px-2 py-2 text-[13px] font-semibold text-muted hover:text-brand"
                       >
                         {c.label}

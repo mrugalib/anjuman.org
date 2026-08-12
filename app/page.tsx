@@ -8,6 +8,7 @@ import NewsTabs from "@/components/NewsTabs";
 import ActivityTabs from "@/components/ActivityTabs";
 import { activityCategories } from "@/lib/data";
 import Widgets from "@/components/Widgets";
+import VideoShowcase from "@/components/VideoShowcase";
 import Reveal from "@/components/Reveal";
 
 export default function Home() {
@@ -40,6 +41,10 @@ export default function Home() {
 
           <Reveal className="mt-16 md:mt-24">
             <Widgets />
+          </Reveal>
+
+          <Reveal className="mt-16 md:mt-24">
+            <VideoShowcase />
           </Reveal>
         </div>
       </main>
