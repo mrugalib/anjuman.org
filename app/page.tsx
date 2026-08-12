@@ -9,6 +9,7 @@ import ActivityTabs from "@/components/ActivityTabs";
 import { activityCategories } from "@/lib/data";
 import Widgets from "@/components/Widgets";
 import VideoShowcase from "@/components/VideoShowcase";
+import OurConcern from "@/components/OurConcern";
 import Reveal from "@/components/Reveal";
 
 export default function Home() {
@@ -45,6 +46,10 @@ export default function Home() {
 
           <Reveal className="mt-16 md:mt-24">
             <VideoShowcase />
+          </Reveal>
+
+          <Reveal className="mt-16 md:mt-24">
+            <OurConcern />
           </Reveal>
         </div>
       </main>

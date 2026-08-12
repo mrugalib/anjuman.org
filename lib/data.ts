@@ -1022,6 +1022,29 @@ export const timeline = [
   },
 ];
 
+export const concerns = [
+  {
+    name: "Anjuman Education Management Board",
+    logo: "/images/concerns/education-management-board.png",
+    href: "https://anjumantrust.org/about-1/",
+  },
+  {
+    name: "Anjuman Research Center",
+    logo: "/images/concerns/anjuman-research-center.png",
+    href: "https://anjumantrust.org/about-1/",
+  },
+  {
+    name: "Da'wat-E Khair Implement Committee",
+    logo: "/images/concerns/dawat-e-khair-implement-committee.png",
+    href: "https://dawatekhair.com/",
+  },
+  {
+    name: "Gausia Committee Bangladesh",
+    logo: "/images/concerns/gausia-committee-bangladesh.png",
+    href: "https://gausiacommitteebangladesh.org/",
+  },
+];
+
 export const missionPoints = [
   {
     title: "Faith & Dawah",

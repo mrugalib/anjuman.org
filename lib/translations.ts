@@ -61,6 +61,12 @@ export const translations = {
   videoShowcase_offline: { en: "Offline — showing last broadcast", bn: "অফলাইন — সর্বশেষ সম্প্রচার দেখানো হচ্ছে" },
   videoShowcase_previous: { en: "Previous Videos", bn: "পূর্ববর্তী ভিডিও" },
 
+  ourConcern_heading: { en: "Our Concern", bn: "আমাদের প্রতিষ্ঠান" },
+  ourConcern_subheading: {
+    en: "The affiliated bodies working under the Trust to serve the community.",
+    bn: "সম্প্রদায়ের সেবায় ট্রাস্টের অধীনে কর্মরত সংশ্লিষ্ট প্রতিষ্ঠানসমূহ।",
+  },
+
   news_heading: { en: "News & Updates", bn: "সংবাদ ও আপডেট" },
 
   widgets_prayerTimes: { en: "Daily Prayer Timings", bn: "দৈনিক নামাজের সময়" },
