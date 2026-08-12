@@ -102,7 +102,7 @@ export type Lang = "en" | "bn";
 export const navLabelKeys: Partial<Record<string, TranslationKey>> = {
   "/": "nav_home",
   "/about": "nav_about",
-  "/#news": "nav_activities",
+  "/activities": "nav_activities",
   "/gallery": "nav_gallery",
   "/contact": "nav_contact",
   "/#donate-panel": "footer_donate",
@@ -114,6 +114,7 @@ export const navLabelKeys: Partial<Record<string, TranslationKey>> = {
 
 export const crumbKeys: Partial<Record<string, TranslationKey>> = {
   "About Us": "nav_about",
+  Activities: "nav_activities",
   Careers: "footer_careers",
   Contact: "nav_contact",
   Gallery: "nav_gallery",

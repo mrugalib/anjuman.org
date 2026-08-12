@@ -5,6 +5,8 @@ import StatsBar from "@/components/StatsBar";
 import DonatePanel from "@/components/DonatePanel";
 import FoundersGrid from "@/components/FoundersGrid";
 import NewsTabs from "@/components/NewsTabs";
+import ActivityTabs from "@/components/ActivityTabs";
+import { activityCategories } from "@/lib/data";
 import Widgets from "@/components/Widgets";
 import Reveal from "@/components/Reveal";
 
@@ -29,6 +31,12 @@ export default function Home() {
           <Reveal className="mt-16 [scroll-margin-top:var(--header-h)] md:mt-24" id="news">
             <NewsTabs />
           </Reveal>
+
+          {activityCategories.map((category) => (
+            <Reveal key={category.key} className="mt-16 md:mt-24">
+              <ActivityTabs initialKey={category.key} />
+            </Reveal>
+          ))}
 
           <Reveal className="mt-16 md:mt-24">
             <Widgets />

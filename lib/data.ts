@@ -439,6 +439,242 @@ export function findNewsArticle(slug: string) {
   return null;
 }
 
+export const activityCategories: NewsCategory[] = [
+  {
+    key: "gausia",
+    label: "Gausia Committee Bangladesh",
+    featured: {
+      title: "Gausia Committee Convenes Annual Coordination Meeting",
+      slug: "gausia-committee-annual-coordination-meeting",
+      excerpt:
+        "Chapter representatives from across the country met in Chattogram to review the year's programmes and set priorities for 2027.",
+      date: "Jul 18, 2026",
+      heroImage: stock("congregation-friday-herat.jpg"),
+      gallery: [
+        stock("congregation-friday-herat.jpg"),
+        stock("mosque-interior-2.jpg"),
+        stock("congregation-baitul-mukarram.jpg"),
+      ],
+      highlights: [
+        "Delegates from 18 chapters attended the coordination meeting",
+        "Reviewed membership growth and chapter reporting standards",
+        "Set shared priorities for outreach and welfare work in 2027",
+      ],
+      body: [
+        "The Gausia Committee Bangladesh held its annual coordination meeting at the Anjuman complex in Chattogram, bringing together representatives from eighteen chapters across the country.",
+        "Sessions covered chapter reporting standards, membership growth and the coordination of shared welfare activities between chapters.",
+        "The committee closed the meeting by agreeing a shared set of priorities for outreach and community welfare work heading into 2027.",
+      ],
+    },
+    rest: [
+      {
+        title: "New Chapter Registered in Cox's Bazar",
+        slug: "gausia-committee-new-chapter-coxs-bazar",
+        date: "Jun 9, 2026",
+        heroImage: stock("mosque-exterior-sunset.jpg"),
+        gallery: [stock("mosque-exterior-sunset.jpg"), stock("mosque-interior-1.jpg")],
+        highlights: [
+          "Cox's Bazar becomes the committee's newest registered chapter",
+          "Local elders and volunteers formed the founding executive",
+        ],
+        body: [
+          "A new Gausia Committee chapter has been formally registered in Cox's Bazar, extending the committee's reach into the coastal district.",
+          "Local elders and volunteers formed the chapter's founding executive and will begin coordinating with the central committee on shared programmes.",
+        ],
+      },
+      {
+        title: "Committee Launches Membership Drive Ahead of Ramadan",
+        slug: "gausia-committee-membership-drive-ramadan",
+        date: "May 20, 2026",
+        heroImage: stock("mosque-interior-3.jpg"),
+        gallery: [stock("mosque-interior-3.jpg"), stock("congregation-friday-herat.jpg")],
+        highlights: [
+          "Drive aims to register new members across all chapters",
+          "Renewed focus on younger members joining chapter committees",
+        ],
+        body: [
+          "The Gausia Committee has launched a nationwide membership drive ahead of the coming Ramadan, with chapters asked to reach new households in their areas.",
+          "Organisers say the drive places particular focus on bringing younger members onto chapter committees.",
+        ],
+      },
+    ],
+  },
+  {
+    key: "research",
+    label: "Research Centre",
+    featured: {
+      title: "Research Centre Publishes Study on Community Welfare Trends",
+      slug: "research-centre-community-welfare-study",
+      excerpt:
+        "A year-long study examines how the Trust's relief and education programmes are reaching households across Chattogram district.",
+      date: "Jul 5, 2026",
+      heroImage: stock("quran-manuscript.jpg"),
+      gallery: [stock("quran-manuscript.jpg"), stock("quran-page.jpg"), stock("calligraphy-classic.jpg")],
+      highlights: [
+        "Year-long study surveyed households across Chattogram district",
+        "Findings will guide relief and education programme planning",
+        "Full report to be shared with affiliated institutions and chapters",
+      ],
+      body: [
+        "The Trust's Research Centre has published the findings of a year-long study tracking how its relief and education programmes are reaching households across Chattogram district.",
+        "Researchers surveyed households and affiliated institutions to understand where existing programmes are working well and where gaps remain.",
+        "The findings will be used to guide programme planning for the year ahead, and the full report is being shared with affiliated institutions and chapters.",
+      ],
+    },
+    rest: [
+      {
+        title: "Fellowship Programme Opens for Young Scholars",
+        slug: "research-centre-fellowship-programme",
+        date: "Jun 14, 2026",
+        heroImage: stock("calligraphy-learning.jpg"),
+        gallery: [stock("calligraphy-learning.jpg"), stock("education-classroom.jpg")],
+        highlights: [
+          "Fellowship supports research into Islamic scholarship and community history",
+          "Open to graduates of affiliated madrasahs and universities",
+        ],
+        body: [
+          "The Research Centre has opened applications for its annual fellowship programme, supporting young scholars researching Islamic scholarship and community history.",
+          "The fellowship is open to graduates of affiliated madrasahs and universities, with selected fellows receiving a stipend and mentorship from senior scholars.",
+        ],
+      },
+      {
+        title: "Archive Digitisation Project Reaches Milestone",
+        slug: "research-centre-archive-digitisation-milestone",
+        date: "Apr 28, 2026",
+        heroImage: stock("quran-page.jpg"),
+        gallery: [stock("quran-page.jpg"), stock("quran-manuscript.jpg")],
+        highlights: [
+          "Over 3,000 historical documents digitised to date",
+          "Archive will be made available to affiliated researchers",
+        ],
+        body: [
+          "The Research Centre's ongoing project to digitise the Trust's historical records has passed the 3,000-document mark.",
+          "Once complete, the digital archive will be made available to affiliated researchers and institutions for study.",
+        ],
+      },
+    ],
+  },
+  {
+    key: "education",
+    label: "Education Board",
+    featured: {
+      title: "Education Board Expands Scholarship Programme for 2026",
+      slug: "education-board-scholarship-expansion-2026",
+      excerpt:
+        "The board has widened eligibility and doubled the number of scholarships available to students at affiliated madrasahs.",
+      date: "Jul 12, 2026",
+      heroImage: stock("education-classroom.jpg"),
+      gallery: [stock("education-classroom.jpg"), stock("calligraphy-learning.jpg"), stock("quran-page.jpg")],
+      highlights: [
+        "Scholarship places doubled for the 2026 academic year",
+        "Eligibility widened to cover more affiliated institutions",
+        "Priority given to students from low-income households",
+      ],
+      body: [
+        "The Education Board has expanded its scholarship programme for the 2026 academic year, doubling the number of places available to students at affiliated madrasahs.",
+        "Eligibility has also been widened to cover more affiliated institutions, with priority given to students from low-income households.",
+        "Applications are being coordinated through each institution's administration office.",
+      ],
+    },
+    rest: [
+      {
+        title: "New Madrasah Curriculum Approved for Rollout",
+        slug: "education-board-new-curriculum-rollout",
+        date: "Jun 2, 2026",
+        heroImage: stock("calligraphy-classic.jpg"),
+        gallery: [stock("calligraphy-classic.jpg"), stock("education-classroom.jpg")],
+        highlights: [
+          "Updated curriculum to roll out across affiliated madrasahs",
+          "Developed with input from senior teaching staff",
+        ],
+        body: [
+          "The Education Board has approved an updated curriculum for rollout across affiliated madrasahs, developed with input from senior teaching staff.",
+          "Institutions will begin phasing in the new curriculum from the coming academic term.",
+        ],
+      },
+      {
+        title: "Teacher Training Workshop Held in Chattogram",
+        slug: "education-board-teacher-training-workshop",
+        date: "May 8, 2026",
+        heroImage: stock("education-classroom.jpg"),
+        gallery: [stock("education-classroom.jpg"), stock("calligraphy-learning.jpg")],
+        highlights: [
+          "Workshop drew teaching staff from affiliated institutions",
+          "Focused on classroom methods and student welfare practices",
+        ],
+        body: [
+          "The Education Board hosted a teacher training workshop in Chattogram, drawing teaching staff from affiliated institutions across the district.",
+          "Sessions focused on classroom methods and student welfare practices, led by senior educators from the board.",
+        ],
+      },
+    ],
+  },
+  {
+    key: "khair",
+    label: "Dawate Khair",
+    featured: {
+      title: "Dawate Khair Distributes Winter Relief Across Six Districts",
+      slug: "dawate-khair-winter-relief-six-districts",
+      excerpt:
+        "Volunteers delivered blankets, warm clothing and food packages to families in six districts as part of the annual winter drive.",
+      date: "Jul 28, 2026",
+      heroImage: stock("relief-aid-distribution.jpg"),
+      gallery: [stock("relief-aid-distribution.jpg"), stock("water-well-pulley.jpg"), stock("mosque-exterior-sunset.jpg")],
+      highlights: [
+        "Relief packages delivered to families across six districts",
+        "Coordinated entirely by volunteer teams and local chapters",
+        "Packages included blankets, warm clothing and food supplies",
+      ],
+      body: [
+        "Dawate Khair volunteers completed this year's winter relief drive, delivering blankets, warm clothing and food packages to families across six districts.",
+        "The drive was coordinated entirely by volunteer teams working with local chapters to identify households most in need.",
+        "Organisers say the response from donors allowed the drive to reach more families than in previous years.",
+      ],
+    },
+    rest: [
+      {
+        title: "Volunteer Corps Doubles in Size This Year",
+        slug: "dawate-khair-volunteer-corps-growth",
+        date: "Jun 20, 2026",
+        heroImage: stock("water-well-pulley.jpg"),
+        gallery: [stock("water-well-pulley.jpg"), stock("relief-aid-distribution.jpg")],
+        highlights: [
+          "Active volunteer numbers have doubled compared to last year",
+          "New volunteers trained through monthly orientation sessions",
+        ],
+        body: [
+          "Dawate Khair's volunteer corps has doubled in size this year, with new members trained through monthly orientation sessions.",
+          "The growth has allowed the programme to take on additional relief and outreach activities across more districts.",
+        ],
+      },
+      {
+        title: "Monthly Food Drive Reaches 500 Families",
+        slug: "dawate-khair-monthly-food-drive-500-families",
+        date: "May 15, 2026",
+        heroImage: stock("relief-aid-distribution.jpg"),
+        gallery: [stock("relief-aid-distribution.jpg"), stock("mosque-interior-1.jpg")],
+        highlights: [
+          "Food packages delivered to 500 families this month",
+          "Distribution coordinated through local mosque committees",
+        ],
+        body: [
+          "Dawate Khair's monthly food drive reached 500 families this month, with distribution coordinated through local mosque committees.",
+          "The programme runs year-round, with volunteers assembling and delivering packages on the first weekend of every month.",
+        ],
+      },
+    ],
+  },
+];
+
+export function findActivity(slug: string) {
+  for (const category of activityCategories) {
+    const all = [category.featured, ...category.rest];
+    const article = all.find((item) => item.slug === slug);
+    if (article) return { article, category };
+  }
+  return null;
+}
+
 export const donationFunds = [
   "Zakat",
   "Sadaqah",
@@ -474,14 +710,14 @@ export const socialLinks = [
 export const mainNav = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Activities", href: "/#news" },
+  { label: "Activities", href: "/activities" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerMenu = [
   { label: "About Us", href: "/about" },
-  { label: "Activities", href: "/#news" },
+  { label: "Activities", href: "/activities" },
   { label: "Gallery", href: "/gallery" },
 ];
 

@@ -2,25 +2,23 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { newsCategories } from "@/lib/data";
-import { useLanguage } from "@/lib/i18n";
+import { activityCategories } from "@/lib/data";
 
-export default function NewsTabs() {
-  const { t } = useLanguage();
-  const [active, setActive] = useState(newsCategories[0].key);
-  const category = newsCategories.find((c) => c.key === active) ?? newsCategories[0];
+export default function ActivityTabs({ initialKey }: { initialKey?: string } = {}) {
+  const [active, setActive] = useState(initialKey ?? activityCategories[0].key);
+  const category = activityCategories.find((c) => c.key === active) ?? activityCategories[0];
 
   return (
     <div>
       <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-        <h2 className="text-2xl font-extrabold text-deep">{t("news_heading")}</h2>
+        <h2 className="text-2xl font-extrabold text-deep">{category.label}</h2>
 
         <div
           role="tablist"
-          aria-label="News categories"
+          aria-label="Activity committees"
           className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {newsCategories.map((c) => {
+          {activityCategories.map((c) => {
             const selected = c.key === active;
             return (
               <button
@@ -43,7 +41,7 @@ export default function NewsTabs() {
 
       <div key={category.key} role="tabpanel" className="tab-fade grid grid-cols-1 gap-6 lg:grid-cols-[1.3fr_1fr]">
         <Link
-          href={`/news/${category.featured.slug}`}
+          href={`/activities/${category.featured.slug}`}
           className="group flex flex-col overflow-hidden rounded-card border border-hairline transition-shadow hover:shadow-[0_12px_32px_rgba(15,53,31,0.12)]"
         >
           <div className="h-56 overflow-hidden md:h-70">
@@ -71,7 +69,7 @@ export default function NewsTabs() {
           {category.rest.map((item) => (
             <Link
               key={item.title}
-              href={`/news/${item.slug}`}
+              href={`/activities/${item.slug}`}
               className="group flex overflow-hidden rounded-card border border-hairline transition-shadow hover:shadow-[0_12px_32px_rgba(15,53,31,0.12)]"
             >
               <div className="h-32 w-32 shrink-0 overflow-hidden">
