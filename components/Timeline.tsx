@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-type TimelineEntry = { year: string; title: string; text: string };
+type TimelineEntry = { year: string; date?: string; title: string; text: string };
 
 export default function Timeline({ timeline }: { timeline: TimelineEntry[] }) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -100,6 +100,9 @@ export default function Timeline({ timeline }: { timeline: TimelineEntry[] }) {
                   reached ? "border-brand bg-brand" : "border-brand bg-white"
                 } ${i % 2 === 0 ? "md:left-auto md:right-[-7px]" : "md:right-auto md:left-[-7px]"}`}
               />
+              {t.date && (
+                <span className="text-[11px] font-bold tracking-[0.02em] text-muted uppercase">{t.date}</span>
+              )}
               <span className="text-[13px] font-extrabold text-brand">{t.year}</span>
               <span className="text-[14.5px] font-bold text-deep">{t.title}</span>
               <p className="text-[12.5px] leading-relaxed text-muted">{t.text}</p>

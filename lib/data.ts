@@ -965,34 +965,60 @@ export const footerOthers = [
 
 export const timeline = [
   {
-    year: "1926",
-    title: "Trust Established in Rangoon",
-    text: "Syed Ahmed Shah Sirikoti founds the Anjuman in Rangoon (Burma) to unite the Sunni Muslim Mashab and Millat under one charitable banner.",
+    date: "15 February",
+    year: "1925",
+    title: "Founded in Rangoon",
+    text: "Established as Anjuman-E-Shura-E-Rahmania in Rangoon, Burma to serve Islamic activities and the community.",
   },
   {
+    date: "29 August",
     year: "1937",
-    title: "Reconstituted in Chattogram",
-    text: "On 29 August, the disciples of Huzur Ahmad Shah reconstitute the Trust in Chattogram, laying the foundation for its present-day institutions.",
+    title: "Reconstituted in Chittagong",
+    text: "Disciples returning from Rangoon reconstitute the Trust in Chittagong in the presence of Huzur Kebla Syed Ahmad Shah.",
   },
   {
-    year: "1958",
-    title: "First Madrasa Opens",
-    text: "The Trust opens its first religious school, beginning six decades of continuous investment in Islamic and general education.",
+    date: "22 January",
+    year: "1954",
+    title: "Renamed & First Madrasa Founded",
+    text: "Reformed as Anjuman-E Ahmadia Sunnia in Anderkilla, Chittagong. The same year, the Trust founds its flagship institution, Jamea Ahmadia Sunnia Kamil Madrasah, in West Sholashahar.",
   },
   {
-    year: "1981",
-    title: "Gawsia Committee Formed",
-    text: "A dedicated committee is formed to coordinate congregations, relief work and outreach across the wider Sylhet and Chattogram regions.",
+    date: "18 March",
+    year: "1956",
+    title: "Present Name Adopted",
+    text: "Formally reconstituted under its current name, Anjuman-E-Rahmania Ahmadia Sunnia Trust, as a non-political, religious and philanthropic trust.",
   },
   {
-    year: "2003",
-    title: "Anjuman Relief Launched",
-    text: "A standing emergency-relief programme is created to respond to floods, cyclones and humanitarian crises across Bangladesh.",
+    year: "1958–59",
+    title: "Officially Registered",
+    text: "Registered under the Societies Registration Act XXI of 1860, Registration No. 1237 E.P./82.",
   },
   {
-    year: "2026",
-    title: "200+ Institutions Nationwide",
-    text: "Today the Trust runs over 200 institutions and dawah programs, reaching more than a crore of lives each year.",
+    date: "12 Rabiul Awal",
+    year: "1974",
+    title: "Jashne Julus Eid-E-Miladunnabi Begins",
+    text: "First organized under the direction of Allama Syed Muhammad Tayyab Shah (R.A.) in Chittagong.",
+  },
+  {
+    date: "16 December 1976",
+    year: "1976–77",
+    title: "Monthly Tarjuman-E-Ahle-Sunnat Launched",
+    text: "Ordered for publication by Allama Syed Muhammad Tayyab Shah (R.A.); officially launched in January 1977 as the Trust's primary monthly publication.",
+  },
+  {
+    year: "1986",
+    title: "Gausia Committee Bangladesh Founded",
+    text: "Founded by Allama Syed Muhammad Tayyab Shah (R.A.) as the Trust's social reform, humanitarian and volunteer auxiliary wing.",
+  },
+  {
+    year: "2009",
+    title: "Da'wat-E Khair Launched",
+    text: "Launched by Pir-e-Tariqat Hazrat Allama Syed Muhammad Sabir Shah Sahib Qibla at Alamgir Khanqah Sharif to guide people toward the core teachings of Sunni Islam.",
+  },
+  {
+    year: "Present",
+    title: "Anjuman Education Management Board",
+    text: "Formed as the central administrative body overseeing the Trust's network of 200+ madrasas and educational institutions established since 1954.",
   },
 ];
 
