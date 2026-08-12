@@ -57,7 +57,7 @@ export default function SiteHeader() {
               document.getElementById("top")?.scrollIntoView({ behavior: "smooth" });
             }
           }}
-          className="flex shrink-0 items-center gap-2 sm:gap-3"
+          className="flex min-w-0 shrink items-center gap-2 sm:shrink-0 sm:gap-3"
         >
           <Image
             src="/images/anjuman-logo.png"
@@ -67,7 +67,7 @@ export default function SiteHeader() {
             className="h-9 w-9 shrink-0 object-contain sm:h-[42px] sm:w-[42px]"
             priority
           />
-          <strong className="whitespace-nowrap text-[11px] leading-tight font-extrabold tracking-[0.02em] text-brand sm:text-[15px]">
+          <strong className="min-w-0 truncate text-[11px] leading-tight font-extrabold tracking-[0.02em] text-brand sm:text-[15px] sm:whitespace-nowrap">
             ANJUMAN-E-RAHMANIA AHMADIA SUNNIA TRUST
           </strong>
         </Link>
