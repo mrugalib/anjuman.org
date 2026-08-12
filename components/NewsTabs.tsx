@@ -18,7 +18,7 @@ export default function NewsTabs() {
         <div
           role="tablist"
           aria-label="News categories"
-          className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-1.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {newsCategories.map((c) => {
             const selected = c.key === active;
@@ -28,7 +28,7 @@ export default function NewsTabs() {
                 role="tab"
                 aria-selected={selected}
                 onClick={() => setActive(c.key)}
-                className={`shrink-0 rounded-full border px-4.5 py-2.5 text-[13.5px] font-bold transition-colors ${
+                className={`shrink-0 rounded-full border px-3 py-1.5 text-[12px] font-bold transition-colors ${
                   selected
                     ? "border-brand bg-brand text-white"
                     : "border-hairline bg-white text-muted hover:border-brand hover:text-brand"

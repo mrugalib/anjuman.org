@@ -62,13 +62,21 @@ export default function SiteHeader() {
             <Link
               key={item.label}
               href={item.href}
-              className={`border-b-2 py-2 text-[14.5px] font-semibold whitespace-nowrap ${
-                isActive(item.href)
-                  ? "border-brand text-brand"
-                  : "border-transparent text-ink hover:border-brand hover:text-brand"
+              className={`group border-b-2 py-2 text-[14.5px] font-semibold whitespace-nowrap ${
+                isActive(item.href) ? "border-brand text-brand" : "border-transparent text-ink hover:border-brand"
               }`}
             >
-              {navLabel(item)}
+              <span className="relative block h-[18px] overflow-hidden">
+                <span className="block leading-[18px] transition-transform duration-300 ease-out group-hover:-translate-y-[18px]">
+                  {navLabel(item)}
+                </span>
+                <span
+                  aria-hidden
+                  className="absolute inset-0 block translate-y-[18px] leading-[18px] text-brand transition-transform duration-300 ease-out group-hover:translate-y-0"
+                >
+                  {navLabel(item)}
+                </span>
+              </span>
             </Link>
           ))}
         </nav>

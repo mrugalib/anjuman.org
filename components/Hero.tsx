@@ -31,15 +31,35 @@ export default function Hero() {
         <div className="hero-in flex flex-wrap gap-3.5 [animation-delay:300ms]">
           <Link
             href="/#donate-panel"
-            className="rounded-lg bg-accent px-7 py-3.5 text-[14.5px] font-bold text-white transition-colors hover:bg-accent-hover"
+            className="group rounded-lg bg-accent px-7 py-3.5 text-[14.5px] font-bold text-white transition-colors hover:bg-accent-hover"
           >
-            <T k="hero_donate" />
+            <span className="relative block h-[18px] overflow-hidden">
+              <span className="block leading-[18px] transition-transform duration-300 ease-out group-hover:-translate-y-[18px]">
+                <T k="hero_donate" />
+              </span>
+              <span
+                aria-hidden
+                className="absolute inset-0 block translate-y-[18px] leading-[18px] transition-transform duration-300 ease-out group-hover:translate-y-0"
+              >
+                <T k="hero_donate" />
+              </span>
+            </span>
           </Link>
           <Link
             href="/about"
-            className="rounded-lg border border-white/45 bg-white/10 px-7 py-3.5 text-[14.5px] font-bold text-white transition-colors hover:bg-white/18"
+            className="group rounded-lg border border-white/45 bg-white/10 px-7 py-3.5 text-[14.5px] font-bold text-white transition-colors hover:bg-white/18"
           >
-            <T k="hero_learnMore" />
+            <span className="relative block h-[18px] overflow-hidden">
+              <span className="block leading-[18px] transition-transform duration-300 ease-out group-hover:-translate-y-[18px]">
+                <T k="hero_learnMore" />
+              </span>
+              <span
+                aria-hidden
+                className="absolute inset-0 block translate-y-[18px] leading-[18px] transition-transform duration-300 ease-out group-hover:translate-y-0"
+              >
+                <T k="hero_learnMore" />
+              </span>
+            </span>
           </Link>
         </div>
       </div>
