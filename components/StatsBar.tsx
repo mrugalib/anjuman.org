@@ -77,26 +77,13 @@ export default function StatsBar() {
     <section aria-label="Trust at a glance" className="relative z-3 mx-auto -mt-8 max-w-[1180px] px-5 md:px-10">
       <div
         ref={ref}
-        className={`stagger-grid grid grid-cols-1 rounded-card bg-white shadow-[0_18px_44px_rgba(15,53,31,0.16)] sm:grid-cols-2 md:grid-cols-4 ${
+        className={`stagger-grid grid grid-cols-2 gap-px overflow-hidden rounded-card bg-tint shadow-[0_18px_44px_rgba(15,53,31,0.16)] sm:grid-cols-3 md:grid-cols-5 ${
           active ? "is-visible" : ""
         }`}
       >
-        {stats.map((s, i) => {
-          const isLast = i === stats.length - 1;
-          const isTopRowSm = i < 2;
-          const isRightColSm = i % 2 === 1;
+        {stats.map((s) => {
           return (
-            <div
-              key={s.label}
-              className={[
-                "border-tint px-5 py-6 text-center sm:py-7",
-                !isLast ? "border-b" : "",
-                isTopRowSm ? "sm:border-b" : "sm:border-b-0",
-                isRightColSm ? "sm:border-r-0" : "sm:border-r",
-                "md:border-b-0",
-                isLast ? "md:border-r-0" : "md:border-r",
-              ].join(" ")}
-            >
+            <div key={s.label} className="bg-white px-5 py-6 text-center sm:py-7">
               <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
                 <CountUp value={s.value} active={active} />
               </div>

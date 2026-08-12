@@ -54,7 +54,7 @@ export default function SiteHeader() {
           className="flex shrink-0 items-center gap-2 sm:gap-3"
         >
           <Image
-            src="/images/anjuman-logo.jpg"
+            src="/images/anjuman-logo.png"
             alt="Anjuman-E Rahmania Ahmadia Sunnia Trust logo"
             width={42}
             height={42}

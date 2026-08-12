@@ -50,7 +50,7 @@ export default function SiteFooter() {
         <div>
           <div className="mb-3.5 flex items-center gap-2.5">
             <Image
-              src="/images/anjuman-logo.jpg"
+              src="/images/anjuman-logo.png"
               alt="Anjuman-E Rahmania Ahmadia Sunnia Trust logo"
               width={36}
               height={36}

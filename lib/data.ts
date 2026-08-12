@@ -1,4 +1,5 @@
 export const stats = [
+  { value: "60+", label: "Publications" },
   { value: "200+", label: "Institutions Run" },
   { value: "200+", label: "Dawah Programs" },
   { value: "1,00,00,000+", label: "Lives Reached" },
