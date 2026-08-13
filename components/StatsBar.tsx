@@ -83,18 +83,16 @@ export default function StatsBar() {
       >
         <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-4">
           {concerns.map((c) => (
-            <div key={c.name} className="flex items-center justify-center bg-brand px-3 py-3 text-center sm:py-3.5">
-              <span className="text-[10.5px] leading-tight font-bold text-white sm:text-[13px]">{c.name}</span>
-            </div>
-          ))}
-        </div>
-        <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-4">
-          {concerns.map((c) => (
-            <div key={c.name} className="bg-white px-5 py-6 text-center sm:py-7">
-              <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
-                <CountUp value={c.stat} active={active} />
+            <div key={c.name} className="flex flex-col bg-white">
+              <div className="flex min-h-[52px] items-center justify-center bg-brand px-3 py-3 text-center sm:min-h-[64px] sm:py-3.5">
+                <span className="text-[10.5px] leading-tight font-bold text-white sm:text-[13px]">{c.name}</span>
               </div>
-              <div className="mt-1 text-[12.5px] text-muted">{c.statLabel}</div>
+              <div className="border-t border-hairline px-5 py-6 text-center sm:py-7">
+                <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
+                  <CountUp value={c.stat} active={active} />
+                </div>
+                <div className="mt-1 text-[12.5px] text-muted">{c.statLabel}</div>
+              </div>
             </div>
           ))}
         </div>
