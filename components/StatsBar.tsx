@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { stats } from "@/lib/data";
+import { concerns } from "@/lib/data";
 
 function formatIndian(num: number) {
   const s = Math.round(num).toString();
@@ -77,24 +77,27 @@ export default function StatsBar() {
     <section aria-label="Trust at a glance" className="relative z-3 mx-auto -mt-8 max-w-[1180px] px-5 md:px-10">
       <div
         ref={ref}
-        className={`stagger-grid grid grid-cols-2 gap-px overflow-hidden rounded-card bg-tint shadow-[0_18px_44px_rgba(15,53,31,0.16)] sm:grid-cols-3 md:grid-cols-5 ${
+        className={`stagger-grid overflow-hidden rounded-card shadow-[0_18px_44px_rgba(15,53,31,0.16)] ${
           active ? "is-visible" : ""
         }`}
       >
-        {stats.map((s, i) => {
-          const isLast = i === stats.length - 1;
-          return (
-            <div
-              key={s.label}
-              className={`bg-white px-5 py-6 text-center sm:py-7 ${isLast ? "col-span-2 md:col-span-1" : ""}`}
-            >
-              <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
-                <CountUp value={s.value} active={active} />
-              </div>
-              <div className="mt-1 text-[12.5px] text-muted">{s.label}</div>
+        <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-4">
+          {concerns.map((c) => (
+            <div key={c.name} className="flex items-center justify-center bg-brand px-3 py-3 text-center sm:py-3.5">
+              <span className="text-[10.5px] leading-tight font-bold text-white sm:text-[13px]">{c.name}</span>
             </div>
-          );
-        })}
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-4">
+          {concerns.map((c) => (
+            <div key={c.name} className="bg-white px-5 py-6 text-center sm:py-7">
+              <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
+                <CountUp value={c.stat} active={active} />
+              </div>
+              <div className="mt-1 text-[12.5px] text-muted">{c.statLabel}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
