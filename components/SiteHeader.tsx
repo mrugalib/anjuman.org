@@ -113,7 +113,7 @@ export default function SiteHeader() {
                           onClick={goToSection(c.key)}
                           className="block rounded-lg px-3 py-2 text-[13px] font-semibold text-ink hover:bg-tint hover:text-brand"
                         >
-                          {c.label}
+                          {c.label[lang]}
                         </Link>
                       ))}
                     </div>
@@ -200,7 +200,7 @@ export default function SiteHeader() {
                         }}
                         className="rounded-md px-2 py-2 text-[13px] font-semibold text-muted hover:text-brand"
                       >
-                        {c.label}
+                        {c.label[lang]}
                       </Link>
                     ))}
                   </div>

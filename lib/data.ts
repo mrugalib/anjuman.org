@@ -57,479 +57,403 @@ export const founders = [
   },
 ];
 
+export type Localized = { en: string; bn: string };
+export type LocalizedList = { en: string[]; bn: string[] };
+
 export type NewsItem = {
-  title: string;
+  title: Localized;
   slug: string;
-  excerpt?: string;
+  excerpt?: Localized;
   date: string;
-  body: string[];
-  highlights: string[];
+  body: LocalizedList;
+  highlights: LocalizedList;
   heroImage: string;
   gallery: string[];
 };
 
 export type NewsCategory = {
   key: string;
-  label: string;
-  featured: NewsItem & { excerpt: string };
+  label: Localized;
+  featured: NewsItem & { excerpt: Localized };
   rest: NewsItem[];
 };
 
 const stock = (name: string) => `/images/news/stock/${name}`;
 
+const gausiaBandarbanRelief: NewsItem & { excerpt: Localized } = {
+  title: {
+    en: "Flood Relief Reaches Balaghata, Bandarban",
+    bn: "বান্দরবানের বালাঘাটায় পৌঁছাল বন্যা ত্রাণ",
+  },
+  slug: "gausia-committee-bandarban-flood-relief",
+  excerpt: {
+    en: "Gausia Committee volunteers carried relief packages on foot into Balaghata, one of the hardest-to-reach flood-affected villages in the hill district of Bandarban.",
+    bn: "গাউসিয়া কমিটির স্বেচ্ছাসেবকরা বান্দরবানের দুর্গম পাহাড়ি গ্রাম বালাঘাটায় পায়ে হেঁটে ত্রাণসামগ্রী পৌঁছে দেন।",
+  },
+  date: "Jul 14, 2026",
+  heroImage: "/images/activities/gausia-bandarban-relief-1.jpg",
+  gallery: [
+    "/images/activities/gausia-bandarban-relief-1.jpg",
+    "/images/activities/gausia-bandarban-relief-2.jpg",
+    "/images/activities/gausia-bandarban-relief-3.jpg",
+    "/images/activities/gausia-bandarban-relief-4.jpg",
+    "/images/activities/gausia-bandarban-relief-5.jpg",
+  ],
+  highlights: {
+    en: [
+      "Relief packages carried on foot into Balaghata, Bandarban",
+      "Part of a wider flood relief drive spanning hill and plain districts",
+      "Packages delivered directly to flood-affected families by committee volunteers",
+    ],
+    bn: [
+      "বান্দরবানের বালাঘাটায় পায়ে হেঁটে ত্রাণসামগ্রী পৌঁছে দেওয়া হয়",
+      "পাহাড় ও সমতল জুড়ে চলমান বন্যা ত্রাণ কর্মসূচির অংশ",
+      "কমিটির স্বেচ্ছাসেবকরা সরাসরি বন্যাদুর্গত পরিবারের হাতে ত্রাণ তুলে দেন",
+    ],
+  },
+  body: {
+    en: [
+      "The Gausia Committee Bangladesh's relief distribution programme has reached Balaghata in Bandarban, carrying essential supplies into one of the hardest-to-reach flood-affected areas of the hill district.",
+      "Volunteers in the committee's green vests carried sacks of relief materials on foot through the affected village, distributing packages directly to families whose homes had been affected by the flooding.",
+      "\"From the hills to the plains, Gausiyans everywhere are engaged in the service of humanity,\" the committee said, describing the effort as part of a wider relief drive that has now reached communities across both hill and plain districts, and pledging that this tradition of service will continue, God willing, until the Day of Judgement.",
+    ],
+    bn: [
+      "বান্দরবানের বালাঘাটায়ও পৌঁছে গেছে গাউসিয়া কমিটি বাংলাদেশ'র ত্রাণ বিতরণ কর্মসূচি।",
+      "এভাবে পাহাড়-সমতল সর্বত্র গাউসিয়ানরা মানবতার সেবায় নিয়োজিত।",
+      "হযরাতে কেরামের নেগাহে করমে এ ধারা কেয়ামত পর্যন্ত চলবে- ইনশাআল্লাহ্‌।",
+    ],
+  },
+};
+
+const gausiaDhakaQuaderiaMeeting: NewsItem = {
+  title: {
+    en: "Meeting on Ensuring Sustainable Education Held at Dhaka Quaderia Madrasah",
+    bn: "ঢাকা কাদেরিয়া মাদরাসায় টেকসই শিক্ষা নিশ্চিতকরণ বিষয়ক মতবিনিময় সভা",
+  },
+  slug: "gausia-committee-dhaka-kaderia-education-meeting",
+  date: "Jul 19, 2026",
+  heroImage: "/images/activities/gausia-dhaka-kaderia-education-meeting-1.jpg",
+  gallery: [
+    "/images/activities/gausia-dhaka-kaderia-education-meeting-1.jpg",
+    "/images/activities/gausia-dhaka-kaderia-education-meeting-2.jpg",
+    "/images/activities/gausia-dhaka-kaderia-education-meeting-3.jpg",
+  ],
+  highlights: {
+    en: [
+      "Held at Quaderia Tayyebia Kamil Madrasah, Dhaka on 19 July 2026",
+      "Organised by the Anjuman Education Management Board",
+      "Chaired by AEMB Chairman Professor Dr. N.K.M. Akbar Hossain",
+    ],
+    bn: [
+      "১৯ জুলাই ২০২৬, ঢাকা কাদেরিয়া তৈয়্যেবিয়া কামিল মাদরাসায় অনুষ্ঠিত",
+      "আয়োজনে আনজুমান এডুকেশন ম্যানেজমেন্ট বোর্ড",
+      "সভাপতিত্বে বোর্ডের চেয়ারম্যান প্রফেসর ড. নূ.ক.ম আকবর হোসেন",
+    ],
+  },
+  body: {
+    en: [
+      "The Anjuman Education Management Board organised a 'consultation meeting on ensuring sustainable education' at Quaderia Tayyebia Kamil Madrasah in Dhaka, known as a beacon for producing sincere scholars under the Anjuman Trust in the capital.",
+      "The meeting, held on Sunday, 19 July 2026, was chaired by AEMB Chairman Professor Dr. N.K.M. Akbar Hossain. Alhaj Mohammad Manjur Alam (Manju), Senior Vice President of the central Anjuman, attended as chief guest.",
+      "Also present were the central Anjuman's Secretary General Alhaj Mohammed Anowar Hossain, leaders of the central Anjuman, leaders of the Dhaka Anjuman, leaders of the Education Board, and Dhaka Quaderia Madrasah's Principal Mufti Muhammad Jashim Uddin Al-Azhari along with other members of the teaching staff.",
+    ],
+    bn: [
+      "কাদেরিয়া তৈয়্যেবিয়া কামিল মাদরাসা রাজধানী ঢাকার বুকে আনজুমান ট্রাস্ট পরিচালিত সাচ্চা আলেম তৈরির বাতিঘর হিসেবে সুপরিচিত। হযরাতে কেরামের নেগাহে কর্মে এ বাতিঘরের আলোকে আরও প্রজ্জলিত করতে 'টেকসই শিক্ষা নিশ্চিতকরণ বিষয়ক মতবিনিময় সভা'-এর আয়োজন করে আনজুমান এডুকেশন ম্যানেজমেন্ট বোর্ড।",
+      "বোর্ডের চেয়ারম্যান প্রফেসর ড. নূ.ক.ম আকবর হোসেনের সভাপতিত্বে অনুষ্ঠিত সভায় প্রধান অতিথি ছিলেন কেন্দ্রীয় আনজুমানের সিনিয়র ভাইস প্রেসিডেন্ট আলহাজ্ব মোহাম্মদ মনজুর আলম (মনজু)।",
+      "কেন্দ্রীয় আনজুমানের সেক্রেটারি জেনারেল আলহাজ্ব মোহাম্মদ আনোয়ার হোসেনসহ সভায় আরও উপস্থিত ছিলেন কেন্দ্রীয় আনজুমানের নেতৃবৃন্দ, ঢাকা আনজুমানের নেতৃবৃন্দ, এডুকেশন বোর্ডের নেতৃবৃন্দ এবং ঢাকা কাদেরিয়া মাদরাসার অধ্যক্ষ মুফতি মুহাম্মদ জসিম উদ্দীন আল-আযহারীসহ অন্যান্য শিক্ষকমন্ডলী।",
+    ],
+  },
+};
+
+const gausiaGazaAidShipment: NewsItem = {
+  title: {
+    en: "Gausia Committee Sends Humanitarian Aid Shipment for Gaza, Palestine",
+    bn: "ফিলিস্তিনের গাজায় মানবিক সহায়তা পাঠাল গাউসিয়া কমিটি",
+  },
+  slug: "gausia-committee-gaza-palestine-aid-shipment",
+  date: "Apr 13, 2025",
+  heroImage: "/images/activities/gausia-gaza-aid-shipment-1.jpg",
+  gallery: [
+    "/images/activities/gausia-gaza-aid-shipment-1.jpg",
+    "/images/activities/gausia-gaza-aid-shipment-2.jpg",
+    "/images/activities/gausia-gaza-aid-shipment-3.jpg",
+    "/images/activities/gausia-gaza-aid-shipment-4.jpg",
+    "/images/activities/gausia-gaza-aid-shipment-5.jpg",
+  ],
+  highlights: {
+    en: [
+      "Pallets of relief supplies packed and loaded for shipment to Gaza",
+      "Sent under the auspices of the Grand Imam of Al-Azhar's office",
+      "Part of the committee's 'Love for Gaza, Palestine' humanitarian campaign",
+    ],
+    bn: [
+      "গাজায় পাঠানোর জন্য প্যালেটে ত্রাণসামগ্রী প্যাক ও লোড করা হয়",
+      "আল-আজহারের গ্র্যান্ড ইমামের কার্যালয়ের তত্ত্বাবধানে প্রেরিত",
+      "কমিটির 'Love for Gaza, Palestine' মানবিক কর্মসূচির অংশ",
+    ],
+  },
+  body: {
+    en: [
+      "\"Alhamdulillah — Gausia Committee Bangladesh, a humanitarian organisation, stands with the oppressed people of Palestine,\" the committee announced as it dispatched a shipment of humanitarian aid for Gaza.",
+      "Warehouse photos show pallets of relief boxes packed and wrapped for transport, loaded onto flatbed trucks for onward shipment, with the consignment sent under the auspices of the office of the Grand Imam of Al-Azhar.",
+      "Volunteers and committee members gathered around the 'Love for Gaza, Palestine' banner ahead of the shipment, part of the Gausia Committee's ongoing campaign in solidarity with the people of Gaza.",
+    ],
+    bn: [
+      "আলহামদুলিল্লাহ,,, ফিলিস্তিনের মজলুমদের পাশে মানবতার সংগঠন গাউসিয়া কমিটি বাংলাদেশ।",
+      "গুদামের ছবিতে দেখা যায়, পরিবহনের জন্য প্যাকেটজাত ত্রাণ বাক্সের প্যালেট ফ্ল্যাটবেড ট্রাকে তোলা হচ্ছে, আল-আজহারের গ্র্যান্ড ইমামের কার্যালয়ের তত্ত্বাবধানে এই চালান প্রেরণ করা হয়।",
+      "শিপমেন্টের আগে স্বেচ্ছাসেবক ও কমিটির সদস্যরা 'Love for Gaza, Palestine' ব্যানারের সামনে একত্রিত হন, যা গাজার জনগণের প্রতি সংহতি প্রকাশের চলমান কর্মসূচির অংশ।",
+    ],
+  },
+};
+
+const gausiaAlimCommittee: NewsItem = {
+  title: {
+    en: "Alim 2nd Year Class Committee Formed at Jamea Ahmadia Sunnia",
+    bn: "জামেয়া আহমদিয়া সুন্নিয়ায় আলিম ২য় বর্ষের ক্লাস কমিটি গঠন",
+  },
+  slug: "gausia-committee-alim-2nd-year-class-committee",
+  date: "Aug 9, 2026",
+  heroImage: "/images/activities/gausia-alim-2nd-year-class-committee-1.jpg",
+  gallery: [
+    "/images/activities/gausia-alim-2nd-year-class-committee-1.jpg",
+    "/images/activities/gausia-alim-2nd-year-class-committee-2.jpg",
+  ],
+  highlights: {
+    en: [
+      "Class committee approved for the Alim 2nd year batch",
+      "Formed under the Jamea Ahmadia Sunnia Kamil Madrasah branch",
+      "Organised by Gausia Committee Bangladesh (JASA chapter)",
+    ],
+    bn: [
+      "আলিম ২য় বর্ষের ব্যাচের জন্য ক্লাস কমিটি অনুমোদিত",
+      "জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসা শাখার অধীনে গঠিত",
+      "আয়োজনে গাউসিয়া কমিটি বাংলাদেশ (জাসা শাখা)",
+    ],
+  },
+  body: {
+    en: [
+      "Gausia Committee Bangladesh has approved the class committee for the Alim 2nd year batch under its Jamea Ahmadia Sunnia Kamil Madrasah branch.",
+      "The committee was formally approved on Sunday, 9 August 2026, and the newly formed body was photographed together in the madrasah's courtyard.",
+    ],
+    bn: [
+      "আলিম ২য় বর্ষের ক্লাস কমিটি গঠন।",
+      "আলহামদুলিল্লাহ, গত ৯ আগস্ট ২০২৬, রবিবার গাউসিয়া কমিটি বাংলাদেশ, জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসা শাখার আওতাধীন আলিম ২য় বর্ষের ক্লাস কমিটি অনুমোদন করা হয়েছে।",
+    ],
+  },
+};
+
+const researchKhairReviewMeeting: NewsItem & { excerpt: Localized } = {
+  title: {
+    en: "Review Meeting & Thank-You Letters for Da'wat-E Khair Thana Committees",
+    bn: "পর্যালোচনা সভা ও থানা কমিটিগুলোকে ধন্যবাদপত্র প্রদান",
+  },
+  slug: "research-centre-khair-review-meeting-thanks-letters",
+  excerpt: {
+    en: "The Anjuman Research Centre convened a review meeting with the six thana committees behind the third monthly Da'wat-E Khair ijtema, presenting each with a letter of thanks.",
+    bn: "তৃতীয় মাসিক দাওয়াতে খায়র ইজতিমার আয়োজক ছয়টি থানা কমিটির সঙ্গে পর্যালোচনা সভা করে আনজুমান রিসার্চ সেন্টার এবং প্রতিটি কমিটিকে ধন্যবাদপত্র প্রদান করা হয়।",
+  },
+  date: "Jul 29, 2026",
+  heroImage: "/images/activities/research-khair-review-meeting-1.jpg",
+  gallery: [
+    "/images/activities/research-khair-review-meeting-1.jpg",
+    "/images/activities/research-khair-review-meeting-2.jpg",
+    "/images/activities/research-khair-review-meeting-3.jpg",
+    "/images/activities/research-khair-review-meeting-4.jpg",
+  ],
+  highlights: {
+    en: [
+      "Review meeting held with organisers of the 3rd monthly Da'wat-E Khair ijtema",
+      "Thank-you letters presented to all six participating thana committees",
+      "Attended by the Da'wat-E Khair Standing Committee and Gausia Committee Bangladesh leaders",
+    ],
+    bn: [
+      "তৃতীয় মাসিক দাওয়াতে খায়র ইজতিমার আয়োজকদের সঙ্গে পর্যালোচনা সভা অনুষ্ঠিত",
+      "অংশগ্রহণকারী ছয়টি থানা কমিটিকে ধন্যবাদপত্র প্রদান করা হয়",
+      "দাওয়াতে খায়র স্ট্যান্ডিং কমিটি ও গাউসিয়া কমিটি বাংলাদেশের নেতৃবৃন্দ উপস্থিত ছিলেন",
+    ],
+  },
+  body: {
+    en: [
+      "On 29 July 2026, a review meeting was held with the leaders of the six thana committees that organised the third monthly Da'wat-E Khair ijtema, followed by the presentation of thank-you letters to each participating committee.",
+      "The meeting was attended by the Da'wat-E Khair Standing Committee, together with leaders of Gausia Committee Bangladesh and representatives from the Khulshi, Akbar Shah, Pahartali, Kotwali East, Kotwali West and Karnaphuli thana committees.",
+    ],
+    bn: [
+      "পর্যালোচনা সভা ও ধন্যবাদপত্র প্রদান। আজ ২৯ জুলাই'২৬, দা'ওয়াতে খায়র তৃতীয় মাসিক ইজতিমার আয়োজক ৬ থানা কমিটির দায়িত্বশীলগণের উপস্থিতিতে পর্যালোচনা সভা ও থানা কমিটিগুলোকে ধন্যবাদপত্র প্রদান করা হয়।",
+      "এতে উপস্থিত ছিলেন দা'ওয়াতে খায়র স্ট্যান্ডিং কমিটি, গাউসিয়া কমিটি বাংলাদেশ, খুলশী, আকবর শাহ, পাহাড়তলী, কোতোয়ালি পূর্ব, কোতোয়ালি পশ্চিম, কর্ণফুলী থানা কমিটির নেতৃবৃন্দ।",
+    ],
+  },
+};
+
+const researchQiraatTraining: NewsItem = {
+  title: {
+    en: "Gausia Qira'at Training 2026 Begins at Alamgir Khankah Sharif",
+    bn: "আলমগীর খানকাহ শরীফে শুরু হলো গাউসিয়া ক্বিরাআত প্রশিক্ষণ-২০২৬",
+  },
+  slug: "research-centre-gausia-qiraat-training-2026",
+  date: "3 Ramadan 1447 AH",
+  heroImage: "/images/activities/research-qiraat-training-1.jpg",
+  gallery: [
+    "/images/activities/research-qiraat-training-1.jpg",
+    "/images/activities/research-qiraat-training-2.jpg",
+    "/images/activities/research-qiraat-training-3.jpg",
+    "/images/activities/research-qiraat-training-4.jpg",
+  ],
+  highlights: {
+    en: [
+      "Daily sessions from 2:00pm to 4:00pm at Alamgir Khankah Sharif",
+      "Runs from 3 Ramadan through to 24 Ramadan",
+      "Organised by the Da'wat-E Khair Standing Committee, supervised by the Anjuman Research Centre",
+    ],
+    bn: [
+      "প্রতিদিন বিকাল ২টা থেকে ৪টা পর্যন্ত আলমগীর খানকাহ শরীফে অনুষ্ঠিত হবে",
+      "৩ রমাদ্বান থেকে ২৪ রমাদ্বান পর্যন্ত চলবে",
+      "আয়োজনে দাওয়াতে খায়র স্ট্যান্ডিং কমিটি, তত্ত্বাবধানে আনজুমান রিসার্চ সেন্টার",
+    ],
+  },
+  body: {
+    en: [
+      "Gausia Qira'at Training 2026 has begun, running daily from 3 Ramadan through to 24 Ramadan, held each afternoon from 2:00pm to 4:00pm at Alamgir Khankah Sharif.",
+      "The training is organised by the Da'wat-E Khair Standing Committee, sponsored by Anjuman-E Rahmania Ahmadia Sunnia Trust, Chattogram, and supervised by the Anjuman Research Centre.",
+    ],
+    bn: [
+      "সুখবর! শুরু হয়ে গেছে গাউসিয়া ক্বিরাআত প্রশিক্ষণ-২০২৬ || আজ ৩ রমাদ্বান থেকে ২৪ রমাদ্বান পর্যন্ত। স্থান: আলমগীর খানকাহ শরীফ, বিকাল ২টা থেকে ৪টা।",
+      "আয়োজন: দা'ওয়াতে খায়র স্ট্যান্ডিং কমিটি। পৃষ্ঠপোষকতা: আনজুমান-এ রহমানিয়া আহমদিয়া সুন্নিয়া ট্রাস্ট, চট্টগ্রাম। তত্ত্বাবধানে: আনজুমান রিসার্চ সেন্টার।",
+    ],
+  },
+};
+
+const researchMiladOlympiad: NewsItem = {
+  title: {
+    en: "Gausia Committee Launches Milad Olympiad, Season 2",
+    bn: "গাউসিয়া কমিটির মিলাদ অলিম্পিয়াড, সিজন-২ শুরু",
+  },
+  slug: "research-centre-milad-olympiad-season-2",
+  date: "Aug 15, 2026",
+  heroImage: "/images/activities/research-milad-olympiad-poster.png",
+  gallery: ["/images/activities/research-milad-olympiad-poster.png"],
+  highlights: {
+    en: [
+      "Total prize pool of Tk 2.5 lakh shared among 12 winners",
+      "1st prize: a Ziyarat (holy visit) to the Haramain Sharifain",
+      "Selection round exam on 15 August 2026, syllabus based on the book Nurunnabi",
+    ],
+    bn: [
+      "১২ জন বিজয়ীর জন্য সর্বমোট ২.৫ লক্ষ টাকার পুরস্কার",
+      "১ম পুরস্কার: পবিত্র হারামাইন শরীফাইনের যেয়ারত",
+      "সিলেকশন রাউন্ডের পরীক্ষা ১৫ আগস্ট ২০২৬, সিলেবাস নূরনবী বই থেকে",
+    ],
+  },
+  body: {
+    en: [
+      "Marking the holy Milad of Sayyidul Mursalin, Rahmatul lil Alameen, Huzur Karim (peace and blessings be upon him), the Gausia Committee Bangladesh's Jamea Ahmadia Sunnia Kamil Madrasah branch has launched the Milad Olympiad, Season 2, offering a total prize pool of Tk 2.5 lakh across 12 winners.",
+      "The top prize is a Ziyarat (holy visit) to the Haramain Sharifain, followed by a laptop for 2nd place and a tablet for 3rd, with cash prizes of Tk 7,000 and Tk 5,000 for 4th and 5th place. Winners placed 6th to 12th receive certificates, medals and gift hampers.",
+      "The syllabus is drawn from the book Nurunnabi by Hafez Muhammad Abdul Jalil (rah.): the selection round covers chapters 1–30, the elimination round chapters 31–55, and the final round the complete book together with a designated PDF. The selection round exam is scheduled for 15 August 2026, with elimination and final round dates to be announced later; the first two rounds will be held online via miladolympiad.com. Registration costs Tk 150.",
+    ],
+    bn: [
+      "সাইয়্যিদুল মুরসালিন, রহমাতুল্লিল আলামীন হুযুর করীম ﷺ এর পবিত্র মিলাদ উপলক্ষে গাউসিয়া কমিটি বাংলাদেশের জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসা শাখার আয়োজনে শুরু হয়েছে মিলাদ অলিম্পিয়াড সিজন-২, সর্বমোট ২.৫ লক্ষ টাকার পুরস্কার নিয়ে ১২ জন বিজয়ীর জন্য।",
+      "১ম পুরস্কার পবিত্র হারামাইন শরীফাইনের যেয়ারত, ২য় পুরস্কার ল্যাপটপ, ৩য় পুরস্কার ট্যাব, ৪র্থ পুরস্কার ৭০০০ টাকা এবং ৫ম পুরস্কার ৫০০০ টাকা। ৬ষ্ঠ থেকে ১২তম পুরস্কারপ্রাপ্তরা পাবেন সার্টিফিকেট, মেডেল ও আকর্ষণীয় গিফট হ্যাম্পার।",
+      "সিলেবাস নির্ধারিত হয়েছে হাফেজ মুহাম্মদ আবদুল জলিল (রহ.) রচিত 'নূরনবী' বই থেকে: সিলেকশন রাউন্ড ১ম থেকে ৩০তম অধ্যায় পর্যন্ত, এলিমিনেশন রাউন্ড ৩১তম থেকে ৫৫তম অধ্যায় পর্যন্ত, এবং ফাইনাল রাউন্ড সম্পূর্ণ বই ও নির্ধারিত পিডিএফ থেকে। সিলেকশন রাউন্ডের পরীক্ষা ১৫ আগস্ট ২০২৬-এ অনুষ্ঠিত হবে, এলিমিনেশন ও ফাইনাল রাউন্ডের তারিখ পরবর্তীতে জানানো হবে; প্রথম দু'টি রাউন্ডের পরীক্ষা হবে miladolympiad.com-এ। রেজিস্ট্রেশন ফি ১৫০ টাকা।",
+    ],
+  },
+};
+
+const educationChuetWorkshop: NewsItem & { excerpt: Localized } = {
+  title: {
+    en: "Day-Long Teacher Training Workshop Held at CUET IT Business Incubator",
+    bn: "চুয়েট আইটি বিজনেস ইনকিউবেটরে দিনব্যাপী শিক্ষক প্রশিক্ষণ কর্মশালা",
+  },
+  slug: "education-board-chuet-teacher-training-workshop",
+  excerpt: {
+    en: "AEMB brought together nearly 180 teachers from Raozan and Rangunia's madrasahs for a day-long faculty development workshop on modern pedagogy and quality education.",
+    bn: "রাউজান ও রাঙ্গুনিয়ার মাদ্রাসার প্রায় ১৮০ জন শিক্ষককে নিয়ে আধুনিক শিক্ষাদর্শ ও গুণগত শিক্ষা বিষয়ক দিনব্যাপী প্রশিক্ষণ কর্মশালার আয়োজন করে এএইএমবি।",
+  },
+  date: "Jun 20, 2026",
+  heroImage: "/images/activities/edu-chuet-workshop-1.jpg",
+  gallery: [
+    "/images/activities/edu-chuet-workshop-1.jpg",
+    "/images/activities/edu-chuet-workshop-2.jpg",
+    "/images/activities/edu-chuet-workshop-3.jpg",
+  ],
+  highlights: {
+    en: [
+      "Around 180 teachers from 10 madrasahs across Raozan and Rangunia attended",
+      "Sessions covered outcome-based learning, EdTech/AI, classroom management, discipline and exam evaluation",
+      "Certificates were presented to all participating teachers at the closing ceremony",
+    ],
+    bn: [
+      "রাউজান ও রাঙ্গুনিয়ার ১০টি মাদ্রাসার প্রায় ১৮০ জন শিক্ষক অংশগ্রহণ করেন",
+      "আউটকাম বেইজড লার্নিং, তথ্যপ্রযুক্তি ও এআই, শ্রেণিকক্ষ ব্যবস্থাপনা ও মূল্যায়ন বিষয়ে আলোচনা হয়",
+      "সমাপনী অনুষ্ঠানে সকল অংশগ্রহণকারী শিক্ষককে সনদপত্র প্রদান করা হয়",
+    ],
+  },
+  body: {
+    en: [
+      "The Anjuman Education Management Board (AEMB), Chattogram held a day-long teacher training workshop at the CUET IT Business Incubator, aimed at improving the quality of madrasah education, spreading modern teaching methods and strengthening teachers' professional skills.",
+      "Nearly 180 teachers from ten madrasahs across Raozan and Rangunia upazilas took part. The day's sessions covered the current challenges facing madrasah education and strategies to overcome them, outcome-based learning (OBL), the use of IT and artificial intelligence in education, classroom and time management, positive discipline practices, the 2011 policy abolishing corporal punishment, bullying and cyber safety, question-paper setting and answer-script evaluation, results preparation, service and leave rules, financial discipline, and effective lesson planning.",
+      "AEMB Vice Chairman Alhaj M. A. Hamid, FCMA delivered the welcome address, saying the board is working continuously through teacher training, academic supervision and modern evaluation methods to ensure quality, modern and values-based education across Anjuman-affiliated madrasahs. Resource persons for the day included AEMB Chairman Professor Dr. N. K. M. Akbar Hossain, Professor Abu Saleh Mohammad Naeem Uddin, Professor Muhammad Gofran and Principal Dr. Mohammad Sarwar Uddin.",
+      "The closing and certificate-distribution ceremony was chaired by Professor Dr. N. K. M. Akbar Hossain, with Anjuman-E Rahmania Ahmadia Sunnia Trust Secretary General Alhaj Mohammed Anowar Hossain as chief guest and CUET IT Business Incubator Director Professor Dr. Mohammad Moshiul Hoque as guest of honour, alongside Finance Secretary Kamar Uddin Sabur and AEMB Vice Chairman M. A. Hamid, FCMA as special guests. \"Teachers are the principal architects of a nation's future — there is no substitute for regular training and skills development if madrasah education is to remain modern and competitive,\" said Alhaj Mohammed Anowar Hossain in his address.",
+      "Certificates were distributed to all participating teachers at the close of the workshop, and attendees called for such training programmes to be organised regularly going forward.",
+    ],
+    bn: [
+      "চুয়েট আইটি বিজনেস ইনকিউবেটরে আনজুমান এডুকেশন ম্যানেজমেন্ট বোর্ডের দিনব্যাপী শিক্ষক প্রশিক্ষণ কর্মশালা অনুষ্ঠিত। মাদ্রাসা শিক্ষার গুণগত মানোন্নয়ন, আধুনিক শিক্ষাদর্শের প্রসার এবং শিক্ষকদের পেশাগত দক্ষতা উন্নয়নের লক্ষ্যে আনজুমান এডুকেশন ম্যানেজমেন্ট বোর্ড (এএইএমবি), চট্টগ্রামের উদ্যোগে এই কর্মশালা অনুষ্ঠিত হয়।",
+      "কর্মশালায় রাউজান ও রাঙ্গুনিয়া উপজেলার আওতাধীন ১০টি মাদ্রাসার প্রায় ১৮০ জন শিক্ষক অংশগ্রহণ করেন। দিনব্যাপী প্রশিক্ষণে মাদ্রাসা শিক্ষার বর্তমান চ্যালেঞ্জ ও উত্তরণের কৌশল, আউটকাম বেইজড লার্নিং (ওবিএল), শিক্ষা ক্ষেত্রে তথ্যপ্রযুক্তি ও কৃত্রিম বুদ্ধিমত্তার (এআই) ব্যবহার, শ্রেণিকক্ষ ও সময় ব্যবস্থাপনা, ইতিবাচক শৃঙ্খলা চর্চা, শারীরিক শাস্তি রহিতকরণ নীতিমালা-২০১১, বুলিং ও সাইবার নিরাপত্তা, প্রশ্নপত্র প্রণয়ন, উত্তরপত্র মূল্যায়ন, ফলাফল প্রস্তুতকরণ, চাকরি ও ছুটি বিধিমালা, আর্থিক শৃঙ্খলা এবং কার্যকর পাঠ পরিকল্পনা প্রণয়ন বিষয়ে বিস্তারিত আলোচনা করা হয়।",
+      "উদ্বোধনী পর্বে স্বাগত বক্তব্য প্রদান করেন আনজুমান এডুকেশন ম্যানেজমেন্ট বোর্ডের ভাইস চেয়ারম্যান এম. এ. হামিদ, এফসিএমএ। তিনি বলেন, আনজুমানভুক্ত মাদ্রাসাগুলোতে গুণগত, আধুনিক ও মূল্যবোধভিত্তিক শিক্ষা নিশ্চিত করতে বোর্ড ধারাবাহিকভাবে শিক্ষক প্রশিক্ষণ, একাডেমিক তদারকি এবং আধুনিক মূল্যায়ন পদ্ধতি বাস্তবায়নের মাধ্যমে কাজ করে যাচ্ছে। রিসোর্স পারসন হিসেবে বক্তব্য রাখেন বোর্ডের চেয়ারম্যান প্রফেসর ড. নূ ক ম. আকবর হোসেন, প্রফেসর আবু ছালেহ মোহাম্মদ নঈম উদ্দিন, প্রফেসর মুহাম্মদ গোফরান এবং অধ্যক্ষ ড. মোহাম্মদ সরওয়ার উদ্দিন।",
+      "প্রশিক্ষণের সমাপনী ও সনদ বিতরণ অনুষ্ঠানে প্রধান অতিথি ছিলেন আনজুমানে রহমানিয়া আহমদিয়া সুন্নিয়া ট্রাস্টের সেক্রেটারি জেনারেল আলহাজ্ব মোহাম্মদ আনোয়ার হোসেন। গেস্ট অব অনার ছিলেন চুয়েট আইটি বিজনেস ইনকিউবেটরের পরিচালক প্রফেসর ড. মোহাম্মদ মশিউল হক। বিশেষ অতিথি ছিলেন ফাইন্যান্স সেক্রেটারি কমর উদ্দিন সবুর এবং ভাইস চেয়ারম্যান এম. এ. হামিদ, এফসিএমএ। প্রধান অতিথি বলেন, \"শিক্ষকরাই একটি জাতির ভবিষ্যৎ নির্মাণের প্রধান কারিগর। মাদ্রাসা শিক্ষাকে যুগোপযোগী ও প্রতিযোগিতামূলক করতে হলে শিক্ষকদের নিয়মিত প্রশিক্ষণ ও দক্ষতা উন্নয়নের বিকল্প নেই।\"",
+      "প্রশিক্ষণ শেষে অংশগ্রহণকারী শিক্ষকদের মধ্যে সনদপত্র বিতরণ করা হয় এবং তাঁরা ভবিষ্যতেও এ ধরনের প্রশিক্ষণ কার্যক্রম নিয়মিত আয়োজনের আহ্বান জানান।",
+    ],
+  },
+};
+
+const khairPotiyaIjtema: NewsItem & { excerpt: Localized } = {
+  title: {
+    en: "Da'wat-E Khair Ijtema Held in Potiya",
+    bn: "পটিয়ায় দাওয়াতে খায়র ইজতিমা অনুষ্ঠিত",
+  },
+  slug: "dawate-khair-potiya-ijtema",
+  excerpt: {
+    en: "Speakers at the Potiya ijtema called for wider outreach so ordinary Muslim men and women can easily learn the basic rulings of Islam, as Da'wat-E Khair announced its next three-month syllabus for trained Muallims.",
+    bn: "পটিয়ার ইজতিমায় আলোচকগণ বলেন, মুসলিম নর-নারীদের ইসলামের মৌলিক বিধিনিষেধের জ্ঞান সহজভাবে শিখিয়ে দিতে দাওয়াতে খায়র মজলিসের প্রসার ঘটাতে হবে।",
+  },
+  date: "May 2, 2026",
+  heroImage: "/images/activities/khair-potiya-ijtema-1.jpg",
+  gallery: [
+    "/images/activities/khair-potiya-ijtema-1.jpg",
+    "/images/activities/khair-potiya-ijtema-2.jpg",
+    "/images/activities/khair-potiya-ijtema-3.jpg",
+  ],
+  highlights: {
+    en: [
+      "Held at Potiya Shah Chand Awlia Mazar & Madrasah's adjoining Jame Masjid",
+      "Organised by the Da'wat-E Khair Standing Committee with Gausia Committee Chattogram South",
+      "Next three-month topic-wise syllabus announced for trained Muallims",
+    ],
+    bn: [
+      "পটিয়া শাহচান্দ আউলিয়া মাজার ও মাদ্রাসা সংলগ্ন জামে মসজিদে অনুষ্ঠিত",
+      "আয়োজনে দাওয়াতে খায়র স্ট্যান্ডিং কমিটি, সৌজন্যে গাউসিয়া কমিটি চট্টগ্রাম দক্ষিণ জেলা",
+      "মুয়াল্লিমদের জন্য আগামী তিন মাসের বিষয়ভিত্তিক সিলেবাস ঘোষণা",
+    ],
+  },
+  body: {
+    en: [
+      "Speakers at the Da'wat-E Khair ijtema in Potiya said the purpose of the Da'wat-E Khair Majlis is to teach the basic rulings of Islam to Muslim men and women in a simple, accessible way, and called for the movement to be expanded through wholehearted effort. Pir Sabir Shah Maddazilluhul Ali, the founder of the Majlis, has directed everyone to carry out this work with sincerity.",
+      "The ijtema was held on Saturday, 2 May 2026 at 9:00am at the Jame Masjid adjoining the Potiya Shah Chand Awlia Mazar and Madrasah, organised under the supervision of the Da'wat-E Khair Standing Committee of Anjuman-E Rahmania Ahmadia Sunnia Trust, with the courtesy of the Gausia Committee Chattogram South district.",
+      "The session was chaired by Da'wat-E Khair Standing Committee convener Mufti Syed Osiyor Rahman Al-Qaderi, and conducted by member secretaries Mosaheb Uddin Bakhtiar and Habibullah Master. Mufti Kazi Abdul Wajed served as chief Muallim, answering questions from attendees, while Anjuman Research Centre Director General Allama Abdul Mannan and Southern University professor Syed Jalal Uddin Al-Azhari delivered talim and discourse on contemporary issues. Maulana Imran Hasan Al-Qaderi conducted the programme and announced the next steps.",
+      "The gathering, held for the Da'wat-E Khair year 2026, brought together district, upazila and union-level presidents, general secretaries and Da'wat-E Khair secretaries alongside trained Muallims and officials of the Chattogram South district committee. The ijtema closed with the announcement of a topic-wise syllabus for Muallims to teach over the next three months.",
+    ],
+    bn: [
+      "পটিয়ায় দাওয়াতে খায়র ইজতিমা অনুষ্ঠিত। ইসলামের মৌলিক বিধি নিষেধের জ্ঞান সহজভাবে শিখিয়ে দিতে দাওয়াতে খায়র মজলিসের প্রসার ঘটাতে হবে—আলোচকবৃন্দ। পটিয়ার দাওয়াতে খায়র ইজতিমায় আলোচকগণ বলেন, মুসলিম নর নারীদেরকে ইসলামের মৌলিক বিধিনিষেধের জ্ঞান সহজভাবে শিখিয়ে দেওয়াই দাওয়াতে খায়র মজলিসের উদ্দেশ্য। তাই সর্বাত্মক প্রচেষ্টার মাধ্যমে এই মজলিসের প্রসার ঘটাতে হবে। সবাইকে আন্তরিকতা নিয়ে কাজ করতে নির্দেশ দিয়েছেন এর প্রবর্তক পীর সাবির শাহ্‌ মাদ্দাজিল্লুহুল আলী।",
+      "আজ ২ মে ২০২৬ শনিবার সকাল নয়টায় পটিয়া শাহচান্দ আউলিয়া মাজার ও মাদ্রাসা সংলগ্ন জামে মসজিদে আনজুমানে রহমানিয়া আহমদিয়া সুন্নিয়া ট্রাস্ট পরিচালিত দাওয়াতে খায়র স্ট্যান্ডিং কমিটির তত্ত্বাবধানে এবং গাউসিয়া কমিটি চট্টগ্রাম দক্ষিণ জেলার সৌজন্যে এই ইজতিমা অনুষ্ঠিত হয়।",
+      "দাওয়াতে খায়র স্ট্যান্ডিং কমিটির আহ্বায়ক মুফতি সৈয়দ অসিয়র রহমান আল কাদেরীর সভাপতিত্বে এবং সদস্য সচিব মোছাহেব উদ্দিন বখতিয়ার ও জনাব হাবিবউল্লাহ মাস্টারের সার্বিক পরিচালনায় অনুষ্ঠিত এই ইজতিমায় প্রধান মুয়াল্লিম হিসেবে বিভিন্ন প্রশ্নের উত্তর দেন মুফতি কাজী আবদুল ওয়াজেদ। তা'লিম ও বয়ান প্রদান করেন আনজুমান রিসার্চ সেন্টারের মহাপরিচালক আল্লামা আবদুল মান্নান এবং সাদার্ন বিশ্ববিদ্যালয়ের অধ্যাপক সৈয়দ জালাল উদ্দীন আল আজহারী। ইজতিমা সঞ্চালনার দায়িত্ব পালন করেন মাওলানা ইমরান হাসান আল কাদেরী।",
+      "দাওয়াতে খায়র বর্ষ ২০২৬ উপলক্ষে আয়োজিত এই ইজতিমায় জেলা-উপজেলা ও ইউনিয়ন পর্যায়ের সভাপতি, সাধারণ সম্পাদক এবং দাওয়াতে খায়র সম্পাদকসহ প্রশিক্ষণপ্রাপ্ত সকল মুয়াল্লিম অংশগ্রহণ করেন। ইজতিমা থেকে আগামী তিন মাসের জন্য মুয়াল্লিমদের হাতে বিষয়ভিত্তিক সিলেবাস ঘোষণা করা হয়।",
+    ],
+  },
+};
+
 export const newsCategories: NewsCategory[] = [
   {
     key: "latest",
-    label: "Latest News",
-    featured: {
-      title: "Flood Relief Reaches Balaghata, Bandarban",
-      slug: "gausia-committee-bandarban-flood-relief",
-      excerpt:
-        "Gausia Committee volunteers carried relief packages on foot into Balaghata, one of the hardest-to-reach flood-affected villages in the hill district of Bandarban.",
-      date: "Jul 14, 2026",
-      heroImage: "/images/activities/gausia-bandarban-relief-1.jpg",
-      gallery: [
-        "/images/activities/gausia-bandarban-relief-1.jpg",
-        "/images/activities/gausia-bandarban-relief-2.jpg",
-        "/images/activities/gausia-bandarban-relief-3.jpg",
-        "/images/activities/gausia-bandarban-relief-4.jpg",
-        "/images/activities/gausia-bandarban-relief-5.jpg",
-      ],
-      highlights: [
-        "Relief packages carried on foot into Balaghata, Bandarban",
-        "Part of a wider flood relief drive spanning hill and plain districts",
-        "Packages delivered directly to flood-affected families by committee volunteers",
-      ],
-      body: [
-        "The Gausia Committee Bangladesh's relief distribution programme has reached Balaghata in Bandarban, carrying essential supplies into one of the hardest-to-reach flood-affected areas of the hill district.",
-        "Volunteers in the committee's green vests carried sacks of relief materials on foot through the affected village, distributing packages directly to families whose homes had been affected by the flooding.",
-        "\"From the hills to the plains, Gausiyans everywhere are engaged in the service of humanity,\" the committee said, describing the effort as part of a wider relief drive that has now reached communities across both hill and plain districts.",
-      ],
-    },
-    rest: [
-      {
-        title: "Day-Long Teacher Training Workshop Held at CUET IT Business Incubator",
-        slug: "education-board-chuet-teacher-training-workshop",
-        date: "Jun 20, 2026",
-        heroImage: "/images/activities/edu-chuet-workshop-1.jpg",
-        gallery: [
-          "/images/activities/edu-chuet-workshop-1.jpg",
-          "/images/activities/edu-chuet-workshop-2.jpg",
-          "/images/activities/edu-chuet-workshop-3.jpg",
-        ],
-        highlights: [
-          "Around 180 teachers from 10 madrasahs across Raozan and Rangunia attended",
-          "Sessions covered outcome-based learning, EdTech/AI, classroom management and exam evaluation",
-        ],
-        body: [
-          "The Anjuman Education Management Board (AEMB), Chattogram held a day-long teacher training workshop at the CUET IT Business Incubator, aimed at improving the quality of madrasah education and strengthening teachers' professional skills.",
-          "Nearly 180 teachers from ten madrasahs across Raozan and Rangunia upazilas took part, with certificates distributed to all participants at the closing ceremony.",
-        ],
-      },
-      {
-        title: "Da'wat-E Khair Ijtema Held in Potiya",
-        slug: "dawate-khair-potiya-ijtema",
-        date: "May 2, 2026",
-        heroImage: "/images/activities/khair-potiya-ijtema-1.jpg",
-        gallery: [
-          "/images/activities/khair-potiya-ijtema-1.jpg",
-          "/images/activities/khair-potiya-ijtema-2.jpg",
-          "/images/activities/khair-potiya-ijtema-3.jpg",
-        ],
-        highlights: [
-          "Held at Potiya Shah Chand Awlia Mazar & Madrasah's adjoining Jame Masjid",
-          "Organised by the Da'wat-E Khair Standing Committee with Gausia Committee Chattogram South",
-        ],
-        body: [
-          "Speakers at the Da'wat-E Khair ijtema in Potiya said the purpose of the Da'wat-E Khair Majlis is to teach the basic rulings of Islam to Muslim men and women in a simple, accessible way, and called for the movement to be expanded through wholehearted effort.",
-          "The gathering, held for the Da'wat-E Khair year 2026, closed with the announcement of a topic-wise syllabus for trained Muallims to teach over the next three months.",
-        ],
-      },
-      {
-        title: "Review Meeting & Thank-You Letters for Da'wat-E Khair Thana Committees",
-        slug: "research-centre-khair-review-meeting-thanks-letters",
-        date: "Jul 29, 2026",
-        heroImage: "/images/activities/research-khair-review-meeting-1.jpg",
-        gallery: [
-          "/images/activities/research-khair-review-meeting-1.jpg",
-          "/images/activities/research-khair-review-meeting-2.jpg",
-          "/images/activities/research-khair-review-meeting-3.jpg",
-          "/images/activities/research-khair-review-meeting-4.jpg",
-        ],
-        highlights: [
-          "Review meeting held with organisers of the 3rd monthly Da'wat-E Khair ijtema",
-          "Thank-you letters presented to all six participating thana committees",
-        ],
-        body: [
-          "On 29 July 2026, the Anjuman Research Centre convened a review meeting with the leaders of the six thana committees that organised the third monthly Da'wat-E Khair ijtema, followed by the presentation of thank-you letters to each participating committee.",
-          "The meeting was attended by the Da'wat-E Khair Standing Committee, together with leaders of Gausia Committee Bangladesh and representatives from the Khulshi, Akbar Shah, Pahartali, Kotwali East, Kotwali West and Karnaphuli thana committees.",
-        ],
-      },
-    ],
-  },
-  {
-    key: "education",
-    label: "Education Board",
-    featured: {
-      title: "Scholarship Ceremony for 200 Students",
-      slug: "scholarship-ceremony-for-200-students",
-      excerpt: "Merit and need-based awards presented at the annual assembly.",
-      date: "Jun 30, 2026",
-      heroImage: stock("education-classroom.jpg"),
-      gallery: [
-        stock("education-classroom.jpg"),
-        stock("calligraphy-learning.jpg"),
-        stock("mosque-interior-2.jpg"),
-      ],
-      highlights: [
-        "200 merit and need-based scholarships awarded this year",
-        "Covers tuition and materials for the coming academic year",
-        "Priority given to families already supported by Trust welfare programs",
-      ],
-      body: [
-        "Two hundred students received merit and need-based scholarships at this year's Education Board assembly, covering tuition and materials for the coming academic year.",
-        "Recipients were selected through a review of academic performance and household circumstance, with priority given to students from families supported by the Trust's welfare programs.",
-        "The Board also announced a modest increase in the scholarship fund for next year, aiming to extend coverage to a further 50 students.",
-      ],
-    },
-    rest: [
-      {
-        title: "New Classroom Block Opens in Rangpur",
-        slug: "new-classroom-block-opens-in-rangpur",
-        date: "Jun 18, 2026",
-        heroImage: stock("education-classroom.jpg"),
-        gallery: [
-          stock("education-classroom.jpg"),
-          stock("mosque-interior-1.jpg"),
-          stock("calligraphy-learning.jpg"),
-        ],
-        highlights: [
-          "Adds capacity for over 150 additional students",
-          "Six classrooms plus a small library",
-          "Funded through the Education Support fund",
-        ],
-        body: [
-          "A newly built classroom block opened at the Trust's affiliated madrasa in Rangpur, adding capacity for over 150 additional students.",
-          "The block includes six classrooms and a small library, funded through donations to the Education Support fund.",
-          "Local staff say the new space will let the madrasa introduce a dedicated girls' section for the first time next term.",
-        ],
-      },
-      {
-        title: "Free Tutoring Program Launched",
-        slug: "free-tutoring-program-launched",
-        date: "Jun 5, 2026",
-        heroImage: stock("calligraphy-learning.jpg"),
-        gallery: [
-          stock("calligraphy-learning.jpg"),
-          stock("education-classroom.jpg"),
-          stock("quran-manuscript.jpg"),
-        ],
-        highlights: [
-          "Free after-school tutoring for board and religious exams",
-          "Staffed by volunteer teachers and senior students",
-          "Runs twice weekly at Trust-affiliated madrasas in Chattogram",
-        ],
-        body: [
-          "A free after-school tutoring program has launched for students preparing for board and religious examinations, staffed by volunteer teachers and senior students.",
-          "Sessions run twice weekly at Trust-affiliated madrasas across Chattogram, with plans to expand to further districts later this year.",
-          "Organisers say early sign-up numbers have exceeded expectations, and are now recruiting additional volunteer tutors.",
-        ],
-      },
-      {
-        title: "Board Approves New Exam Scholarship Track",
-        slug: "board-approves-new-exam-scholarship-track",
-        date: "May 22, 2026",
-        heroImage: stock("quran-page.jpg"),
-        gallery: [
-          stock("quran-page.jpg"),
-          stock("education-classroom.jpg"),
-          stock("calligraphy-learning.jpg"),
-        ],
-        highlights: [
-          "New scholarship track for top religious exam performers",
-          "Open to students at all affiliated madrasas",
-          "First awards to be presented at next year's assembly",
-        ],
-        body: [
-          "The Education Board has approved a new scholarship track recognising top performers in religious examinations across affiliated madrasas.",
-          "The track is open to students at every affiliated institution, with award criteria published to administrators this month.",
-          "The first round of awards under the new track will be presented at next year's scholarship assembly.",
-        ],
-      },
-    ],
-  },
-  {
-    key: "tarjuman",
-    label: "Tarjuman",
-    featured: {
-      title: "Darse Quran: Surah Al-Kahf Explained",
-      slug: "darse-quran-surah-al-kahf-explained",
-      excerpt: "A weekly reading circle on patience and trial.",
-      date: "Aug 1, 2026",
-      heroImage: stock("quran-manuscript.jpg"),
-      gallery: [
-        stock("quran-manuscript.jpg"),
-        stock("quran-page.jpg"),
-        stock("calligraphy-classic.jpg"),
-      ],
-      highlights: [
-        "Focus on patience, trial and reliance on divine wisdom",
-        "Drawn from the stories of the Companions of the Cave and Khidr",
-        "Closed with guidance on applying the lessons to everyday hardship",
-      ],
-      body: [
-        "This week's Darse Quran session examined Surah Al-Kahf, focusing on its themes of patience, trial and reliance on divine wisdom through the stories of the Companions of the Cave and Khidr.",
-        "The session closed with a discussion on applying these lessons to everyday hardship, drawing from classical commentary and the words of the Trust's scholars.",
-        "Attendees were given a short reading list for the following week, continuing the circle's chapter-by-chapter study of the surah.",
-      ],
-    },
-    rest: [
-      {
-        title: "Darse Hadith: On Kindness to Neighbours",
-        slug: "darse-hadith-kindness-to-neighbours",
-        date: "Jul 27, 2026",
-        heroImage: stock("quran-page.jpg"),
-        gallery: [
-          stock("quran-page.jpg"),
-          stock("calligraphy-classic.jpg"),
-          stock("mosque-interior-2.jpg"),
-        ],
-        highlights: [
-          "Covered prophetic traditions on kindness to neighbours",
-          "Discussed etiquette of sharing and checking in on the unwell",
-          "Encouraged reflection within attendees' own communities",
-        ],
-        body: [
-          "This week's Darse Hadith explored prophetic traditions on kindness to neighbours, covering the etiquette of sharing, checking in on the unwell, and resolving disputes gently.",
-          "Attendees were encouraged to reflect on these teachings within their own communities over the coming week.",
-          "The session forms part of an ongoing series examining social conduct in the hadith literature.",
-        ],
-      },
-      {
-        title: "Weekly Q&A: Your Questions Answered",
-        slug: "weekly-qa-your-questions-answered",
-        date: "Jul 20, 2026",
-        heroImage: stock("calligraphy-classic.jpg"),
-        gallery: [
-          stock("calligraphy-classic.jpg"),
-          stock("quran-manuscript.jpg"),
-          stock("mosque-interior-3.jpg"),
-        ],
-        highlights: [
-          "Addressed questions on prayer, fasting and family matters",
-          "Questions submitted in advance through the outreach desk",
-          "Recordings available on request through the Tarjuman committee",
-        ],
-        body: [
-          "The Trust's weekly Q&A session addressed reader questions on prayer, fasting and family matters, submitted in advance through the community outreach desk.",
-          "Recordings of the session are available on request through the Tarjuman committee.",
-          "Organisers welcome new questions year-round for consideration in upcoming sessions.",
-        ],
-      },
-      {
-        title: "Tafsir Circle Begins New Chapter Study",
-        slug: "tafsir-circle-begins-new-chapter-study",
-        date: "Jul 13, 2026",
-        heroImage: stock("mosque-interior-1.jpg"),
-        gallery: [
-          stock("mosque-interior-1.jpg"),
-          stock("quran-manuscript.jpg"),
-          stock("quran-page.jpg"),
-        ],
-        highlights: [
-          "New chapter-by-chapter tafsir circle opened to all attendees",
-          "Meets weekly following the Maghrib congregation",
-          "Notes distributed for those unable to attend in person",
-        ],
-        body: [
-          "The Tarjuman committee has opened a new chapter-by-chapter tafsir circle, welcoming attendees of all backgrounds to join the weekly sessions.",
-          "The circle meets weekly following the Maghrib congregation, led by one of the Trust's resident scholars.",
-          "Written notes from each session are distributed afterward for those unable to attend in person.",
-        ],
-      },
-    ],
-  },
-  {
-    key: "khair",
-    label: "Dawate Khair",
-    featured: {
-      title: "Da'wat-e-Khair Magazine, August Issue",
-      slug: "dawat-e-khair-magazine-august-issue",
-      excerpt: "This month: youth in dawah, and a founder's letter.",
-      date: "Aug 1, 2026",
-      heroImage: stock("calligraphy-classic.jpg"),
-      gallery: [
-        stock("calligraphy-classic.jpg"),
-        stock("calligraphy-learning.jpg"),
-        stock("quran-page.jpg"),
-      ],
-      highlights: [
-        "Special section on youth in modern dawah work",
-        "A letter from the Chief Patron on a century of service",
-        "Available in print at all Trust offices and digitally by mail",
-      ],
-      body: [
-        "The August issue of Da'wat-e-Khair features a special section on the role of youth in modern dawah work, alongside a letter from the Trust's Chief Patron reflecting on a century of service.",
-        "Print copies are available at all Trust offices, with a digital edition distributed through the mailing list.",
-        "This issue also introduces a new reader-submissions column, inviting short reflections for future editions.",
-      ],
-    },
-    rest: [
-      {
-        title: "Dawate Iftar Highlights",
-        slug: "dawate-iftar-highlights",
-        date: "Jul 15, 2026",
-        heroImage: stock("congregation-friday-herat.jpg"),
-        gallery: [
-          stock("congregation-friday-herat.jpg"),
-          stock("congregation-baitul-mukarram.jpg"),
-          stock("relief-aid-distribution.jpg"),
-        ],
-        highlights: [
-          "Meals served to thousands of families during Ramadan",
-          "Delivered across all Trust-affiliated centres",
-          "Made possible by volunteers and donors region-wide",
-        ],
-        body: [
-          "This year's community Iftar programs served meals to thousands of families across Trust-affiliated centres during the month of Ramadan.",
-          "Volunteers and donors from across the region contributed to make the daily distributions possible.",
-          "Organisers are already planning an expanded schedule of centres for next year's programme.",
-        ],
-      },
-      {
-        title: "Community Food Distribution Report",
-        slug: "community-food-distribution-report",
-        date: "Jul 8, 2026",
-        heroImage: stock("relief-aid-distribution.jpg"),
-        gallery: [
-          stock("relief-aid-distribution.jpg"),
-          stock("water-well-pulley.jpg"),
-          stock("mosque-exterior-sunset.jpg"),
-        ],
-        highlights: [
-          "Over 3,000 packages delivered this quarter",
-          "Families identified through local welfare surveys",
-          "Funded through the general and Sadaqah funds",
-        ],
-        body: [
-          "A summary report on this quarter's community food distribution shows over 3,000 packages delivered to families identified through local welfare surveys.",
-          "The program continues on a rolling basis, funded through the general and Sadaqah funds.",
-          "The welfare committee plans to publish distribution reports quarterly going forward for full transparency with donors.",
-        ],
-      },
-      {
-        title: "Reader Letters: A Century of Service",
-        slug: "reader-letters-a-century-of-service",
-        date: "Jun 30, 2026",
-        heroImage: stock("calligraphy-learning.jpg"),
-        gallery: [
-          stock("calligraphy-learning.jpg"),
-          stock("calligraphy-classic.jpg"),
-          stock("mosque-exterior-sunset.jpg"),
-        ],
-        highlights: [
-          "Selected reader letters marking the Trust's centenary",
-          "Submissions gathered from across the mailing list",
-          "Full collection to run across three upcoming issues",
-        ],
-        body: [
-          "This edition's reader letters column features submissions marking the Trust's approaching centenary, gathered from readers across the mailing list.",
-          "Contributors shared memories of the Trust's institutions and the impact of its relief and education work on their families.",
-          "The full collection of letters will run across three upcoming issues of Da'wat-e-Khair.",
-        ],
-      },
-    ],
-  },
-  {
-    key: "gawsia",
-    label: "Gawsia Committee",
-    featured: {
-      title: "Committee Elects New Regional Heads",
-      slug: "committee-elects-new-regional-heads",
-      excerpt: "Fresh leadership for the Sylhet and Chattogram chapters.",
-      date: "Jun 28, 2026",
-      heroImage: stock("mosque-exterior-sunset.jpg"),
-      gallery: [
-        stock("mosque-exterior-sunset.jpg"),
-        stock("mosque-interior-2.jpg"),
-        stock("congregation-friday-herat.jpg"),
-      ],
-      highlights: [
-        "New regional heads elected for Sylhet and Chattogram",
-        "Fresh leadership brought in for the coming term",
-        "Outgoing officials recognised for their contributions",
-      ],
-      body: [
-        "The Gawsia Committee elected new regional heads for its Sylhet and Chattogram chapters at its annual general meeting, bringing in fresh leadership for the coming term.",
-        "Outgoing officials were recognised for their contributions to relief coordination and congregation logistics over the past term.",
-        "The incoming heads outlined priorities for the term ahead, including closer coordination between the two chapters on relief logistics.",
-      ],
-    },
-    rest: [
-      {
-        title: "Annual Congregation Photos",
-        slug: "annual-congregation-photos",
-        date: "Jun 20, 2026",
-        heroImage: stock("congregation-baitul-mukarram.jpg"),
-        gallery: [
-          stock("congregation-baitul-mukarram.jpg"),
-          stock("mosque-interior-1.jpg"),
-          stock("mosque-interior-3.jpg"),
-        ],
-        highlights: [
-          "Largest attendance at the annual congregation to date",
-          "Album covers the main assembly and closing address",
-          "Includes behind-the-scenes shots of the logistics teams",
-        ],
-        body: [
-          "Photographs from this year's annual congregation are now available, capturing the gathering's largest attendance to date.",
-          "The album includes highlights from the main assembly, volunteer logistics teams and the closing address.",
-          "Prints of selected photographs will be displayed at the Trust's head office through the end of the month.",
-        ],
-      },
-      {
-        title: "Friday Sermon Series Begins",
-        slug: "friday-sermon-series-begins",
-        date: "Jun 1, 2026",
-        heroImage: stock("mosque-interior-2.jpg"),
-        gallery: [
-          stock("mosque-interior-2.jpg"),
-          stock("mosque-exterior-sunset.jpg"),
-          stock("congregation-friday-herat.jpg"),
-        ],
-        highlights: [
-          "New eight-week series across Gawsia-affiliated masjids",
-          "Focus on community responsibility and spiritual renewal",
-          "Guest speakers rotating between chapters each week",
-        ],
-        body: [
-          "A new Friday sermon series has begun across Gawsia Committee-affiliated masjids, focusing on themes of community responsibility and spiritual renewal.",
-          "The series will run for eight weeks, with guest speakers rotating between chapters.",
-          "Congregants can find the full speaker schedule posted at each affiliated masjid's noticeboard.",
-        ],
-      },
-      {
-        title: "New Madrasah and Orphanage Open in Sub-Continent",
-        slug: "new-madrasah-and-orphanage-open-in-sub-continent",
-        date: "May 15, 2026",
-        heroImage: stock("mosque-interior-3.jpg"),
-        gallery: [
-          stock("mosque-interior-3.jpg"),
-          stock("education-classroom.jpg"),
-          stock("mosque-exterior-sunset.jpg"),
-        ],
-        highlights: [
-          "Combined madrasah and orphanage facility now open",
-          "Built with support from affiliated chapters abroad",
-          "Provides boarding, schooling and religious education",
-        ],
-        body: [
-          "A combined madrasah and orphanage facility affiliated with the Gawsia Committee has opened, built with support from chapters across the sub-continent.",
-          "The facility provides boarding, general schooling and religious education for children in its care.",
-          "Committee officials say the facility will serve as a model for similar projects planned in other regions.",
-        ],
-      },
-    ],
+    label: { en: "Latest News", bn: "সর্বশেষ সংবাদ" },
+    featured: gausiaBandarbanRelief,
+    rest: [educationChuetWorkshop, khairPotiyaIjtema, researchKhairReviewMeeting],
   },
 ];
 
@@ -545,328 +469,240 @@ export function findNewsArticle(slug: string) {
 export const activityCategories: NewsCategory[] = [
   {
     key: "gausia",
-    label: "Gausia Committee Bangladesh",
-    featured: {
-      title: "Flood Relief Reaches Balaghata, Bandarban",
-      slug: "gausia-committee-bandarban-flood-relief",
-      excerpt:
-        "Gausia Committee volunteers carried relief packages on foot into Balaghata, one of the hardest-to-reach flood-affected villages in the hill district of Bandarban.",
-      date: "Jul 14, 2026",
-      heroImage: "/images/activities/gausia-bandarban-relief-1.jpg",
-      gallery: [
-        "/images/activities/gausia-bandarban-relief-1.jpg",
-        "/images/activities/gausia-bandarban-relief-2.jpg",
-        "/images/activities/gausia-bandarban-relief-3.jpg",
-        "/images/activities/gausia-bandarban-relief-4.jpg",
-        "/images/activities/gausia-bandarban-relief-5.jpg",
-      ],
-      highlights: [
-        "Relief packages carried on foot into Balaghata, Bandarban",
-        "Part of a wider flood relief drive spanning hill and plain districts",
-        "Packages delivered directly to flood-affected families by committee volunteers",
-      ],
-      body: [
-        "The Gausia Committee Bangladesh's relief distribution programme has reached Balaghata in Bandarban, carrying essential supplies into one of the hardest-to-reach flood-affected areas of the hill district.",
-        "Volunteers in the committee's green vests carried sacks of relief materials on foot through the affected village, distributing packages directly to families whose homes had been affected by the flooding.",
-        "\"From the hills to the plains, Gausiyans everywhere are engaged in the service of humanity,\" the committee said, describing the effort as part of a wider relief drive that has now reached communities across both hill and plain districts, and pledging that this tradition of service will continue, God willing, until the Day of Judgement.",
-      ],
-    },
-    rest: [
-      {
-        title: "Meeting on Ensuring Sustainable Education Held at Dhaka Quaderia Madrasah",
-        slug: "gausia-committee-dhaka-kaderia-education-meeting",
-        date: "Jul 19, 2026",
-        heroImage: "/images/activities/gausia-dhaka-kaderia-education-meeting-1.jpg",
-        gallery: [
-          "/images/activities/gausia-dhaka-kaderia-education-meeting-1.jpg",
-          "/images/activities/gausia-dhaka-kaderia-education-meeting-2.jpg",
-          "/images/activities/gausia-dhaka-kaderia-education-meeting-3.jpg",
-        ],
-        highlights: [
-          "Held at Quaderia Tayyebia Kamil Madrasah, Dhaka on 19 July 2026",
-          "Organised by the Anjuman Education Management Board",
-          "Chaired by AEMB Chairman Professor Dr. N.K.M. Akbar Hossain",
-        ],
-        body: [
-          "The Anjuman Education Management Board organised a 'consultation meeting on ensuring sustainable education' at Quaderia Tayyebia Kamil Madrasah in Dhaka, known as a beacon for producing sincere scholars under the Anjuman Trust in the capital.",
-          "The meeting, held on Sunday, 19 July 2026, was chaired by AEMB Chairman Professor Dr. N.K.M. Akbar Hossain. Alhaj Mohammad Manjur Alam (Manju), Senior Vice President of the central Anjuman, attended as chief guest.",
-          "Also present were the central Anjuman's Secretary General Alhaj Mohammed Anowar Hossain, leaders of the central Anjuman, leaders of the Dhaka Anjuman, leaders of the Education Board, and Dhaka Quaderia Madrasah's Principal Mufti Muhammad Jashim Uddin Al-Azhari along with other members of the teaching staff.",
-        ],
-      },
-      {
-        title: "Gausia Committee Sends Humanitarian Aid Shipment for Gaza, Palestine",
-        slug: "gausia-committee-gaza-palestine-aid-shipment",
-        date: "Apr 13, 2025",
-        heroImage: "/images/activities/gausia-gaza-aid-shipment-1.jpg",
-        gallery: [
-          "/images/activities/gausia-gaza-aid-shipment-1.jpg",
-          "/images/activities/gausia-gaza-aid-shipment-2.jpg",
-          "/images/activities/gausia-gaza-aid-shipment-3.jpg",
-          "/images/activities/gausia-gaza-aid-shipment-4.jpg",
-          "/images/activities/gausia-gaza-aid-shipment-5.jpg",
-        ],
-        highlights: [
-          "Pallets of relief supplies packed and loaded for shipment to Gaza",
-          "Sent under the auspices of the Grand Imam of Al-Azhar's office",
-          "Part of the committee's 'Love for Gaza, Palestine' humanitarian campaign",
-        ],
-        body: [
-          "\"Alhamdulillah — Gausia Committee Bangladesh, a humanitarian organisation, stands with the oppressed people of Palestine,\" the committee announced as it dispatched a shipment of humanitarian aid for Gaza.",
-          "Warehouse photos show pallets of relief boxes packed and wrapped for transport, loaded onto flatbed trucks for onward shipment, with the consignment sent under the auspices of the office of the Grand Imam of Al-Azhar.",
-          "Volunteers and committee members gathered around the 'Love for Gaza, Palestine' banner ahead of the shipment, part of the Gausia Committee's ongoing campaign in solidarity with the people of Gaza.",
-        ],
-      },
-      {
-        title: "Alim 2nd Year Class Committee Formed at Jamea Ahmadia Sunnia",
-        slug: "gausia-committee-alim-2nd-year-class-committee",
-        date: "Aug 9, 2026",
-        heroImage: "/images/activities/gausia-alim-2nd-year-class-committee-1.jpg",
-        gallery: [
-          "/images/activities/gausia-alim-2nd-year-class-committee-1.jpg",
-          "/images/activities/gausia-alim-2nd-year-class-committee-2.jpg",
-        ],
-        highlights: [
-          "Class committee approved for the Alim 2nd year batch",
-          "Formed under the Jamea Ahmadia Sunnia Kamil Madrasah branch",
-          "Organised by Gausia Committee Bangladesh (JASA chapter)",
-        ],
-        body: [
-          "Gausia Committee Bangladesh has approved the class committee for the Alim 2nd year batch under its Jamea Ahmadia Sunnia Kamil Madrasah branch.",
-          "The committee was formally approved on Sunday, 9 August 2026, and the newly formed body was photographed together in the madrasah's courtyard.",
-        ],
-      },
-    ],
+    label: { en: "Gausia Committee Bangladesh", bn: "গাউসিয়া কমিটি বাংলাদেশ" },
+    featured: gausiaBandarbanRelief,
+    rest: [gausiaDhakaQuaderiaMeeting, gausiaGazaAidShipment, gausiaAlimCommittee],
   },
   {
     key: "research",
-    label: "Research Centre",
-    featured: {
-      title: "Review Meeting & Thank-You Letters for Da'wat-E Khair Thana Committees",
-      slug: "research-centre-khair-review-meeting-thanks-letters",
-      excerpt:
-        "The Anjuman Research Centre convened a review meeting with the six thana committees behind the third monthly Da'wat-E Khair ijtema, presenting each with a letter of thanks.",
-      date: "Jul 29, 2026",
-      heroImage: "/images/activities/research-khair-review-meeting-1.jpg",
-      gallery: [
-        "/images/activities/research-khair-review-meeting-1.jpg",
-        "/images/activities/research-khair-review-meeting-2.jpg",
-        "/images/activities/research-khair-review-meeting-3.jpg",
-        "/images/activities/research-khair-review-meeting-4.jpg",
-      ],
-      highlights: [
-        "Review meeting held with organisers of the 3rd monthly Da'wat-E Khair ijtema",
-        "Thank-you letters presented to all six participating thana committees",
-        "Attended by the Da'wat-E Khair Standing Committee and Gausia Committee Bangladesh leaders",
-      ],
-      body: [
-        "On 29 July 2026, a review meeting was held with the leaders of the six thana committees that organised the third monthly Da'wat-E Khair ijtema, followed by the presentation of thank-you letters to each participating committee.",
-        "The meeting was attended by the Da'wat-E Khair Standing Committee, together with leaders of Gausia Committee Bangladesh and representatives from the Khulshi, Akbar Shah, Pahartali, Kotwali East, Kotwali West and Karnaphuli thana committees.",
-      ],
-    },
+    label: { en: "Research Centre", bn: "রিসার্চ সেন্টার" },
+    featured: researchKhairReviewMeeting,
     rest: [
+      researchQiraatTraining,
+      researchMiladOlympiad,
       {
-        title: "Gausia Qira'at Training 2026 Begins at Alamgir Khankah Sharif",
-        slug: "research-centre-gausia-qiraat-training-2026",
-        date: "3 Ramadan 1447 AH",
-        heroImage: "/images/activities/research-qiraat-training-1.jpg",
-        gallery: [
-          "/images/activities/research-qiraat-training-1.jpg",
-          "/images/activities/research-qiraat-training-2.jpg",
-          "/images/activities/research-qiraat-training-3.jpg",
-          "/images/activities/research-qiraat-training-4.jpg",
-        ],
-        highlights: [
-          "Daily sessions from 2:00pm to 4:00pm at Alamgir Khankah Sharif",
-          "Runs from 3 Ramadan through to 24 Ramadan",
-          "Organised by the Da'wat-E Khair Standing Committee, supervised by the Anjuman Research Centre",
-        ],
-        body: [
-          "Gausia Qira'at Training 2026 has begun, running daily from 3 Ramadan through to 24 Ramadan, held each afternoon from 2:00pm to 4:00pm at Alamgir Khankah Sharif.",
-          "The training is organised by the Da'wat-E Khair Standing Committee, sponsored by Anjuman-E Rahmania Ahmadia Sunnia Trust, Chattogram, and supervised by the Anjuman Research Centre.",
-        ],
-      },
-      {
-        title: "Gausia Committee Launches Milad Olympiad, Season 2",
-        slug: "research-centre-milad-olympiad-season-2",
-        date: "Aug 15, 2026",
-        heroImage: "/images/activities/research-milad-olympiad-poster.png",
-        gallery: ["/images/activities/research-milad-olympiad-poster.png"],
-        highlights: [
-          "Total prize pool of Tk 2.5 lakh shared among 12 winners",
-          "1st prize: a Ziyarat (holy visit) to the Haramain Sharifain",
-          "Selection round exam on 15 August 2026, syllabus based on the book Nurunnabi",
-        ],
-        body: [
-          "Marking the holy Milad of Sayyidul Mursalin, Rahmatul lil Alameen, Huzur Karim (peace and blessings be upon him), the Gausia Committee Bangladesh's Jamea Ahmadia Sunnia Kamil Madrasah branch has launched the Milad Olympiad, Season 2, offering a total prize pool of Tk 2.5 lakh across 12 winners.",
-          "The top prize is a Ziyarat (holy visit) to the Haramain Sharifain, followed by a laptop for 2nd place and a tablet for 3rd, with cash prizes of Tk 7,000 and Tk 5,000 for 4th and 5th place. Winners placed 6th to 12th receive certificates, medals and gift hampers.",
-          "The syllabus is drawn from the book Nurunnabi by Hafez Muhammad Abdul Jalil (rah.): the selection round covers chapters 1–30, the elimination round chapters 31–55, and the final round the complete book together with a designated PDF. The selection round exam is scheduled for 15 August 2026, with elimination and final round dates to be announced later; the first two rounds will be held online via miladolympiad.com. Registration costs Tk 150.",
-        ],
-      },
-      {
-        title: "Centre Hosts Roundtable on Community Welfare Policy",
+        title: {
+          en: "Centre Hosts Roundtable on Community Welfare Policy",
+          bn: "কমিউনিটি কল্যাণ নীতি নিয়ে রাউন্ডটেবিল আয়োজন করল সেন্টার",
+        },
         slug: "research-centre-roundtable-welfare-policy",
         date: "Mar 30, 2026",
         heroImage: stock("mosque-interior-2.jpg"),
         gallery: [stock("mosque-interior-2.jpg"), stock("quran-manuscript.jpg")],
-        highlights: [
-          "Roundtable brought together researchers and chapter representatives",
-          "Discussed findings from the welfare trends study",
-        ],
-        body: [
-          "The Research Centre hosted a roundtable bringing together researchers and chapter representatives to discuss findings from its welfare trends study.",
-          "Participants exchanged views on how the findings could shape programme planning across affiliated institutions.",
-        ],
+        highlights: {
+          en: [
+            "Roundtable brought together researchers and chapter representatives",
+            "Discussed findings from the welfare trends study",
+          ],
+          bn: [
+            "রাউন্ডটেবিলে গবেষক ও চ্যাপ্টার প্রতিনিধিরা একত্রিত হন",
+            "কল্যাণ প্রবণতা সমীক্ষার ফলাফল নিয়ে আলোচনা হয়",
+          ],
+        },
+        body: {
+          en: [
+            "The Research Centre hosted a roundtable bringing together researchers and chapter representatives to discuss findings from its welfare trends study.",
+            "Participants exchanged views on how the findings could shape programme planning across affiliated institutions.",
+          ],
+          bn: [
+            "রিসার্চ সেন্টার একটি রাউন্ডটেবিল আয়োজন করে, যেখানে গবেষক ও চ্যাপ্টার প্রতিনিধিরা কল্যাণ প্রবণতা সমীক্ষার ফলাফল নিয়ে আলোচনা করেন।",
+            "অংশগ্রহণকারীরা এই ফলাফল কীভাবে অধিভুক্ত প্রতিষ্ঠানগুলোর কর্মসূচি পরিকল্পনাকে প্রভাবিত করতে পারে তা নিয়ে মতবিনিময় করেন।",
+          ],
+        },
       },
     ],
   },
   {
     key: "education",
-    label: "Education Board",
-    featured: {
-      title: "Day-Long Teacher Training Workshop Held at CUET IT Business Incubator",
-      slug: "education-board-chuet-teacher-training-workshop",
-      excerpt:
-        "AEMB brought together nearly 180 teachers from Raozan and Rangunia's madrasahs for a day-long faculty development workshop on modern pedagogy and quality education.",
-      date: "Jun 20, 2026",
-      heroImage: "/images/activities/edu-chuet-workshop-1.jpg",
-      gallery: [
-        "/images/activities/edu-chuet-workshop-1.jpg",
-        "/images/activities/edu-chuet-workshop-2.jpg",
-        "/images/activities/edu-chuet-workshop-3.jpg",
-      ],
-      highlights: [
-        "Around 180 teachers from 10 madrasahs across Raozan and Rangunia attended",
-        "Sessions covered outcome-based learning, EdTech/AI, classroom management, discipline and exam evaluation",
-        "Certificates were presented to all participating teachers at the closing ceremony",
-      ],
-      body: [
-        "The Anjuman Education Management Board (AEMB), Chattogram held a day-long teacher training workshop at the CUET IT Business Incubator, aimed at improving the quality of madrasah education, spreading modern teaching methods and strengthening teachers' professional skills.",
-        "Nearly 180 teachers from ten madrasahs across Raozan and Rangunia upazilas took part. The day's sessions covered the current challenges facing madrasah education and strategies to overcome them, outcome-based learning (OBL), the use of IT and artificial intelligence in education, classroom and time management, positive discipline practices, the 2011 policy abolishing corporal punishment, bullying and cyber safety, question-paper setting and answer-script evaluation, results preparation, service and leave rules, financial discipline, and effective lesson planning.",
-        "AEMB Vice Chairman Alhaj M. A. Hamid, FCMA delivered the welcome address, saying the board is working continuously through teacher training, academic supervision and modern evaluation methods to ensure quality, modern and values-based education across Anjuman-affiliated madrasahs. Resource persons for the day included AEMB Chairman Professor Dr. N. K. M. Akbar Hossain, Professor Abu Saleh Mohammad Naeem Uddin, Professor Muhammad Gofran and Principal Dr. Mohammad Sarwar Uddin.",
-        "The closing and certificate-distribution ceremony was chaired by Professor Dr. N. K. M. Akbar Hossain, with Anjuman-E Rahmania Ahmadia Sunnia Trust Secretary General Alhaj Mohammed Anowar Hossain as chief guest and CUET IT Business Incubator Director Professor Dr. Mohammad Moshiul Hoque as guest of honour, alongside Finance Secretary Kamar Uddin Sabur and AEMB Vice Chairman M. A. Hamid, FCMA as special guests. \"Teachers are the principal architects of a nation's future — there is no substitute for regular training and skills development if madrasah education is to remain modern and competitive,\" said Alhaj Mohammed Anowar Hossain in his address.",
-        "Certificates were distributed to all participating teachers at the close of the workshop, and attendees called for such training programmes to be organised regularly going forward.",
-      ],
-    },
+    label: { en: "Education Board", bn: "এডুকেশন বোর্ড" },
+    featured: educationChuetWorkshop,
     rest: [
       {
-        title: "New Madrasah Curriculum Approved for Rollout",
+        title: {
+          en: "New Madrasah Curriculum Approved for Rollout",
+          bn: "মাদ্রাসার নতুন পাঠ্যক্রম অনুমোদিত",
+        },
         slug: "education-board-new-curriculum-rollout",
         date: "Jun 2, 2026",
         heroImage: stock("calligraphy-classic.jpg"),
         gallery: [stock("calligraphy-classic.jpg"), stock("education-classroom.jpg")],
-        highlights: [
-          "Updated curriculum to roll out across affiliated madrasahs",
-          "Developed with input from senior teaching staff",
-        ],
-        body: [
-          "The Education Board has approved an updated curriculum for rollout across affiliated madrasahs, developed with input from senior teaching staff.",
-          "Institutions will begin phasing in the new curriculum from the coming academic term.",
-        ],
+        highlights: {
+          en: [
+            "Updated curriculum to roll out across affiliated madrasahs",
+            "Developed with input from senior teaching staff",
+          ],
+          bn: [
+            "অধিভুক্ত মাদ্রাসাগুলোতে হালনাগাদ পাঠ্যক্রম চালু হবে",
+            "সিনিয়র শিক্ষকদের পরামর্শে প্রস্তুত করা হয়েছে",
+          ],
+        },
+        body: {
+          en: [
+            "The Education Board has approved an updated curriculum for rollout across affiliated madrasahs, developed with input from senior teaching staff.",
+            "Institutions will begin phasing in the new curriculum from the coming academic term.",
+          ],
+          bn: [
+            "এডুকেশন বোর্ড অধিভুক্ত মাদ্রাসাগুলোর জন্য একটি হালনাগাদ পাঠ্যক্রম অনুমোদন করেছে, যা সিনিয়র শিক্ষকদের পরামর্শে প্রস্তুত করা হয়েছে।",
+            "আগামী শিক্ষাবর্ষ থেকে প্রতিষ্ঠানগুলো ধাপে ধাপে নতুন পাঠ্যক্রম চালু করবে।",
+          ],
+        },
       },
       {
-        title: "Teacher Training Workshop Held in Chattogram",
+        title: {
+          en: "Teacher Training Workshop Held in Chattogram",
+          bn: "চট্টগ্রামে শিক্ষক প্রশিক্ষণ কর্মশালা অনুষ্ঠিত",
+        },
         slug: "education-board-teacher-training-workshop",
         date: "May 8, 2026",
         heroImage: stock("education-classroom.jpg"),
         gallery: [stock("education-classroom.jpg"), stock("calligraphy-learning.jpg")],
-        highlights: [
-          "Workshop drew teaching staff from affiliated institutions",
-          "Focused on classroom methods and student welfare practices",
-        ],
-        body: [
-          "The Education Board hosted a teacher training workshop in Chattogram, drawing teaching staff from affiliated institutions across the district.",
-          "Sessions focused on classroom methods and student welfare practices, led by senior educators from the board.",
-        ],
+        highlights: {
+          en: [
+            "Workshop drew teaching staff from affiliated institutions",
+            "Focused on classroom methods and student welfare practices",
+          ],
+          bn: [
+            "অধিভুক্ত প্রতিষ্ঠানগুলোর শিক্ষকরা কর্মশালায় অংশগ্রহণ করেন",
+            "শ্রেণিকক্ষ পদ্ধতি ও শিক্ষার্থী কল্যাণ চর্চার ওপর গুরুত্ব দেওয়া হয়",
+          ],
+        },
+        body: {
+          en: [
+            "The Education Board hosted a teacher training workshop in Chattogram, drawing teaching staff from affiliated institutions across the district.",
+            "Sessions focused on classroom methods and student welfare practices, led by senior educators from the board.",
+          ],
+          bn: [
+            "এডুকেশন বোর্ড চট্টগ্রামে একটি শিক্ষক প্রশিক্ষণ কর্মশালার আয়োজন করে, যেখানে জেলার অধিভুক্ত প্রতিষ্ঠানগুলোর শিক্ষকরা অংশগ্রহণ করেন।",
+            "সেশনগুলো শ্রেণিকক্ষ পদ্ধতি ও শিক্ষার্থী কল্যাণ চর্চার ওপর কেন্দ্রীভূত ছিল, যা বোর্ডের সিনিয়র শিক্ষাবিদরা পরিচালনা করেন।",
+          ],
+        },
       },
       {
-        title: "Board Opens New Scholarship Applications Portal",
+        title: {
+          en: "Board Opens New Scholarship Applications Portal",
+          bn: "বৃত্তির আবেদনের জন্য নতুন অনলাইন পোর্টাল চালু",
+        },
         slug: "education-board-scholarship-applications-portal",
         date: "Apr 14, 2026",
         heroImage: stock("quran-page.jpg"),
         gallery: [stock("quran-page.jpg"), stock("education-classroom.jpg")],
-        highlights: [
-          "New online portal for scholarship applications",
-          "Reduces paperwork for affiliated institution administrators",
-        ],
-        body: [
-          "The Education Board has launched a new online portal for scholarship applications, replacing the previous paper-based process.",
-          "Institution administrators say the portal significantly reduces the paperwork involved in submitting and tracking applications.",
-        ],
+        highlights: {
+          en: [
+            "New online portal for scholarship applications",
+            "Reduces paperwork for affiliated institution administrators",
+          ],
+          bn: [
+            "বৃত্তির আবেদনের জন্য নতুন অনলাইন পোর্টাল",
+            "অধিভুক্ত প্রতিষ্ঠানের প্রশাসকদের কাগজপত্রের কাজ কমায়",
+          ],
+        },
+        body: {
+          en: [
+            "The Education Board has launched a new online portal for scholarship applications, replacing the previous paper-based process.",
+            "Institution administrators say the portal significantly reduces the paperwork involved in submitting and tracking applications.",
+          ],
+          bn: [
+            "এডুকেশন বোর্ড বৃত্তির আবেদনের জন্য একটি নতুন অনলাইন পোর্টাল চালু করেছে, যা আগের কাগজভিত্তিক প্রক্রিয়ার পরিবর্তে ব্যবহৃত হবে।",
+            "প্রতিষ্ঠান প্রশাসকরা বলছেন, পোর্টালটি আবেদন জমা ও ট্র্যাক করার কাগজপত্রের কাজ উল্লেখযোগ্যভাবে কমিয়ে দেয়।",
+          ],
+        },
       },
     ],
   },
   {
     key: "khair",
-    label: "Dawate Khair",
-    featured: {
-      title: "Da'wat-E Khair Ijtema Held in Potiya",
-      slug: "dawate-khair-potiya-ijtema",
-      excerpt:
-        "Speakers at the Potiya ijtema called for wider outreach so ordinary Muslim men and women can easily learn the basic rulings of Islam, as Da'wat-E Khair announced its next three-month syllabus for trained Muallims.",
-      date: "May 2, 2026",
-      heroImage: "/images/activities/khair-potiya-ijtema-1.jpg",
-      gallery: [
-        "/images/activities/khair-potiya-ijtema-1.jpg",
-        "/images/activities/khair-potiya-ijtema-2.jpg",
-        "/images/activities/khair-potiya-ijtema-3.jpg",
-      ],
-      highlights: [
-        "Held at Potiya Shah Chand Awlia Mazar & Madrasah's adjoining Jame Masjid",
-        "Organised by the Da'wat-E Khair Standing Committee with Gausia Committee Chattogram South",
-        "Next three-month topic-wise syllabus announced for trained Muallims",
-      ],
-      body: [
-        "Speakers at the Da'wat-E Khair ijtema in Potiya said the purpose of the Da'wat-E Khair Majlis is to teach the basic rulings of Islam to Muslim men and women in a simple, accessible way, and called for the movement to be expanded through wholehearted effort. Pir Sabir Shah Maddazilluhul Ali, the founder of the Majlis, has directed everyone to carry out this work with sincerity.",
-        "The ijtema was held on Saturday, 2 May 2026 at 9:00am at the Jame Masjid adjoining the Potiya Shah Chand Awlia Mazar and Madrasah, organised under the supervision of the Da'wat-E Khair Standing Committee of Anjuman-E Rahmania Ahmadia Sunnia Trust, with the courtesy of the Gausia Committee Chattogram South district.",
-        "The session was chaired by Da'wat-E Khair Standing Committee convener Mufti Syed Osiyor Rahman Al-Qaderi, and conducted by member secretaries Mosaheb Uddin Bakhtiar and Habibullah Master. Mufti Kazi Abdul Wajed served as chief Muallim, answering questions from attendees, while Anjuman Research Centre Director General Allama Abdul Mannan and Southern University professor Syed Jalal Uddin Al-Azhari delivered talim and discourse on contemporary issues. Maulana Imran Hasan Al-Qaderi conducted the programme and announced the next steps.",
-        "The gathering, held for the Da'wat-E Khair year 2026, brought together district, upazila and union-level presidents, general secretaries and Da'wat-E Khair secretaries alongside trained Muallims and officials of the Chattogram South district committee. The ijtema closed with the announcement of a topic-wise syllabus for Muallims to teach over the next three months.",
-      ],
-    },
+    label: { en: "Dawate Khair", bn: "দাওয়াতে খায়র" },
+    featured: khairPotiyaIjtema,
     rest: [
       {
-        title: "Volunteer Corps Doubles in Size This Year",
+        title: {
+          en: "Volunteer Corps Doubles in Size This Year",
+          bn: "এ বছর স্বেচ্ছাসেবক দলের সংখ্যা দ্বিগুণ হয়েছে",
+        },
         slug: "dawate-khair-volunteer-corps-growth",
         date: "Jun 20, 2026",
         heroImage: stock("water-well-pulley.jpg"),
         gallery: [stock("water-well-pulley.jpg"), stock("relief-aid-distribution.jpg")],
-        highlights: [
-          "Active volunteer numbers have doubled compared to last year",
-          "New volunteers trained through monthly orientation sessions",
-        ],
-        body: [
-          "Dawate Khair's volunteer corps has doubled in size this year, with new members trained through monthly orientation sessions.",
-          "The growth has allowed the programme to take on additional relief and outreach activities across more districts.",
-        ],
+        highlights: {
+          en: [
+            "Active volunteer numbers have doubled compared to last year",
+            "New volunteers trained through monthly orientation sessions",
+          ],
+          bn: [
+            "গত বছরের তুলনায় সক্রিয় স্বেচ্ছাসেবকের সংখ্যা দ্বিগুণ হয়েছে",
+            "মাসিক ওরিয়েন্টেশন সেশনের মাধ্যমে নতুন স্বেচ্ছাসেবক প্রশিক্ষিত হয়েছেন",
+          ],
+        },
+        body: {
+          en: [
+            "Dawate Khair's volunteer corps has doubled in size this year, with new members trained through monthly orientation sessions.",
+            "The growth has allowed the programme to take on additional relief and outreach activities across more districts.",
+          ],
+          bn: [
+            "দাওয়াতে খায়রের স্বেচ্ছাসেবক দলের আকার এ বছর দ্বিগুণ হয়েছে, নতুন সদস্যরা মাসিক ওরিয়েন্টেশন সেশনের মাধ্যমে প্রশিক্ষিত হয়েছেন।",
+            "এই বৃদ্ধির ফলে কর্মসূচি আরও বেশি জেলায় ত্রাণ ও প্রচারণা কার্যক্রম গ্রহণ করতে সক্ষম হয়েছে।",
+          ],
+        },
       },
       {
-        title: "Monthly Food Drive Reaches 500 Families",
+        title: {
+          en: "Monthly Food Drive Reaches 500 Families",
+          bn: "মাসিক খাদ্য কর্মসূচি ৫০০ পরিবারে পৌঁছেছে",
+        },
         slug: "dawate-khair-monthly-food-drive-500-families",
         date: "May 15, 2026",
         heroImage: stock("relief-aid-distribution.jpg"),
         gallery: [stock("relief-aid-distribution.jpg"), stock("mosque-interior-1.jpg")],
-        highlights: [
-          "Food packages delivered to 500 families this month",
-          "Distribution coordinated through local mosque committees",
-        ],
-        body: [
-          "Dawate Khair's monthly food drive reached 500 families this month, with distribution coordinated through local mosque committees.",
-          "The programme runs year-round, with volunteers assembling and delivering packages on the first weekend of every month.",
-        ],
+        highlights: {
+          en: [
+            "Food packages delivered to 500 families this month",
+            "Distribution coordinated through local mosque committees",
+          ],
+          bn: [
+            "এ মাসে ৫০০ পরিবারে খাদ্য প্যাকেজ পৌঁছে দেওয়া হয়েছে",
+            "স্থানীয় মসজিদ কমিটির মাধ্যমে বিতরণ সমন্বয় করা হয়",
+          ],
+        },
+        body: {
+          en: [
+            "Dawate Khair's monthly food drive reached 500 families this month, with distribution coordinated through local mosque committees.",
+            "The programme runs year-round, with volunteers assembling and delivering packages on the first weekend of every month.",
+          ],
+          bn: [
+            "দাওয়াতে খায়রের মাসিক খাদ্য কর্মসূচি এ মাসে ৫০০ পরিবারে পৌঁছেছে, স্থানীয় মসজিদ কমিটির মাধ্যমে বিতরণ সমন্বয় করা হয়েছে।",
+            "কর্মসূচিটি সারা বছর চলে, স্বেচ্ছাসেবকরা প্রতি মাসের প্রথম সপ্তাহান্তে প্যাকেজ প্রস্তুত ও বিতরণ করেন।",
+          ],
+        },
       },
       {
-        title: "Emergency Relief Deployed After Flash Floods",
+        title: {
+          en: "Emergency Relief Deployed After Flash Floods",
+          bn: "আকস্মিক বন্যার পর জরুরি ত্রাণ বিতরণ",
+        },
         slug: "dawate-khair-emergency-relief-flash-floods",
         date: "Apr 3, 2026",
         heroImage: stock("water-well-pulley.jpg"),
         gallery: [stock("water-well-pulley.jpg"), stock("mosque-exterior-sunset.jpg")],
-        highlights: [
-          "Emergency packages delivered within 48 hours of flooding",
-          "Coordinated with local union councils on the ground",
-        ],
-        body: [
-          "Dawate Khair deployed emergency relief packages within 48 hours of flash flooding in low-lying districts, working with local union councils to reach affected households.",
-          "The rapid response drew on the programme's standing emergency relief fund, kept in reserve for situations exactly like this one.",
-        ],
+        highlights: {
+          en: [
+            "Emergency packages delivered within 48 hours of flooding",
+            "Coordinated with local union councils on the ground",
+          ],
+          bn: [
+            "বন্যার ৪৮ ঘণ্টার মধ্যে জরুরি ত্রাণ প্যাকেজ পৌঁছে দেওয়া হয়",
+            "স্থানীয় ইউনিয়ন পরিষদের সঙ্গে সমন্বয় করা হয়",
+          ],
+        },
+        body: {
+          en: [
+            "Dawate Khair deployed emergency relief packages within 48 hours of flash flooding in low-lying districts, working with local union councils to reach affected households.",
+            "The rapid response drew on the programme's standing emergency relief fund, kept in reserve for situations exactly like this one.",
+          ],
+          bn: [
+            "নিম্নাঞ্চলীয় জেলাগুলোতে আকস্মিক বন্যার ৪৮ ঘণ্টার মধ্যে দাওয়াতে খায়র জরুরি ত্রাণ প্যাকেজ বিতরণ করে, স্থানীয় ইউনিয়ন পরিষদের সঙ্গে মিলে ক্ষতিগ্রস্ত পরিবারগুলোর কাছে পৌঁছায়।",
+            "এই দ্রুত সাড়াদান কর্মসূচির স্থায়ী জরুরি ত্রাণ তহবিল থেকে সম্ভব হয়েছে, যা ঠিক এই ধরনের পরিস্থিতির জন্য সংরক্ষিত থাকে।",
+          ],
+        },
       },
     ],
   },

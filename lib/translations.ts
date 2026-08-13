@@ -110,6 +110,11 @@ export const translations = {
   countdown_hours: { en: "Hours", bn: "ঘন্টা" },
   countdown_minutes: { en: "Minutes", bn: "মিনিট" },
   countdown_seconds: { en: "Seconds", bn: "সেকেন্ড" },
+
+  article_backToActivities: { en: "Back to Activities", bn: "কার্যক্রমে ফিরে যান" },
+  article_backToNews: { en: "Back to News", bn: "সংবাদে ফিরে যান" },
+  article_keyHighlights: { en: "Key Highlights", bn: "মূল বিষয়সমূহ" },
+  article_moreFrom: { en: "More from", bn: "থেকে আরও" },
 } as const;
 
 export type TranslationKey = keyof typeof translations;
