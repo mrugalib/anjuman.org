@@ -937,11 +937,13 @@ export const concerns = [
 ];
 
 export const concernLogos = [
-  ...concerns.map(({ name, logo, href }) => ({
-    name: name === "Da'wat-E Khair Implement Committee" ? "Da'wat-E Khair\nImplement Committee" : name,
-    logo,
-    href,
-  })),
+  ...concerns
+    .filter(({ name }) => name !== "Monthly Tarjuman-e-Ahle-Sunnat")
+    .map(({ name, logo, href }) => ({
+      name: name === "Da'wat-E Khair Implement Committee" ? "Da'wat-E Khair\nImplement Committee" : name,
+      logo,
+      href,
+    })),
   {
     name: "Tarjumane Ahle Sunnat",
     logo: "/images/concerns/tarjumane-ahle-sunnat.png",
