@@ -74,7 +74,7 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section aria-label="Trust at a glance" className="relative z-3 mx-auto -mt-8 max-w-[1180px] px-5 md:px-10">
+    <section aria-label="Trust at a glance" className="relative z-3 mx-auto -mt-24 max-w-[1180px] px-5 sm:-mt-14 md:px-10">
       <div
         ref={ref}
         className={`stagger-grid overflow-hidden rounded-card shadow-[0_18px_44px_rgba(15,53,31,0.16)] ${

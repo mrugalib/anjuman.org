@@ -153,7 +153,7 @@ export default function SiteHeader() {
           </div>
           <Link
             href="/#donate-panel"
-            className="rounded-lg bg-brand px-3 py-2 text-[12px] font-bold whitespace-nowrap text-white transition-colors hover:bg-brand-hover sm:px-5 sm:py-2.5 sm:text-[13.5px]"
+            className="relative overflow-hidden rounded-lg bg-brand px-3 py-2 text-[12px] font-bold whitespace-nowrap text-white transition-colors before:absolute before:inset-0 before:-translate-x-full before:bg-[linear-gradient(115deg,transparent_20%,rgba(255,255,255,0.4)_50%,transparent_80%)] before:transition-transform before:duration-700 before:ease-out before:content-[''] hover:bg-brand-hover hover:before:translate-x-full sm:px-5 sm:py-2.5 sm:text-[13.5px]"
           >
             <span className="sm:hidden">{t("header_donateShort")}</span>
             <span className="hidden sm:inline">{t("header_donate")}</span>
