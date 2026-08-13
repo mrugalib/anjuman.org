@@ -900,6 +900,13 @@ export const timeline = [
 
 export const concerns = [
   {
+    name: "Monthly Tarjuman-e-Ahle-Sunnat",
+    logo: "/images/concerns/tarjumane-ahle-sunnat.png",
+    href: "https://www.monthlytarjuman.com/",
+    stat: "60+",
+    statLabel: "Publications",
+  },
+  {
     name: "Anjuman Education Management Board",
     logo: "/images/concerns/education-management-board.png",
     href: "https://anjumantrust.org/about-1/",
