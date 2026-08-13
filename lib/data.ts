@@ -1053,6 +1053,24 @@ export const concerns = [
   },
 ];
 
+export const concernLogos = [
+  ...concerns.map(({ name, logo, href }) => ({
+    name: name === "Da'wat-E Khair Implement Committee" ? "Da'wat-E Khair\nImplement Committee" : name,
+    logo,
+    href,
+  })),
+  {
+    name: "Tarjumane Ahle Sunnat",
+    logo: "/images/concerns/tarjumane-ahle-sunnat.png",
+    href: "https://www.monthlytarjuman.com/",
+  },
+  {
+    name: "Anjuman Trust Media",
+    logo: "/images/concerns/anjuman-trust-media.png",
+    href: "https://anjumantrust.org/",
+  },
+];
+
 export const missionPoints = [
   {
     title: "Faith & Dawah",
