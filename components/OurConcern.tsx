@@ -13,14 +13,14 @@ export default function OurConcern() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 items-start gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-6">
+      <div className="grid grid-cols-2 items-stretch gap-3 sm:gap-4 lg:grid-cols-3 xl:grid-cols-6">
         {concernLogos.map((c) => (
           <a
             key={c.name}
             href={c.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-2 rounded-2xl border border-hairline bg-white px-2.5 py-4 text-center transition-shadow hover:shadow-[0_8px_24px_rgba(15,53,31,0.10)] sm:px-3"
+            className="group flex flex-col items-center justify-center gap-2 rounded-2xl border border-hairline bg-white px-2.5 py-4 text-center transition-shadow hover:shadow-[0_8px_24px_rgba(15,53,31,0.10)] sm:px-3"
           >
             <img
               src={c.logo}
