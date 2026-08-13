@@ -1071,6 +1071,139 @@ export const concernLogos = [
   },
 ];
 
+export type OrganizationProfile = {
+  key: string;
+  name: string;
+  logo: string;
+  href: string;
+  established: string;
+  description: string[];
+};
+
+export const organizationProfiles: OrganizationProfile[] = [
+  {
+    key: "tarjuman",
+    name: "Monthly Tarjuman-e-Ahle-Sunnat",
+    logo: "/images/concerns/tarjumane-ahle-sunnat.png",
+    href: "https://www.monthlytarjuman.com/",
+    established: "Est. 1977",
+    description: [
+      "Ordered for publication by Hazrat Allama Syed Muhammad Tayyab Shah (R.A.), the Monthly Tarjuman-e-Ahle-Sunnat was officially launched in January 1977 as the Trust's primary monthly publication.",
+      "It holds the distinction of being the main and oldest publication in the field of leading monthly Sunni journals, and has long stood as a crucial pillar of Sunni literary publishing in the Bengali language.",
+      "The magazine was founded on the belief that publication is one of the most important means of giving long-term, credible and widely accepted validity to an ideology — carrying the true teachings of Ahle Sunnat wal Jamaat to readers across generations.",
+    ],
+  },
+  {
+    key: "gausia",
+    name: "Gausia Committee Bangladesh",
+    logo: "/images/concerns/gausia-committee-bangladesh.png",
+    href: "https://gausiacommitteebangladesh.org/",
+    established: "Est. 1986",
+    description: [
+      "Founded in 1986 by Hazrat Allama Syed Muhammad Tayyab Shah (R.A.), the Gausia Committee Bangladesh serves as the Trust's social reform, humanitarian and volunteer auxiliary wing.",
+      "It is a social reformist, non-political movement built on the principle that personal reform must precede social reform, with members taking an oath of allegiance to the teachings of Ghausul-A'zam Sheikh Abdul Qadir Jilani (R.A.).",
+      "Its core objectives include member training centred on spiritual purification, raising awareness of authentic Sunni Islamic beliefs, and promoting steadfast commitment to Sunnism and spiritual guidance through the network of Madrasas and Anjumans.",
+    ],
+  },
+  {
+    key: "dawat-e-khair",
+    name: "Da'wat-E Khair",
+    logo: "/images/concerns/dawat-e-khair-implement-committee.png",
+    href: "https://dawatekhair.com/",
+    established: "Est. 2009",
+    description: [
+      "Launched in 2009 through a historic address at Alamgir Khanqah, Da'wat-E Khair carries forward the Qur'anic principle of enjoining good and forbidding evil (Amr Bil Ma'ruf wa Nahi Anil Munkar).",
+      "The programme was established to make the true, authentic teachings of Islam accessible to communities across the country through structured outreach, education and Dawah activities.",
+      "Since its launch, Da'wat-E Khair has grown into one of the Trust's largest public engagement efforts, reaching over 1 crore (10 million+) people through its Dawah initiatives.",
+    ],
+  },
+];
+
+export type CabinetMember = {
+  name: string;
+  suffix?: string;
+  role: string;
+  image?: string;
+  isChief?: boolean;
+};
+
+export const cabinetChiefs: CabinetMember[] = [
+  {
+    name: "Syed Muhammad Taher Shah",
+    suffix: "(M.J.A.)",
+    role: "President",
+    image: "/images/founders/syed-muhammad-taher-shah.png",
+    isChief: true,
+  },
+  {
+    name: "Syed Muhammad Sabir Shah",
+    suffix: "(M.J.A.)",
+    role: "Executive President",
+    image: "/images/founders/syed-muhammad-sabir-shah.jpeg",
+    isChief: true,
+  },
+];
+
+export const cabinetMembers: CabinetMember[] = [
+  {
+    name: "Mohammad Manjur Alam",
+    suffix: "(Manju)",
+    role: "Senior Vice President",
+    image: "/images/cabinet/manjur-alam.png",
+  },
+  { name: "A.Q.I Chowdhury", role: "Vice President", image: "/images/cabinet/aqi-chowdhury.png" },
+  {
+    name: "Muhammad Amir Hossain",
+    suffix: "(Sohel)",
+    role: "Vice President",
+    image: "/images/cabinet/amir-hossain.png",
+  },
+  {
+    name: "Mohammed Anowar Hossain",
+    role: "Secretary General",
+    image: "/images/cabinet/anowar-hossain.png",
+  },
+  {
+    name: "Mohammed Shamsuddin",
+    role: "Additional General Secretary",
+    image: "/images/cabinet/shamsuddin.png",
+  },
+  {
+    name: "S.M. Giash Uddin",
+    suffix: "(Shaker)",
+    role: "Assistant General Secretary",
+    image: "/images/cabinet/giash-uddin.png",
+  },
+  {
+    name: "Mohammed Kamar Uddin",
+    suffix: "(Sabur)",
+    role: "Finance Secretary",
+    image: "/images/cabinet/kamar-uddin.png",
+  },
+  {
+    name: "Mohammad Golam Mohiuddin",
+    role: "Press & Publication Secretary",
+    image: "/images/cabinet/golam-mohiuddin.png",
+  },
+  { name: "Payer Mohammad", role: "Cabinet Member", image: "/images/cabinet/payer-mohammad.png" },
+  {
+    name: "Muhammad Hossain Khokan",
+    role: "Cabinet Member",
+    image: "/images/cabinet/hossain-khokan.png",
+  },
+  {
+    name: "Muhammad Mahmood Newaz",
+    role: "Cabinet Member",
+    image: "/images/cabinet/mahmood-newaz.png",
+  },
+];
+
+export const aboutAchievements = [
+  { value: "200+", label: "Our Madrasah" },
+  { value: "50+", label: "Khanka Sharif" },
+  { value: "20+", label: "On Going Project" },
+];
+
 export const missionPoints = [
   {
     title: "Faith & Dawah",

@@ -5,6 +5,9 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import FoundersGrid from "@/components/FoundersGrid";
 import Timeline from "@/components/Timeline";
+import OrganizationProfiles from "@/components/OrganizationProfiles";
+import CabinetGrid from "@/components/CabinetGrid";
+import AchievementsBar from "@/components/AchievementsBar";
 import { missionPoints, timeline } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -95,8 +98,20 @@ export default function AboutPage() {
             <Timeline timeline={timeline} />
           </Reveal>
 
-          <Reveal className="mt-16 mb-20 md:mt-24 md:mb-28">
+          <Reveal className="mt-16 md:mt-24">
+            <OrganizationProfiles />
+          </Reveal>
+
+          <Reveal className="mt-16 md:mt-24">
             <FoundersGrid />
+          </Reveal>
+
+          <Reveal className="mt-16 md:mt-24">
+            <CabinetGrid />
+          </Reveal>
+
+          <Reveal className="mt-16 mb-20 md:mt-24 md:mb-28">
+            <AchievementsBar />
           </Reveal>
         </div>
       </main>
