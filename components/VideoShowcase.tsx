@@ -57,13 +57,13 @@ function PlayableVideo({
           {badge && <div className="absolute top-2.5 left-2.5 z-[2] sm:top-3 sm:left-3">{badge}</div>}
           <span
             className={`absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-brand shadow-lg transition-transform duration-300 group-hover:scale-110 ${
-              compact ? "h-9 w-9" : "h-16 w-16 sm:h-18 sm:w-18"
+              compact ? "h-10 w-10 sm:h-12 sm:w-12" : "h-16 w-16 sm:h-18 sm:w-18"
             }`}
           >
-            <Play size={compact ? 15 : 26} weight="fill" className="ml-0.5" />
+            <Play size={compact ? 16 : 26} weight="fill" className="ml-0.5" />
           </span>
-          <div className={`absolute inset-x-0 bottom-0 text-left ${compact ? "p-2.5" : "p-4 sm:p-6"}`}>
-            <h3 className={`font-extrabold text-white ${compact ? "line-clamp-1 text-[12.5px]" : "text-base sm:text-lg"}`}>
+          <div className={`absolute inset-x-0 bottom-0 text-left ${compact ? "p-2 sm:p-3" : "p-4 sm:p-6"}`}>
+            <h3 className={`font-extrabold text-white ${compact ? "line-clamp-1 text-[12px] sm:text-[13.5px]" : "text-base sm:text-lg"}`}>
               {video.title}
             </h3>
             {!compact && (
@@ -92,39 +92,36 @@ export default function VideoShowcase() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.5fr_1fr]">
-        <div>
-          <h3 className="mb-3.5 text-sm font-extrabold text-deep">
-            <T k="videoShowcase_live" />
-          </h3>
-          <PlayableVideo
-            video={liveBroadcast}
-            aspect="aspect-video w-full"
-            badge={
-              liveBroadcast.isLive ? (
-                <span className="inline-flex animate-pulse items-center gap-1.5 rounded-full bg-[#e0433a] px-2.5 py-1 text-[10px] font-extrabold tracking-[0.06em] text-white">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white" />
-                  {t("videoShowcase_liveNow")}
-                </span>
-              ) : (
-                <span className="inline-flex items-center rounded-full bg-black/45 px-2.5 py-1 text-[10px] font-bold text-white/85 backdrop-blur-sm">
-                  {t("videoShowcase_offline")}
-                </span>
-              )
-            }
-          />
-        </div>
+      <div className="mb-2 grid grid-cols-[1.5fr_1fr_1fr_1fr] gap-2 sm:gap-3">
+        <h3 className="text-[11px] font-extrabold whitespace-nowrap text-deep sm:text-xs">
+          <T k="videoShowcase_live" />
+        </h3>
+        <h3 className="col-span-3 text-[11px] font-extrabold whitespace-nowrap text-deep sm:text-xs">
+          <T k="videoShowcase_previous" />
+        </h3>
+      </div>
 
-        <div>
-          <h3 className="mb-3.5 text-sm font-extrabold text-deep">
-            <T k="videoShowcase_previous" />
-          </h3>
-          <div className="grid grid-cols-2 gap-3">
-            {videoShowcase.map((video) => (
-              <PlayableVideo key={video.title} video={video} aspect="aspect-video w-full" compact />
-            ))}
-          </div>
-        </div>
+      <div className="grid grid-cols-[1.5fr_1fr_1fr_1fr] gap-2 sm:gap-3">
+        <PlayableVideo
+          video={liveBroadcast}
+          aspect="aspect-video w-full"
+          compact
+          badge={
+            liveBroadcast.isLive ? (
+              <span className="inline-flex animate-pulse items-center gap-1.5 rounded-full bg-[#e0433a] px-2 py-0.5 text-[9px] font-extrabold tracking-[0.06em] text-white sm:px-2.5 sm:py-1 sm:text-[10px]">
+                <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                {t("videoShowcase_liveNow")}
+              </span>
+            ) : (
+              <span className="inline-flex items-center rounded-full bg-black/45 px-2 py-0.5 text-[9px] font-bold text-white/85 backdrop-blur-sm sm:px-2.5 sm:py-1 sm:text-[10px]">
+                {t("videoShowcase_offline")}
+              </span>
+            )
+          }
+        />
+        {videoShowcase.slice(0, 3).map((video) => (
+          <PlayableVideo key={video.title} video={video} aspect="aspect-video w-full" compact />
+        ))}
       </div>
     </div>
   );
