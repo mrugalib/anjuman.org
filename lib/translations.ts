@@ -51,7 +51,7 @@ export const translations = {
   founder_about: { en: "About", bn: "সম্পর্কে" },
   founder_flipBack: { en: "Flip back", bn: "ফিরিয়ে দিন" },
 
-  videoShowcase_heading: { en: "Video Showcase", bn: "ভিডিও শোকেস" },
+  videoShowcase_heading: { en: "Videos & Live Broadcast", bn: "ভিডিও ও লাইভ সম্প্রচার" },
   videoShowcase_subheading: {
     en: "Watch highlights from our programmes, gatherings and welfare work.",
     bn: "আমাদের কর্মসূচি, সমাবেশ ও কল্যাণমূলক কাজের ঝলক দেখুন।",
