@@ -285,12 +285,16 @@ const researchKhairReviewMeeting: NewsItem & { excerpt: Localized } = {
   },
 };
 
-const researchQiraatTraining: NewsItem = {
+const researchQiraatTraining: NewsItem & { excerpt: Localized } = {
   title: {
     en: "Gausia Qira'at Training 2026 Begins at Alamgir Khankah Sharif",
     bn: "আলমগীর খানকাহ শরীফে শুরু হলো গাউসিয়া ক্বিরাআত প্রশিক্ষণ-২০২৬",
   },
   slug: "research-centre-gausia-qiraat-training-2026",
+  excerpt: {
+    en: "Gausia Qira'at Training 2026 has begun at Alamgir Khankah Sharif, running daily through Ramadan under the supervision of the Anjuman Research Centre.",
+    bn: "আলমগীর খানকাহ শরীফে শুরু হয়েছে গাউসিয়া ক্বিরাআত প্রশিক্ষণ-২০২৬, রমাদ্বান জুড়ে প্রতিদিন আনজুমান রিসার্চ সেন্টারের তত্ত্বাবধানে অনুষ্ঠিত হবে।",
+  },
   date: "3 Ramadan 1447 AH",
   heroImage: "/images/activities/research-qiraat-training-1.jpg",
   gallery: [
@@ -473,14 +477,13 @@ export const activityCategories: NewsCategory[] = [
     key: "gausia",
     label: { en: "Gausia Committee Bangladesh", bn: "গাউসিয়া কমিটি বাংলাদেশ" },
     featured: gausiaBandarbanRelief,
-    rest: [gausiaDhakaQuaderiaMeeting, gausiaGazaAidShipment, gausiaAlimCommittee],
+    rest: [gausiaGazaAidShipment, gausiaAlimCommittee],
   },
   {
     key: "research",
     label: { en: "Research Centre", bn: "রিসার্চ সেন্টার" },
-    featured: researchKhairReviewMeeting,
+    featured: researchQiraatTraining,
     rest: [
-      researchQiraatTraining,
       researchMiladOlympiad,
       {
         title: {
@@ -519,93 +522,93 @@ export const activityCategories: NewsCategory[] = [
     label: { en: "Education Board", bn: "এডুকেশন বোর্ড" },
     featured: educationChuetWorkshop,
     rest: [
+      gausiaDhakaQuaderiaMeeting,
       {
         title: {
-          en: "New Madrasah Curriculum Approved for Rollout",
-          bn: "মাদ্রাসার নতুন পাঠ্যক্রম অনুমোদিত",
-        },
-        slug: "education-board-new-curriculum-rollout",
-        date: "Jun 2, 2026",
-        heroImage: stock("calligraphy-classic.jpg"),
-        gallery: [stock("calligraphy-classic.jpg"), stock("education-classroom.jpg")],
-        highlights: {
-          en: [
-            "Updated curriculum to roll out across affiliated madrasahs",
-            "Developed with input from senior teaching staff",
-          ],
-          bn: [
-            "অধিভুক্ত মাদ্রাসাগুলোতে হালনাগাদ পাঠ্যক্রম চালু হবে",
-            "সিনিয়র শিক্ষকদের পরামর্শে প্রস্তুত করা হয়েছে",
-          ],
-        },
-        body: {
-          en: [
-            "The Education Board has approved an updated curriculum for rollout across affiliated madrasahs, developed with input from senior teaching staff.",
-            "Institutions will begin phasing in the new curriculum from the coming academic term.",
-          ],
-          bn: [
-            "এডুকেশন বোর্ড অধিভুক্ত মাদ্রাসাগুলোর জন্য একটি হালনাগাদ পাঠ্যক্রম অনুমোদন করেছে, যা সিনিয়র শিক্ষকদের পরামর্শে প্রস্তুত করা হয়েছে।",
-            "আগামী শিক্ষাবর্ষ থেকে প্রতিষ্ঠানগুলো ধাপে ধাপে নতুন পাঠ্যক্রম চালু করবে।",
-          ],
-        },
-      },
-      {
-        title: {
-          en: "Teacher Training Workshop Held in Chattogram",
-          bn: "চট্টগ্রামে শিক্ষক প্রশিক্ষণ কর্মশালা অনুষ্ঠিত",
+          en: "Anjuman Education Management Board Completes Day-Long Primary Teacher Training Workshop",
+          bn: "আঞ্জুমান এডুকেশন ম্যানেজমেন্ট বোর্ডের ইবতেদায়ী শিক্ষক প্রশিক্ষণ কর্মশালা সম্পন্ন",
         },
         slug: "education-board-teacher-training-workshop",
-        date: "May 8, 2026",
-        heroImage: stock("education-classroom.jpg"),
-        gallery: [stock("education-classroom.jpg"), stock("calligraphy-learning.jpg")],
+        date: "Aug 11, 2026",
+        heroImage: "/images/activities/education-board-teacher-training-workshop-thumb.png",
+        gallery: [
+          "/images/activities/education-board-teacher-training-workshop-thumb.png",
+          "/images/activities/education-board-teacher-training-workshop-1.png",
+          "/images/activities/education-board-teacher-training-workshop-2.png",
+          "/images/activities/education-board-teacher-training-workshop-3.png",
+          "/images/activities/education-board-teacher-training-workshop-4.png",
+        ],
         highlights: {
           en: [
-            "Workshop drew teaching staff from affiliated institutions",
-            "Focused on classroom methods and student welfare practices",
+            "Day-long 'Lesson Plan' training for Ebtedayee-section madrasah teachers, held 11 August 2026 (Tuesday), 8:00 AM – 4:00 PM at the Jamea Conference Hall",
+            "Chief guest: AEMB Chairman Professor Dr. N.K.M. Akbar Hossain; also present: Board Secretary Principal Professor Abu Saleh Mohammad Naeem Uddin and Joint Secretary Professor Muhammad Gofran",
+            "Also attended by Jamea Ahmadia Sunnia Kamil Madrasah Chairman Md. Yahiya Khan, Principal Hafez Kazi Abdul Alim Rezvi, Vice Principal Dr. ATM Liakat Ali, and Jamea Ahmadia Sunnia Women's Kamil Madrasah Principal Dr. Maulana Muhammad Sarwar Uddin",
+            "Teachers from three institutions took part: Jamea Ahmadia Sunnia Kamil Madrasah, Jamea Ahmadia Sunnia Women's Kamil Madrasah, and Madrasah-e-Tayyibiah Islamia Sunnia (Halishahr)",
           ],
           bn: [
-            "অধিভুক্ত প্রতিষ্ঠানগুলোর শিক্ষকরা কর্মশালায় অংশগ্রহণ করেন",
-            "শ্রেণিকক্ষ পদ্ধতি ও শিক্ষার্থী কল্যাণ চর্চার ওপর গুরুত্ব দেওয়া হয়",
+            "১১ আগস্ট ২০২৬ (মঙ্গলবার), সকাল ৮টা থেকে বিকাল ৪টা পর্যন্ত জামেয়া কনফারেন্স হলে ইবতেদায়ী শাখার শিক্ষকদের জন্য দিনব্যাপী 'লেসন প্ল্যান' প্রশিক্ষণ কর্মশালা অনুষ্ঠিত হয়",
+            "প্রধান অতিথি ছিলেন AEMB চেয়ারম্যান প্রফেসর ড. নু. ক. ম. আকবর হোসেন; আরও উপস্থিত ছিলেন বোর্ড সচিব প্রিন্সিপাল প্রফেসর আবু সালেহ মোহাম্মদ নাঈম উদ্দীন ও যুগ্ম সচিব প্রফেসর মুহাম্মদ গোফরান",
+            "আরও উপস্থিত ছিলেন জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসার চেয়ারম্যান জনাব আবুল মহসিন মো. ইয়াহিয়া খান, অধ্যক্ষ হাফেজ কাজী আব্দুল আলীম রেজভী, উপাধ্যক্ষ ড. এটিএম লিয়াকত আলী এবং জামেয়া আহমদিয়া সুন্নিয়া মহিলা কামিল মাদরাসার অধ্যক্ষ ড. মাওলানা মুহাম্মদ সরওয়ার উদ্দীন",
+            "তিনটি প্রতিষ্ঠানের শিক্ষকবৃন্দ অংশগ্রহণ করেন: জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসা, জামেয়া আহমদিয়া সুন্নিয়া মহিলা কামিল মাদরাসা এবং মাদরাসা-এ তৈয়্যবিয়া ইসলামিয়া সুন্নিয়া, হালিশহর",
           ],
         },
         body: {
           en: [
-            "The Education Board hosted a teacher training workshop in Chattogram, drawing teaching staff from affiliated institutions across the district.",
-            "Sessions focused on classroom methods and student welfare practices, led by senior educators from the board.",
+            "The Anjuman Education Management Board (AEMB) successfully completed a day-long 'Lesson Plan' training workshop for Ebtedayee-section madrasah teachers, held on Tuesday, 11 August 2026, from 8:00 AM to 4:00 PM at the Jamea Conference Hall. The workshop aimed to improve the quality of education, introduce modern and effective teaching methods, and strengthen teachers' professional competency.",
+            "AEMB Chairman Professor Dr. N.K.M. Akbar Hossain attended as chief guest. Also present were the Board's Secretary, Principal Professor Abu Saleh Mohammad Naeem Uddin, Joint Secretary Professor Muhammad Gofran, and other officials of the board.",
+            "The workshop was further attended by Jamea Ahmadia Sunnia Kamil Madrasah Chairman Md. Yahiya Khan, Principal Hafez Kazi Abdul Alim Rezvi, and Vice Principal Dr. ATM Liakat Ali, along with Jamea Ahmadia Sunnia Women's Kamil Madrasah Principal Dr. Maulana Muhammad Sarwar Uddin.",
+            "Teaching staff from three affiliated institutions — Jamea Ahmadia Sunnia Kamil Madrasah, Jamea Ahmadia Sunnia Women's Kamil Madrasah, and Madrasah-e-Tayyibiah Islamia Sunnia (Halishahr) — took part throughout the full-day session, covering lesson planning, classroom management, and effective teaching practices.",
+            "The Education Board expects the workshop to play an important role in familiarising teachers with contemporary teaching methods, improving classroom management and instructional skills, and raising the overall standard of education across affiliated madrasahs.",
           ],
           bn: [
-            "এডুকেশন বোর্ড চট্টগ্রামে একটি শিক্ষক প্রশিক্ষণ কর্মশালার আয়োজন করে, যেখানে জেলার অধিভুক্ত প্রতিষ্ঠানগুলোর শিক্ষকরা অংশগ্রহণ করেন।",
-            "সেশনগুলো শ্রেণিকক্ষ পদ্ধতি ও শিক্ষার্থী কল্যাণ চর্চার ওপর কেন্দ্রীভূত ছিল, যা বোর্ডের সিনিয়র শিক্ষাবিদরা পরিচালনা করেন।",
+            "শিক্ষার গুণগত মানোন্নয়ন, আধুনিক ও কার্যকর শিক্ষাদান পদ্ধতির প্রয়োগ এবং শিক্ষকদের পেশাগত দক্ষতা বৃদ্ধির লক্ষ্যে আঞ্জুমান এডুকেশন ম্যানেজমেন্ট বোর্ড (AEMB)-এর ইবতেদায়ী শিক্ষক প্রশিক্ষণ কর্মশালা ১১ আগস্ট ২০২৬ (মঙ্গলবার) সকাল ৮টা থেকে বিকাল ৪টা পর্যন্ত জামেয়া কনফারেন্স হলে সফলভাবে সম্পন্ন হয়েছে।",
+            "প্রশিক্ষণ কর্মশালায় সম্মানিত অতিথি হিসেবে উপস্থিত ছিলেন আঞ্জুমান এডুকেশন ম্যানেজমেন্ট বোর্ডের চেয়ারম্যান প্রফেসর ড. নু. ক. ম. আকবর হোসেন। এছাড়াও উপস্থিত ছিলেন বোর্ডের সম্মানিত সচিব প্রিন্সিপাল প্রফেসর আবু সালেহ মোহাম্মদ নাঈম উদ্দীন, যুগ্ম সচিব প্রফেসর মুহাম্মদ গোফরানসহ বোর্ডের সংশ্লিষ্ট কর্মকর্তাবৃন্দ।",
+            "কর্মশালায় আরও উপস্থিত ছিলেন জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসার সম্মানিত চেয়ারম্যান জনাব আবুল মহসিন মো. ইয়াহিয়া খান এবং অধ্যক্ষ হাফেজ কাজী আব্দুল আলীম রেজভী, উপাধ্যক্ষ ড. এটিএম লিয়াকত আলী। পাশাপাশি উপস্থিত ছিলেন জামেয়া আহমদিয়া সুন্নিয়া মহিলা কামিল মাদরাসার সম্মানিত অধ্যক্ষ ড. মাওলানা মুহাম্মদ সরওয়ার উদ্দীন।",
+            "দিনব্যাপী এই প্রশিক্ষণ কর্মশালায় জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসা, জামেয়া আহমদিয়া সুন্নিয়া মহিলা কামিল মাদরাসা এবং মাদরাসা-এ তৈয়্যবিয়া ইসলামিয়া সুন্নিয়া, হালিশহর — এই তিনটি প্রতিষ্ঠানের সম্মানিত শিক্ষকবৃন্দ সক্রিয়ভাবে অংশগ্রহণ করেন এবং লেসন প্ল্যানিং, শ্রেণিকক্ষ ব্যবস্থাপনা ও কার্যকর শিক্ষাদান কৌশল নিয়ে দিনভর প্রশিক্ষণ গ্রহণ করেন।",
+            "এ ধরনের প্রশিক্ষণ কর্মশালা শিক্ষকদের সমসাময়িক শিক্ষাদান পদ্ধতি সম্পর্কে ধারণা প্রদান, শ্রেণিকক্ষ ব্যবস্থাপনা ও পাঠদান দক্ষতা উন্নয়ন এবং শিক্ষার সামগ্রিক মানোন্নয়নে গুরুত্বপূর্ণ ভূমিকা রাখবে বলে প্রত্যাশা করা যায়।",
           ],
         },
       },
       {
         title: {
-          en: "Board Opens New Scholarship Applications Portal",
-          bn: "বৃত্তির আবেদনের জন্য নতুন অনলাইন পোর্টাল চালু",
+          en: "AEMB Holds Faculty Development Workshop on Skilled Teachers, Modern Pedagogy and Values-Based Leadership",
+          bn: "দক্ষ শিক্ষক, আধুনিক শিক্ষাপদ্ধতি ও মূল্যবোধভিত্তিক নেতৃত্ব বিষয়ে AEMB-এর ফ্যাকাল্টি ডেভেলপমেন্ট ওয়ার্কশপ",
         },
-        slug: "education-board-scholarship-applications-portal",
-        date: "Apr 14, 2026",
-        heroImage: stock("quran-page.jpg"),
-        gallery: [stock("quran-page.jpg"), stock("education-classroom.jpg")],
+        slug: "education-board-faculty-development-workshop",
+        date: "Jun 27, 2026",
+        heroImage: "/images/activities/education-board-faculty-development-workshop-thumb.png",
+        gallery: [
+          "/images/activities/education-board-faculty-development-workshop-1.png",
+          "/images/activities/education-board-faculty-development-workshop-2.png",
+          "/images/activities/education-board-faculty-development-workshop-3.png",
+          "/images/activities/education-board-faculty-development-workshop-4.png",
+          "/images/activities/education-board-faculty-development-workshop-5.png",
+          "/images/activities/education-board-faculty-development-workshop-6.png",
+        ],
         highlights: {
           en: [
-            "New online portal for scholarship applications",
-            "Reduces paperwork for affiliated institution administrators",
+            "Faculty Development Workshop on 'Skilled Teachers, Modern Pedagogy and Values-Based Leadership for Ensuring Quality Education', held Saturday, 27 June 2026 at Jameah Ahmadia Sunnia Kamil Madrasah",
+            "Organised by the Anjuman Education Management Board (AEMB), Chattogram",
+            "Attended by madrasah teachers from Hathazari, Fatikchari, Sitakunda and Kaptai upazilas",
+            "Programme concluded with certificate distribution to participating teachers",
           ],
           bn: [
-            "বৃত্তির আবেদনের জন্য নতুন অনলাইন পোর্টাল",
-            "অধিভুক্ত প্রতিষ্ঠানের প্রশাসকদের কাগজপত্রের কাজ কমায়",
+            "'দক্ষ শিক্ষক, আধুনিক শিক্ষাপদ্ধতি ও মূল্যবোধভিত্তিক নেতৃত্ব' শীর্ষক ফ্যাকাল্টি ডেভেলপমেন্ট ওয়ার্কশপ ২৭ জুন ২০২৬ (শনিবার) জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসায় অনুষ্ঠিত হয়",
+            "আয়োজনে ছিল আঞ্জুমান এডুকেশন ম্যানেজমেন্ট বোর্ড (AEMB), চট্টগ্রাম",
+            "হাটহাজারী, ফটিকছড়ি, সীতাকুণ্ড ও কাপ্তাই উপজেলার মাদ্রাসা শিক্ষকবৃন্দ অংশগ্রহণ করেন",
+            "অনুষ্ঠানের সমাপনী পর্বে অংশগ্রহণকারী শিক্ষকদের মাঝে সনদপত্র বিতরণ করা হয়",
           ],
         },
         body: {
           en: [
-            "The Education Board has launched a new online portal for scholarship applications, replacing the previous paper-based process.",
-            "Institution administrators say the portal significantly reduces the paperwork involved in submitting and tracking applications.",
+            "The Anjuman Education Management Board (AEMB), Chattogram organised a Faculty Development Workshop on 'Skilled Teachers, Modern Pedagogy and Values-Based Leadership for Ensuring Quality Education' on Saturday, 27 June 2026 at Jameah Ahmadia Sunnia Kamil Madrasah.",
+            "The workshop brought together madrasah teachers from Hathazari, Fatikchari, Sitakunda and Kaptai upazilas to strengthen classroom skills, introduce modern pedagogical approaches, and reinforce values-based leadership among educators.",
+            "The programme concluded with a certificate distribution ceremony, where board and madrasah officials presented certificates to the participating teachers in recognition of their attendance.",
           ],
           bn: [
-            "এডুকেশন বোর্ড বৃত্তির আবেদনের জন্য একটি নতুন অনলাইন পোর্টাল চালু করেছে, যা আগের কাগজভিত্তিক প্রক্রিয়ার পরিবর্তে ব্যবহৃত হবে।",
-            "প্রতিষ্ঠান প্রশাসকরা বলছেন, পোর্টালটি আবেদন জমা ও ট্র্যাক করার কাগজপত্রের কাজ উল্লেখযোগ্যভাবে কমিয়ে দেয়।",
+            "আঞ্জুমান এডুকেশন ম্যানেজমেন্ট বোর্ড (AEMB), চট্টগ্রাম আয়োজন করে 'দক্ষ শিক্ষক, আধুনিক শিক্ষাপদ্ধতি ও মূল্যবোধভিত্তিক নেতৃত্ব' শীর্ষক ফ্যাকাল্টি ডেভেলপমেন্ট ওয়ার্কশপ, যা ২৭ জুন ২০২৬ (শনিবার) জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসায় অনুষ্ঠিত হয়।",
+            "কর্মশালায় হাটহাজারী, ফটিকছড়ি, সীতাকুণ্ড ও কাপ্তাই উপজেলার মাদ্রাসা শিক্ষকবৃন্দ অংশগ্রহণ করেন, যার লক্ষ্য ছিল শ্রেণিকক্ষ দক্ষতা বৃদ্ধি, আধুনিক শিক্ষাপদ্ধতির প্রবর্তন এবং শিক্ষকদের মধ্যে মূল্যবোধভিত্তিক নেতৃত্ব সুদৃঢ় করা।",
+            "অনুষ্ঠানের সমাপনী পর্বে সনদপত্র বিতরণ অনুষ্ঠানের মাধ্যমে বোর্ড ও মাদরাসা কর্মকর্তাগণ অংশগ্রহণকারী শিক্ষকদের উপস্থিতির স্বীকৃতিস্বরূপ সনদপত্র প্রদান করেন।",
           ],
         },
       },
@@ -616,63 +619,45 @@ export const activityCategories: NewsCategory[] = [
     label: { en: "Dawate Khair", bn: "দাওয়াতে খায়র" },
     featured: khairPotiyaIjtema,
     rest: [
+      researchKhairReviewMeeting,
       {
         title: {
-          en: "Volunteer Corps Doubles in Size This Year",
-          bn: "এ বছর স্বেচ্ছাসেবক দলের সংখ্যা দ্বিগুণ হয়েছে",
+          en: "Dawate Khair Mahfil Held in Boalkhali with Gausia Committee Bangladesh",
+          bn: "বোয়ালখালীতে গাউসিয়া কমিটি বাংলাদেশের আয়োজনে দাওয়াতে খায়র মাহফিল অনুষ্ঠিত",
         },
-        slug: "dawate-khair-volunteer-corps-growth",
-        date: "Jun 20, 2026",
-        heroImage: stock("water-well-pulley.jpg"),
-        gallery: [stock("water-well-pulley.jpg"), stock("relief-aid-distribution.jpg")],
+        slug: "dawate-khair-boalkhali-mahfil",
+        date: "Jul 4, 2026",
+        heroImage: "/images/activities/dawate-khair-boalkhali-mahfil-thumb.png",
+        gallery: [
+          "/images/activities/dawate-khair-boalkhali-mahfil-1.png",
+          "/images/activities/dawate-khair-boalkhali-mahfil-2.png",
+          "/images/activities/dawate-khair-boalkhali-mahfil-3.png",
+          "/images/activities/dawate-khair-boalkhali-mahfil-4.jpeg",
+          "/images/activities/dawate-khair-boalkhali-mahfil-5.png",
+        ],
         highlights: {
           en: [
-            "Active volunteer numbers have doubled compared to last year",
-            "New volunteers trained through monthly orientation sessions",
+            "Dawate Khair Mahfil held Saturday, 4 July 2026, from 9:00 AM to 2:00 PM",
+            "Venue: Sultan Mostofa Complex Shahi Jame Masjid, Kodurkhal, Boalkhali, Chattogram",
+            "Managed by Gausia Committee Bangladesh, Boalkhali Upazila Branch",
+            "Held with the overall cooperation of Toiyabiya Taheriya Sultan Mostofa Complex",
           ],
           bn: [
-            "গত বছরের তুলনায় সক্রিয় স্বেচ্ছাসেবকের সংখ্যা দ্বিগুণ হয়েছে",
-            "মাসিক ওরিয়েন্টেশন সেশনের মাধ্যমে নতুন স্বেচ্ছাসেবক প্রশিক্ষিত হয়েছেন",
+            "৪ জুলাই ২০২৬ (শনিবার) সকাল ৯টা থেকে বেলা ২টা পর্যন্ত দাওয়াতে খায়র মাহফিল অনুষ্ঠিত হয়",
+            "স্থান: সুলতান মোস্তফা কমপ্লেক্স শাহী জামে মসজিদ, কধুরখাল, বোয়ালখালী, চট্টগ্রাম",
+            "ব্যবস্থাপনায় ছিল গাউসিয়া কমিটি বাংলাদেশ, বোয়ালখালী উপজেলা শাখা",
+            "সার্বিক সহযোগিতায় ছিল তৈয়্যবিয়া তাহেরিয়া সুলতান মোস্তফা কমপ্লেক্স",
           ],
         },
         body: {
           en: [
-            "Dawate Khair's volunteer corps has doubled in size this year, with new members trained through monthly orientation sessions.",
-            "The growth has allowed the programme to take on additional relief and outreach activities across more districts.",
+            "A Dawate Khair Mahfil was held on Saturday, 4 July 2026, from 9:00 AM to 2:00 PM at the Sultan Mostofa Complex Shahi Jame Masjid in Kodurkhal, Boalkhali, Chattogram.",
+            "The programme was managed by Gausia Committee Bangladesh's Boalkhali Upazila Branch, with the overall cooperation of Toiyabiya Taheriya Sultan Mostofa Complex.",
+            "A large gathering of attendees took part in the day-long mahfil, held under the Da'wat-E Khair banner to spread the basic teachings of Islam among the local community.",
           ],
           bn: [
-            "দাওয়াতে খায়রের স্বেচ্ছাসেবক দলের আকার এ বছর দ্বিগুণ হয়েছে, নতুন সদস্যরা মাসিক ওরিয়েন্টেশন সেশনের মাধ্যমে প্রশিক্ষিত হয়েছেন।",
-            "এই বৃদ্ধির ফলে কর্মসূচি আরও বেশি জেলায় ত্রাণ ও প্রচারণা কার্যক্রম গ্রহণ করতে সক্ষম হয়েছে।",
-          ],
-        },
-      },
-      {
-        title: {
-          en: "Monthly Food Drive Reaches 500 Families",
-          bn: "মাসিক খাদ্য কর্মসূচি ৫০০ পরিবারে পৌঁছেছে",
-        },
-        slug: "dawate-khair-monthly-food-drive-500-families",
-        date: "May 15, 2026",
-        heroImage: stock("relief-aid-distribution.jpg"),
-        gallery: [stock("relief-aid-distribution.jpg"), stock("mosque-interior-1.jpg")],
-        highlights: {
-          en: [
-            "Food packages delivered to 500 families this month",
-            "Distribution coordinated through local mosque committees",
-          ],
-          bn: [
-            "এ মাসে ৫০০ পরিবারে খাদ্য প্যাকেজ পৌঁছে দেওয়া হয়েছে",
-            "স্থানীয় মসজিদ কমিটির মাধ্যমে বিতরণ সমন্বয় করা হয়",
-          ],
-        },
-        body: {
-          en: [
-            "Dawate Khair's monthly food drive reached 500 families this month, with distribution coordinated through local mosque committees.",
-            "The programme runs year-round, with volunteers assembling and delivering packages on the first weekend of every month.",
-          ],
-          bn: [
-            "দাওয়াতে খায়রের মাসিক খাদ্য কর্মসূচি এ মাসে ৫০০ পরিবারে পৌঁছেছে, স্থানীয় মসজিদ কমিটির মাধ্যমে বিতরণ সমন্বয় করা হয়েছে।",
-            "কর্মসূচিটি সারা বছর চলে, স্বেচ্ছাসেবকরা প্রতি মাসের প্রথম সপ্তাহান্তে প্যাকেজ প্রস্তুত ও বিতরণ করেন।",
+            "গাউসিয়া কমিটি বাংলাদেশ বোয়ালখালী উপজেলা শাখার ব্যবস্থাপনায় এবং তৈয়্যবিয়া তাহেরিয়া সুলতান মোস্তফা কমপ্লেক্সের সার্বিক সহযোগিতায় \"দাওয়াতে খায়র মাহফিল\" ৪ জুলাই ২০২৬ (শনিবার) সকাল ৯টা থেকে বেলা ২টা পর্যন্ত সুলতান মোস্তফা কমপ্লেক্স শাহী জামে মসজিদ, কধুরখাল, বোয়ালখালী, চট্টগ্রামে সুসম্পন্ন হয়েছে।",
+            "দিনব্যাপী এই মাহফিলে বিপুল সংখ্যক মুসল্লি ও এলাকাবাসী অংশগ্রহণ করেন, যার লক্ষ্য ছিল দাওয়াতে খায়রের ব্যানারে স্থানীয় জনগণের মাঝে ইসলামের মৌলিক শিক্ষা ছড়িয়ে দেওয়া।",
           ],
         },
       },
