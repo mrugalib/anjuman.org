@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { MapPin, Phone, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
+import { MapPin, Phone, EnvelopeSimple, Clock } from "@phosphor-icons/react/dist/ssr";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import ImageSlot from "@/components/ImageSlot";
 import ContactForm from "@/components/ContactForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import T from "@/components/T";
@@ -44,16 +43,26 @@ export default function ContactPage() {
                     <div className="mb-1 text-[13px] font-bold text-deep">
                       <T k="contact_phone" />
                     </div>
-                    <div className="text-[13px] text-muted">02333388421</div>
-                    <div className="text-[13px] text-muted">01841-937872</div>
+                    <div className="text-[13px] text-muted">02333388411</div>
+                    <div className="text-[13px] text-muted">02333388422</div>
+                    <div className="text-[13px] text-muted">02333363837</div>
                   </div>
                   <div className="rounded-card border border-hairline p-5">
                     <EnvelopeSimple size={20} className="mb-3 text-brand" weight="fill" />
                     <div className="mb-1 text-[13px] font-bold text-deep">
                       <T k="contact_email" />
                     </div>
-                    <div className="text-[13px] text-muted">info@anjumantrust.com</div>
+                    <div className="text-[13px] text-muted">info@anjumantrust.org</div>
+                    <div className="text-[13px] text-muted">news@anjumantrust.org</div>
                   </div>
+                </div>
+
+                <div className="rounded-card border border-hairline p-5">
+                  <Clock size={20} className="mb-3 text-brand" weight="fill" />
+                  <div className="mb-1 text-[13px] font-bold text-deep">
+                    <T k="contact_hours" />
+                  </div>
+                  <div className="text-[13px] text-muted">Everyday 9:30 AM – 5:30 PM</div>
                 </div>
 
                 {officeLocations.map((office) => (
@@ -61,13 +70,20 @@ export default function ContactPage() {
                     <MapPin size={22} className="mt-0.5 shrink-0 text-brand" weight="fill" />
                     <div>
                       <div className="mb-1 text-[13.5px] font-bold text-deep">{office.name}</div>
-                      <div className="mb-1 text-[13px] text-muted">{office.address}</div>
-                      <div className="text-[13px] text-muted">{office.phone}</div>
+                      <div className="text-[13px] text-muted">{office.address}</div>
                     </div>
                   </div>
                 ))}
 
-                <ImageSlot dark label="Map · Chattogram, Bangladesh" className="h-48" />
+                <div className="overflow-hidden rounded-card border border-hairline">
+                  <iframe
+                    title="Anjuman-E Rahmania Ahmadia Sunnia Trust — Head Office location"
+                    src="https://www.google.com/maps?q=321+Didar+Market,+Dewan+Bazar,+Chattogram,+Bangladesh&output=embed"
+                    className="h-64 w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </div>
             </div>
           </Reveal>

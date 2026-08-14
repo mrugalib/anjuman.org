@@ -109,7 +109,10 @@ export default function SiteFooter() {
         </div>
 
         <div className="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-4 border-t border-white/8 px-5 py-4.5 text-xs text-[#8fab9c] md:px-10">
-          <span>info@anjumantrust.com &middot; 02333388421 &middot; 01841-937872</span>
+          <span>
+            info@anjumantrust.org &middot; news@anjumantrust.org &middot; 02333388411 &middot; 02333388422
+            &middot; 02333363837
+          </span>
           <span>Copyright&copy; 2026 Anjuman-E Rahmania Ahmadia Sunnia Trust. All rights reserved.</span>
         </div>
       </div>

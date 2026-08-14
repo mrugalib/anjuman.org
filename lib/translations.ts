@@ -111,6 +111,7 @@ export const translations = {
   cta_getInTouch: { en: "Get in Touch", bn: "যোগাযোগ করুন" },
   contact_phone: { en: "Phone", bn: "ফোন" },
   contact_email: { en: "Email", bn: "ইমেইল" },
+  contact_hours: { en: "Office Hours", bn: "অফিস সময়" },
 
   event_badge: { en: "UPCOMING EVENT", bn: "আসন্ন অনুষ্ঠান" },
   event_happeningNow: { en: "HAPPENING NOW", bn: "চলছে এখন" },

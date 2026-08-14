@@ -1236,13 +1236,8 @@ export const galleryItems: { category: GalleryCategory; title: string; image: st
 export const officeLocations = [
   {
     name: "Head Office — Chattogram",
-    address: "Anjuman Complex, Andarkilla, Chattogram, Bangladesh",
-    phone: "02333388421",
-  },
-  {
-    name: "Gawsia Committee — Sylhet",
-    address: "Zindabazar Road, Sylhet, Bangladesh",
-    phone: "01841-937872",
+    address: "321 Didar Market, Dewan Bazar, Chattogram, Bangladesh",
+    phone: "02333388411, 02333388422, 02333363837",
   },
 ];
 
