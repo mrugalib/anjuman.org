@@ -41,56 +41,77 @@ function FooterColumn({
   );
 }
 
+function FooterPattern() {
+  return (
+    <svg
+      aria-hidden="true"
+      className="pointer-events-none absolute inset-0 h-full w-full text-[#d4af37] opacity-[0.025]"
+    >
+      <pattern id="footerIslamicPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+        <path
+          d="M30,4 L34.21,19.84 L48.39,11.62 L40.16,25.79 L56,30 L40.16,34.21 L48.39,48.39 L34.21,40.16 L30,56 L25.79,40.16 L11.61,48.39 L19.84,34.21 L4,30 L19.84,25.79 L11.61,11.61 L25.79,19.84 Z"
+          fill="currentColor"
+        />
+      </pattern>
+      <rect width="100%" height="100%" fill="url(#footerIslamicPattern)" />
+    </svg>
+  );
+}
+
 export default function SiteFooter() {
   return (
-    <footer className="bg-deep-2 text-[#cfe0d5]">
-      <Newsletter />
+    <footer className="relative overflow-hidden bg-deep-2 text-[#cfe0d5]">
+      <FooterPattern />
 
-      <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-10 px-5 py-12 sm:grid-cols-2 md:px-10 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
-        <div>
-          <div className="mb-3.5 flex items-center gap-2.5">
-            <Image
-              src="/images/anjuman-logo.png"
-              alt="Anjuman-E Rahmania Ahmadia Sunnia Trust logo"
-              width={36}
-              height={36}
-              className="h-9 w-9 shrink-0 object-contain"
-            />
-            <strong className="text-[11px] leading-tight font-extrabold tracking-[0.02em] whitespace-nowrap text-white sm:text-[15px]">
-              ANJUMAN-E-RAHMANIA AHMADIA SUNNIA TRUST
-            </strong>
+      <div className="relative z-10">
+        <Newsletter />
+
+        <div className="mx-auto grid max-w-[1180px] grid-cols-1 gap-10 px-5 py-12 sm:grid-cols-2 md:px-10 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+          <div>
+            <div className="mb-3.5 flex items-center gap-2.5">
+              <Image
+                src="/images/anjuman-logo.png"
+                alt="Anjuman-E Rahmania Ahmadia Sunnia Trust logo"
+                width={36}
+                height={36}
+                className="h-9 w-9 shrink-0 object-contain"
+              />
+              <strong className="text-[11px] leading-tight font-extrabold tracking-[0.02em] whitespace-nowrap text-white sm:text-[15px]">
+                ANJUMAN-E-RAHMANIA AHMADIA SUNNIA TRUST
+              </strong>
+            </div>
+            <p className="mb-4 max-w-80 text-[13px] leading-relaxed text-[#a9c2b4]">
+              Established 1926 in Rangoon (Burma) for the Muslim Mashab and Millat, reconstituted 29 August
+              1937 by the disciples of Huzur Ahmad Shah in Chattogram.
+            </p>
+            <div className="flex gap-2.5">
+              {socialLinks.map(({ label, href }) => {
+                const Icon = socialIcons[label];
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="flex h-8.5 w-8.5 items-center justify-center rounded-full bg-white/8 text-white transition-colors hover:bg-brand"
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
+            </div>
           </div>
-          <p className="mb-4 max-w-80 text-[13px] leading-relaxed text-[#a9c2b4]">
-            Established 1926 in Rangoon (Burma) for the Muslim Mashab and Millat, reconstituted 29 August
-            1937 by the disciples of Huzur Ahmad Shah in Chattogram.
-          </p>
-          <div className="flex gap-2.5">
-            {socialLinks.map(({ label, href }) => {
-              const Icon = socialIcons[label];
-              return (
-                <a
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  className="flex h-8.5 w-8.5 items-center justify-center rounded-full bg-white/8 text-white transition-colors hover:bg-brand"
-                >
-                  <Icon size={16} />
-                </a>
-              );
-            })}
-          </div>
+
+          <FooterColumn titleKey="footer_menuTitle" items={footerMenu} />
+          <FooterColumn titleKey="footer_connectTitle" items={footerConnect} />
+          <FooterColumn titleKey="footer_othersTitle" items={footerOthers} />
         </div>
 
-        <FooterColumn titleKey="footer_menuTitle" items={footerMenu} />
-        <FooterColumn titleKey="footer_connectTitle" items={footerConnect} />
-        <FooterColumn titleKey="footer_othersTitle" items={footerOthers} />
-      </div>
-
-      <div className="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-4 border-t border-white/8 px-5 py-4.5 text-xs text-[#8fab9c] md:px-10">
-        <span>info@anjumantrust.com &middot; 02333388421 &middot; 01841-937872</span>
-        <span>Copyright&copy; 2026 Anjuman-E Rahmania Ahmadia Sunnia Trust. All rights reserved.</span>
+        <div className="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-4 border-t border-white/8 px-5 py-4.5 text-xs text-[#8fab9c] md:px-10">
+          <span>info@anjumantrust.com &middot; 02333388421 &middot; 01841-937872</span>
+          <span>Copyright&copy; 2026 Anjuman-E Rahmania Ahmadia Sunnia Trust. All rights reserved.</span>
+        </div>
       </div>
     </footer>
   );

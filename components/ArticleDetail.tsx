@@ -41,12 +41,12 @@ export default function ArticleDetail({
         <div className="relative mx-auto w-full max-w-[800px] px-5 py-10 md:px-10 md:py-14">
           <Link
             href={backHref}
-            className="mb-4 inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-white/80 hover:text-white"
+            className="mb-4 flex w-fit items-center gap-1.5 text-[12.5px] font-semibold text-white/80 hover:text-white"
           >
             <ArrowLeft size={14} weight="bold" />
             {t(backLabelKey)}
           </Link>
-          <span className="mb-3 inline-block w-fit rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm">
+          <span className="mb-3 block w-fit rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-bold text-white backdrop-blur-sm">
             {category.label[lang]}
           </span>
           <h1 className="text-[24px] leading-[1.25] font-extrabold text-white sm:text-[30px] md:text-[36px]">
