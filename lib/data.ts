@@ -3,7 +3,7 @@ import type { TranslationKey } from "./translations";
 export const stats = [
   { value: "60+", label: "Publications" },
   { value: "200+", label: "Institutions Run" },
-  { value: "200+", label: "Dawah Programs" },
+  { value: "20000+", label: "Dawah Programs" },
   { value: "1,00,00,000+", label: "Lives Reached" },
   { value: "10,00,000+", label: "Annual Attendees" },
 ];
@@ -1011,7 +1011,7 @@ export const concerns: {
     name: "Da'wat-E Khair Implement Committee",
     logo: "/images/concerns/dawat-e-khair-implement-committee.png",
     href: "https://dawatekhair.com/",
-    stat: "1,00,00,000+",
+    stat: "20000+",
     statLabel: "stats_dawah",
   },
   {
