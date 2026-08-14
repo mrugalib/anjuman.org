@@ -1,3 +1,5 @@
+import type { TranslationKey } from "./translations";
+
 export const stats = [
   { value: "60+", label: "Publications" },
   { value: "200+", label: "Institutions Run" },
@@ -898,41 +900,47 @@ export const timeline = [
   },
 ];
 
-export const concerns = [
+export const concerns: {
+  name: string;
+  logo: string;
+  href: string;
+  stat: string;
+  statLabel: TranslationKey;
+}[] = [
   {
     name: "Monthly Tarjuman-e-Ahle-Sunnat",
     logo: "/images/concerns/tarjumane-ahle-sunnat.png",
     href: "https://www.monthlytarjuman.com/",
     stat: "60+",
-    statLabel: "Publications",
+    statLabel: "stats_publications",
   },
   {
     name: "Anjuman Education Management Board",
     logo: "/images/concerns/education-management-board.png",
     href: "https://anjumantrust.org/about-1/",
     stat: "200+",
-    statLabel: "Institutions",
+    statLabel: "stats_institutions",
   },
   {
     name: "Anjuman Research Center",
     logo: "/images/concerns/anjuman-research-center.png",
     href: "https://anjumantrust.org/about-1/",
     stat: "200+",
-    statLabel: "Books",
+    statLabel: "stats_books",
   },
   {
     name: "Da'wat-E Khair Implement Committee",
     logo: "/images/concerns/dawat-e-khair-implement-committee.png",
     href: "https://dawatekhair.com/",
     stat: "1,00,00,000+",
-    statLabel: "Da'wah",
+    statLabel: "stats_dawah",
   },
   {
     name: "Gausia Committee Bangladesh",
     logo: "/images/concerns/gausia-committee-bangladesh.png",
     href: "https://gausiacommitteebangladesh.org/",
     stat: "10,00,000+",
-    statLabel: "Humble Attendant",
+    statLabel: "stats_humbleAttendant",
   },
 ];
 

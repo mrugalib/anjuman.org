@@ -19,14 +19,13 @@ export default function Hero() {
       />
       <div className="relative mx-auto w-full max-w-[1180px] px-5 py-18 pb-22 md:px-10 md:pt-24 md:pb-27">
         <div className="hero-in mb-4 text-[13px] font-bold tracking-[0.06em] text-[#8fe0b4] [animation-delay:0ms]">
-          SINCE 1926 &middot; CHATTOGRAM, BANGLADESH
+          <T k="hero_eyebrow" />
         </div>
         <h1 className="hero-in mb-4 max-w-[620px] text-[32px] leading-[1.16] font-extrabold text-white [animation-delay:100ms] md:text-[46px]">
-          Faith, education and relief for the Sunni Muslim community
+          <T k="hero_heading" />
         </h1>
         <p className="hero-in mb-7 max-w-[500px] text-base leading-relaxed text-[#dcebe2] [animation-delay:200ms]">
-          A non-political, religious and philanthropic trust, recognised by the Muslim Ummah of the
-          Sub-continent and beyond.
+          <T k="hero_subtext" />
         </p>
         <div className="hero-in flex flex-wrap gap-3.5 [animation-delay:300ms]">
           <Link

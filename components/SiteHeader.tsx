@@ -17,6 +17,7 @@ export default function SiteHeader() {
   const { lang, setLang, t } = useLanguage();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href.split("#")[0]) && href !== "/#news";
+  const isExternal = (href: string) => href.startsWith("http");
   const navLabel = (item: { label: string; href: string }) => {
     const key = navLabelKeys[item.href];
     return key ? t(key) : item.label;
@@ -79,6 +80,8 @@ export default function SiteHeader() {
               <div key={item.label} className={isActivities ? "group/menu relative" : undefined}>
                 <Link
                   href={item.href}
+                  target={isExternal(item.href) ? "_blank" : undefined}
+                  rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
                   className={`group flex items-center gap-1 border-b-2 py-2 text-[14.5px] font-semibold whitespace-nowrap ${
                     isActive(item.href) ? "border-brand text-brand" : "border-transparent text-ink hover:border-brand"
                   }`}
@@ -116,6 +119,14 @@ export default function SiteHeader() {
                           {c.label[lang]}
                         </Link>
                       ))}
+                      <Link
+                        href="https://www.monthlytarjuman.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-lg px-3 py-2 text-[13px] font-semibold text-ink hover:bg-tint hover:text-brand"
+                      >
+                        {t("nav_tarjumaneAhleSunnat")}
+                      </Link>
                     </div>
                   </div>
                 )}
@@ -181,6 +192,8 @@ export default function SiteHeader() {
               <div key={item.label}>
                 <Link
                   href={item.href}
+                  target={isExternal(item.href) ? "_blank" : undefined}
+                  rel={isExternal(item.href) ? "noopener noreferrer" : undefined}
                   onClick={() => setOpen(false)}
                   className={`block rounded-md px-2 py-2.5 text-[14.5px] font-semibold ${
                     isActive(item.href) ? "text-brand" : "text-ink hover:text-brand"
@@ -203,6 +216,15 @@ export default function SiteHeader() {
                         {c.label[lang]}
                       </Link>
                     ))}
+                    <Link
+                      href="https://www.monthlytarjuman.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setOpen(false)}
+                      className="rounded-md px-2 py-2 text-[13px] font-semibold text-muted hover:text-brand"
+                    >
+                      {t("nav_tarjumaneAhleSunnat")}
+                    </Link>
                   </div>
                 )}
               </div>

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { concerns } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 
 function formatIndian(num: number) {
   const s = Math.round(num).toString();
@@ -54,6 +55,7 @@ function CountUp({ value, active }: { value: string; active: boolean }) {
 export default function StatsBar() {
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const el = ref.current;
@@ -92,7 +94,7 @@ export default function StatsBar() {
               <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
                 <CountUp value={c.stat} active={active} />
               </div>
-              <div className="mt-1 text-[12.5px] text-muted">{c.statLabel}</div>
+              <div className="mt-1 text-[12.5px] text-muted">{t(c.statLabel)}</div>
             </div>
           ))}
         </div>

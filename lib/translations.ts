@@ -4,6 +4,7 @@ export const translations = {
   nav_activities: { en: "Activities", bn: "কার্যক্রম" },
   nav_gallery: { en: "Gallery", bn: "গ্যালারি" },
   nav_contact: { en: "Contact", bn: "যোগাযোগ" },
+  nav_tarjumaneAhleSunnat: { en: "Monthly Tarjuman", bn: "মাসিক তরজুমান" },
 
   header_donate: { en: "Donate Now", bn: "এখনই দান করুন" },
   header_donateShort: { en: "Donate", bn: "দান করুন" },
@@ -31,6 +32,15 @@ export const translations = {
   newsletter_placeholder: { en: "Your email address", bn: "আপনার ইমেইল ঠিকানা" },
   newsletter_subscribe: { en: "Subscribe", bn: "সাবস্ক্রাইব করুন" },
 
+  hero_eyebrow: { en: "SINCE 1926 · CHATTOGRAM, BANGLADESH", bn: "১৯২৬ সাল থেকে · চট্টগ্রাম, বাংলাদেশ" },
+  hero_heading: {
+    en: "Faith, education and relief for the Sunni Muslim community",
+    bn: "সুন্নি মুসলিম সম্প্রদায়ের জন্য দ্বীন, শিক্ষা ও ত্রাণ সেবা",
+  },
+  hero_subtext: {
+    en: "A non-political, religious and philanthropic trust, recognised by the Muslim Ummah of the Sub-continent and beyond.",
+    bn: "একটি অরাজনৈতিক, ধর্মীয় ও জনহিতকর ট্রাস্ট, যা উপমহাদেশ ও তার বাইরের মুসলিম উম্মাহ কর্তৃক স্বীকৃত।",
+  },
   hero_donate: { en: "Donate Now", bn: "এখনই দান করুন" },
   hero_learnMore: { en: "Learn More", bn: "আরও জানুন" },
 
@@ -60,6 +70,12 @@ export const translations = {
   videoShowcase_liveNow: { en: "LIVE", bn: "লাইভ" },
   videoShowcase_offline: { en: "Offline — showing last broadcast", bn: "অফলাইন — সর্বশেষ সম্প্রচার দেখানো হচ্ছে" },
   videoShowcase_previous: { en: "Previous Videos", bn: "পূর্ববর্তী ভিডিও" },
+
+  stats_publications: { en: "Publications", bn: "প্রকাশনা" },
+  stats_institutions: { en: "Institutions", bn: "প্রতিষ্ঠান" },
+  stats_books: { en: "Books", bn: "বই" },
+  stats_dawah: { en: "Da'wah", bn: "দাওয়াত" },
+  stats_humbleAttendant: { en: "Humble Attendant", bn: "উপস্থিত সদস্য" },
 
   ourConcern_heading: { en: "Our Concern", bn: "আমাদের প্রতিষ্ঠান" },
   ourConcern_subheading: {
@@ -126,6 +142,7 @@ export const navLabelKeys: Partial<Record<string, TranslationKey>> = {
   "/activities": "nav_activities",
   "/gallery": "nav_gallery",
   "/contact": "nav_contact",
+  "https://www.monthlytarjuman.com/": "nav_tarjumaneAhleSunnat",
   "/#donate-panel": "footer_donate",
   "/volunteer": "footer_volunteer",
   "/careers": "footer_careers",
