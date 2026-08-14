@@ -448,37 +448,35 @@ const researchQiraatTraining: NewsItem & { excerpt: Localized } = {
   },
 };
 
-const researchMiladOlympiad: NewsItem = {
+const researchTarjumanSafarIssue: NewsItem = {
   title: {
-    en: "Gausia Committee Launches Milad Olympiad, Season 2",
-    bn: "গাউসিয়া কমিটির মিলাদ অলিম্পিয়াড, সিজন-২ শুরু",
+    en: "Tarjuman-e-Ahle-Sunnat wal Jama'at — Safar 1448H Issue Published",
+    bn: "মাসিক তরজুমান-এ আহলে সুন্নাত ওয়াল জামা'আত সফর ১৪৪৮ হিজরী সংখ্যা প্রকাশিত",
   },
-  slug: "research-centre-milad-olympiad-season-2",
-  date: "Aug 15, 2026",
-  heroImage: "/images/activities/research-milad-olympiad-poster.png",
-  gallery: ["/images/activities/research-milad-olympiad-poster.png"],
+  slug: "research-centre-tarjuman-safar-1448-issue",
+  date: "Aug 14, 2026",
+  heroImage: "/images/activities/research-tarjuman-safar-1448-issue.png",
+  gallery: ["/images/activities/research-tarjuman-safar-1448-issue.png"],
   highlights: {
     en: [
-      "Total prize pool of Tk 2.5 lakh shared among 12 winners",
-      "1st prize: a Ziyarat (holy visit) to the Haramain Sharifain",
-      "Selection round exam on 15 August 2026, syllabus based on the book Nurunnabi",
+      "Regular monthly publication of Anjuman Trust: Tarjuman-e-Ahle-Sunnat wal Jama'at",
+      "Safar 1448 Hijri issue (July–August 2026) now available",
+      "Copies can be collected from the Anjuman office",
     ],
     bn: [
-      "১২ জন বিজয়ীর জন্য সর্বমোট ২.৫ লক্ষ টাকার পুরস্কার",
-      "১ম পুরস্কার: পবিত্র হারামাইন শরীফাইনের যেয়ারত",
-      "সিলেকশন রাউন্ডের পরীক্ষা ১৫ আগস্ট ২০২৬, সিলেবাস নূরনবী বই থেকে",
+      "আনজুমান ট্রাস্টের নিয়মিত প্রকাশনা মাসিক তরজুমান-এ আহলে সুন্নাত ওয়াল জামা'আত",
+      "সফর ১৪৪৮ হিজরী সংখ্যা (জুলাই-আগস্ট ২০২৬) প্রকাশিত হয়েছে",
+      "আনজুমান কার্যালয় থেকে কপি সংগ্রহ করা যাবে",
     ],
   },
   body: {
     en: [
-      "Marking the holy Milad of Sayyidul Mursalin, Rahmatul lil Alameen, Huzur Karim (peace and blessings be upon him), the Gausia Committee Bangladesh's Jamea Ahmadia Sunnia Kamil Madrasah branch has launched the Milad Olympiad, Season 2, offering a total prize pool of Tk 2.5 lakh across 12 winners.",
-      "The top prize is a Ziyarat (holy visit) to the Haramain Sharifain, followed by a laptop for 2nd place and a tablet for 3rd, with cash prizes of Tk 7,000 and Tk 5,000 for 4th and 5th place. Winners placed 6th to 12th receive certificates, medals and gift hampers.",
-      "The syllabus is drawn from the book Nurunnabi by Hafez Muhammad Abdul Jalil (rah.): the selection round covers chapters 1–30, the elimination round chapters 31–55, and the final round the complete book together with a designated PDF. The selection round exam is scheduled for 15 August 2026, with elimination and final round dates to be announced later; the first two rounds will be held online via miladolympiad.com. Registration costs Tk 150.",
+      "Alhamdulillah! The Safar 1448 Hijri issue of Anjuman Trust's regular monthly publication, 'Tarjuman-e-Ahle-Sunnat wal Jama'at,' has been published.",
+      "Readers are invited to collect their copy.",
     ],
     bn: [
-      "সাইয়্যিদুল মুরসালিন, রহমাতুল্লিল আলামীন হুযুর করীম ﷺ এর পবিত্র মিলাদ উপলক্ষে গাউসিয়া কমিটি বাংলাদেশের জামেয়া আহমদিয়া সুন্নিয়া কামিল মাদরাসা শাখার আয়োজনে শুরু হয়েছে মিলাদ অলিম্পিয়াড সিজন-২, সর্বমোট ২.৫ লক্ষ টাকার পুরস্কার নিয়ে ১২ জন বিজয়ীর জন্য।",
-      "১ম পুরস্কার পবিত্র হারামাইন শরীফাইনের যেয়ারত, ২য় পুরস্কার ল্যাপটপ, ৩য় পুরস্কার ট্যাব, ৪র্থ পুরস্কার ৭০০০ টাকা এবং ৫ম পুরস্কার ৫০০০ টাকা। ৬ষ্ঠ থেকে ১২তম পুরস্কারপ্রাপ্তরা পাবেন সার্টিফিকেট, মেডেল ও আকর্ষণীয় গিফট হ্যাম্পার।",
-      "সিলেবাস নির্ধারিত হয়েছে হাফেজ মুহাম্মদ আবদুল জলিল (রহ.) রচিত 'নূরনবী' বই থেকে: সিলেকশন রাউন্ড ১ম থেকে ৩০তম অধ্যায় পর্যন্ত, এলিমিনেশন রাউন্ড ৩১তম থেকে ৫৫তম অধ্যায় পর্যন্ত, এবং ফাইনাল রাউন্ড সম্পূর্ণ বই ও নির্ধারিত পিডিএফ থেকে। সিলেকশন রাউন্ডের পরীক্ষা ১৫ আগস্ট ২০২৬-এ অনুষ্ঠিত হবে, এলিমিনেশন ও ফাইনাল রাউন্ডের তারিখ পরবর্তীতে জানানো হবে; প্রথম দু'টি রাউন্ডের পরীক্ষা হবে miladolympiad.com-এ। রেজিস্ট্রেশন ফি ১৫০ টাকা।",
+      "আলহামদুলিল্লাহ্‌! আনজুমান ট্রাস্ট এর নিয়মিত প্রকাশনা- \"মাসিক তরজুমান- এ আহলে সুন্নাত ওয়াল জামা'আত\" সফর ১৪৪৮ হিজরী সংখ্যা প্রকাশিত হয়েছে।",
+      "আপনার কপি সংগ্রহ করুন।",
     ],
   },
 };
@@ -604,7 +602,7 @@ export const activityCategories: NewsCategory[] = [
     key: "research",
     label: { en: "Research Centre", bn: "রিসার্চ সেন্টার" },
     featured: anjumanResearchCentreAbout,
-    rest: [researchMiladOlympiad, researchWritingWorkshop, researchQiraatTraining],
+    rest: [researchTarjumanSafarIssue, researchWritingWorkshop, researchQiraatTraining],
   },
   {
     key: "education",
