@@ -80,8 +80,6 @@ export type NewsCategory = {
   rest: NewsItem[];
 };
 
-const stock = (name: string) => `/images/news/stock/${name}`;
-
 const gausiaBandarbanRelief: NewsItem & { excerpt: Localized } = {
   title: {
     en: "Flood Relief Reaches Balaghata, Bandarban",
@@ -243,6 +241,47 @@ const gausiaAlimCommittee: NewsItem = {
   },
 };
 
+const gausiaRabiulAwwalWelcomeRally: NewsItem = {
+  title: {
+    en: "Welcome Rally Marks the Holy Month of Rabiul Awwal Sharif",
+    bn: "পবিত্র মাহে রবিউল আউয়াল শরীফ উপলক্ষে স্বাগত র‍্যালি",
+  },
+  slug: "gausia-committee-rabiul-awwal-welcome-rally",
+  date: "Aug 14, 2026",
+  heroImage: "/images/activities/gausia-rabiul-awwal-welcome-rally-1.png",
+  gallery: [
+    "/images/activities/gausia-rabiul-awwal-welcome-rally-1.png",
+    "/images/activities/gausia-rabiul-awwal-welcome-rally-2.png",
+    "/images/activities/gausia-rabiul-awwal-welcome-rally-3.png",
+    "/images/activities/gausia-rabiul-awwal-welcome-rally-4.png",
+    "/images/activities/gausia-rabiul-awwal-welcome-rally-5.png",
+  ],
+  highlights: {
+    en: [
+      "Rally set out from the premises of Quaderia Tayyabiya Kamil Madrasah",
+      "Managed by Anjuman-E Rahmania Ahmadiyya Sunnia Trust, Dhaka",
+      "Held in collaboration with Gausia Committee Bangladesh, Dhaka",
+    ],
+    bn: [
+      "কাদেরিয়া তৈয়্যেবিয়া কামিল মাদরাসা প্রাঙ্গণ থেকে র‍্যালিটি শুরু হয়",
+      "ব্যবস্থাপনায় আনজুমান-এ রহমানিয়া আহমদিয়া সুন্নিয়া ট্রাস্ট, ঢাকা",
+      "সহযোগিতায় গাউসিয়া কমিটি বাংলাদেশ, ঢাকা",
+    ],
+  },
+  body: {
+    en: [
+      "A welcome rally marking the arrival of the holy month of Rabiul Awwal Sharif set out from the premises of Quaderia Tayyabiya Kamil Madrasah in Dhaka.",
+      "Carrying green flags and a banner reading \"Ahlan Sahlan, Marhaban Marhaban\" and \"Welcome Rally for the Holy Month of Rabiul Awwal,\" scholars, students and devotees marched through the streets of the capital in celebration of the sacred month.",
+      "The rally was managed by Anjuman-E Rahmania Ahmadiyya Sunnia Trust, Dhaka, in collaboration with Gausia Committee Bangladesh, Dhaka.",
+    ],
+    bn: [
+      "রাজধানী ঢাকার কাদেরিয়া তৈয়্যেবিয়া কামিল মাদরাসা প্রাঙ্গণ থেকে পবিত্র মাহে রবিউল আউয়াল শরীফ উপলক্ষে একটি স্বাগত র‍্যালি বের হয়।",
+      "সবুজ পতাকা ও \"আহলান সাহলান, মারহাবান মারহাবান\" এবং \"পবিত্র মাহে রবিউল আউয়ালের স্বাগত র‍্যালি\" লেখা ব্যানার নিয়ে আলেম-ওলামা, ছাত্র ও ভক্তবৃন্দ রাজধানীর রাজপথে পবিত্র এই মাস উদযাপনে অংশ নেন।",
+      "র‍্যালিটির ব্যবস্থাপনায় ছিল আনজুমান-এ রহমানিয়া আহমদিয়া সুন্নিয়া ট্রাস্ট, ঢাকা এবং সহযোগিতায় ছিল গাউসিয়া কমিটি বাংলাদেশ, ঢাকা।",
+    ],
+  },
+};
+
 const researchKhairReviewMeeting: NewsItem & { excerpt: Localized } = {
   title: {
     en: "Review Meeting & Thank-You Letters for Da'wat-E Khair Thana Committees",
@@ -281,6 +320,88 @@ const researchKhairReviewMeeting: NewsItem & { excerpt: Localized } = {
     bn: [
       "পর্যালোচনা সভা ও ধন্যবাদপত্র প্রদান। আজ ২৯ জুলাই'২৬, দা'ওয়াতে খায়র তৃতীয় মাসিক ইজতিমার আয়োজক ৬ থানা কমিটির দায়িত্বশীলগণের উপস্থিতিতে পর্যালোচনা সভা ও থানা কমিটিগুলোকে ধন্যবাদপত্র প্রদান করা হয়।",
       "এতে উপস্থিত ছিলেন দা'ওয়াতে খায়র স্ট্যান্ডিং কমিটি, গাউসিয়া কমিটি বাংলাদেশ, খুলশী, আকবর শাহ, পাহাড়তলী, কোতোয়ালি পূর্ব, কোতোয়ালি পশ্চিম, কর্ণফুলী থানা কমিটির নেতৃবৃন্দ।",
+    ],
+  },
+};
+
+const anjumanResearchCentreAbout: NewsItem & { excerpt: Localized } = {
+  title: {
+    en: "About Anjuman Research Centre",
+    bn: "আনজুমান রিসার্চ সেন্টার পরিচিতি",
+  },
+  slug: "anjuman-research-centre-about",
+  excerpt: {
+    en: "Anjuman Research Centre serves as the Trust's hub for scholarship, writing and publications — nurturing researchers, writers and Qira'at reciters under the guidance of its Director General and senior scholars.",
+    bn: "আনজুমান রিসার্চ সেন্টার ট্রাস্টের গবেষণা, লেখনী ও প্রকাশনার কেন্দ্র, যা ডাইরেক্টর জেনারেল ও সিনিয়র আলেমগণের তত্ত্বাবধানে গবেষক, লেখক ও ক্বারী তৈরিতে কাজ করে।",
+  },
+  date: "Aug 14, 2026",
+  heroImage: "/images/activities/research-centre-about-thumb.png",
+  gallery: ["/images/activities/research-centre-about-thumb.png"],
+  highlights: {
+    en: [
+      "Serves as the Trust's centre for research, writing and publications",
+      "Led by Director General Allama Abdul Mannan alongside senior scholars",
+      "Organises research-writing workshops, Qira'at training and publication launches",
+      "Has helped produce 200+ publications supporting the Trust's Dawah and education mission",
+    ],
+    bn: [
+      "ট্রাস্টের গবেষণা, লেখনী ও প্রকাশনার কেন্দ্র হিসেবে কাজ করে",
+      "ডাইরেক্টর জেনারেল আল্লামা আব্দুল মান্নান ও সিনিয়র আলেমগণের নেতৃত্বে পরিচালিত",
+      "গবেষণা লিখন কর্মশালা, ক্বেরাত প্রশিক্ষণ ও প্রকাশনা উদ্বোধন আয়োজন করে",
+      "ট্রাস্টের দাওয়াহ ও শিক্ষা লক্ষ্য পূরণে ২০০+ প্রকাশনা তৈরিতে ভূমিকা রেখেছে",
+    ],
+  },
+  body: {
+    en: [
+      "Anjuman Research Centre is the research, writing and publications wing of Anjuman-E Rahmania Ahmadiyya Sunnia Trust, working to nurture scholars, writers and reciters across the Trust's institutions.",
+      "Under the guidance of Director General Allama Abdul Mannan and senior scholars, the Centre organises training programmes such as the annual Gausia Qira'at Training and day-long research-writing workshops, alongside publication launches and academic roundtables.",
+      "Over the years, the Centre has helped produce more than 200 publications, and continues to expand its work — from training new researchers to reviewing manuscripts — in service of the Trust's wider mission of Dawah and education.",
+    ],
+    bn: [
+      "আনজুমান রিসার্চ সেন্টার আনজুমান-এ রহমানিয়া আহমদিয়া সুন্নিয়া ট্রাস্টের গবেষণা, লেখনী ও প্রকাশনা বিভাগ, যা ট্রাস্টের বিভিন্ন প্রতিষ্ঠানের মধ্যে আলেম, লেখক ও ক্বারী তৈরিতে কাজ করে।",
+      "ডাইরেক্টর জেনারেল আল্লামা আব্দুল মান্নান ও সিনিয়র আলেমগণের তত্ত্বাবধানে সেন্টার বার্ষিক গাউসিয়া ক্বেরাত প্রশিক্ষণ, দিনব্যাপী গবেষণা লিখন কর্মশালাসহ বিভিন্ন প্রশিক্ষণ কর্মসূচি এবং প্রকাশনা উদ্বোধন ও একাডেমিক রাউন্ডটেবিল আয়োজন করে থাকে।",
+      "বছরের পর বছর ধরে সেন্টার ২০০+ প্রকাশনা তৈরিতে ভূমিকা রেখেছে এবং নতুন গবেষক তৈরি থেকে শুরু করে পাণ্ডুলিপি পর্যালোচনা পর্যন্ত ট্রাস্টের দাওয়াহ ও শিক্ষার বৃহত্তর লক্ষ্য পূরণে কাজ করে চলেছে।",
+    ],
+  },
+};
+
+const researchWritingWorkshop: NewsItem = {
+  title: {
+    en: "Day-Long Workshop on Research Writing Held by Anjuman Research Centre",
+    bn: "আনজুমান রিসার্চ সেন্টার আয়োজিত দিনব্যাপী গবেষণা লিখন কর্মশালা",
+  },
+  slug: "research-centre-research-writing-workshop",
+  date: "Aug 14, 2026",
+  heroImage: "/images/activities/research-writing-workshop-1.png",
+  gallery: [
+    "/images/activities/research-writing-workshop-1.png",
+    "/images/activities/research-writing-workshop-2.png",
+    "/images/activities/research-writing-workshop-3.png",
+  ],
+  highlights: {
+    en: [
+      "Organised by Anjuman Research Centre under the guidance of Dr. Shaiful Alam Huzur",
+      "Day-long workshop covering the qualities, responsibilities and methods of a researcher",
+      "Included a writer-verification process and timed article-writing exercises",
+      "Certificates presented to participants at the closing session",
+    ],
+    bn: [
+      "মুর্শিদের মিশন বাস্তবায়নের লক্ষ্যে আনজুমান রিসার্চ সেন্টার ও ড. সাইফুল আলম হুযুরের উদ্যোগে আয়োজিত",
+      "গবেষকের গুণাবলি, দায়িত্ব ও পদ্ধতি নিয়ে দিনব্যাপী কর্মশালা",
+      "লেখক যাচাইকরণ প্রক্রিয়া ও নির্দিষ্ট সময়ের মধ্যে প্রবন্ধ রচনার অনুশীলন অন্তর্ভুক্ত",
+      "সমাপনী পর্বে অংশগ্রহণকারীদের সনদপত্র প্রদান করা হয়",
+    ],
+  },
+  body: {
+    en: [
+      "With the aim of realising the Murshid's mission, the Anjuman Research Centre, through the tireless effort of Dr. Shaiful Alam Huzur, organised a 'Day-Long Workshop on Research Writing.'",
+      "Dr. Shaiful Alam Huzur's words and the arrangements made clear that he had planned for much more, though time and circumstances did not allow all of it to be realised. No one becomes a researcher or writer in a single day — this workshop was only the beginning of a journey, and future editions are expected to be held on a deeper and larger scale, God willing.",
+      "The best part of the programme was its writer-verification process, with emphasis placed on producing an article within a set time. Gratitude is owed to everyone involved, and especially to Dr. Shaiful Alam Huzur.",
+    ],
+    bn: [
+      "মুর্শিদের মিশন বাস্তবায়নের লক্ষ্যে Anjuman Research Center ও DR. Shaiful Alam হুযুরের অক্লান্ত পরিশ্রমে আয়োজিত হয় 'দিনব্যাপী গবেষণা লিখন কর্মশালা'।",
+      "ড. সাইফুল আলম হুযুরের কথা ও আয়োজনে স্পষ্ট বুঝা যায় তিনি আরো অনেক পরিকল্পনা করেছিলেন কিন্তু সময় ও পরিস্থিতি অনুকূলে না-থাকার কারণে তা বাস্তবায়ন সম্ভব হয়নি। মূলত একদিনেই যে গবেষক বা লেখক হয়ে যাবে তা ভাবার সুযোগ নেই। বরং এটি একটি যাত্রার প্রারম্ভ মাত্র। ভবিষ্যতে এই কর্মশালা আরো গভীর ও বৃহৎ আকারে হবে ইনশাআল্লাহ।",
+      "এই আয়োজনের সবচেয়ে ভালো দিক হচ্ছে এখানে লেখক যাচাইকরণ প্রক্রিয়া রাখা হয়েছে। প্রবন্ধ রচনার উপর জোর প্রয়োগ করে নির্দিষ্ট সময়ের মাঝে লেখা তৈরির জন্য জোর দেয়া হয়েছে। তবে আমার জন্য বিষয়টি ভিন্ন ধরনের গুরুত্ব বহন করে। আমার স্বপ্নের সারথি এখন মুর্শিদের দিকনির্দেশনা হবে, পথিকের জন্য এ অনেক বড়ো পাওনা আলহামদুলিল্লাহ। সর্বোপরি সংশ্লিষ্ট সবার প্রতি আমি কৃতজ্ঞতা স্বীকার করছি, বিশেষ করে ড. সাইফুল স্যারের প্রতি আন্তরিক শুকরিয়া।",
     ],
   },
 };
@@ -477,45 +598,13 @@ export const activityCategories: NewsCategory[] = [
     key: "gausia",
     label: { en: "Gausia Committee Bangladesh", bn: "গাউসিয়া কমিটি বাংলাদেশ" },
     featured: gausiaBandarbanRelief,
-    rest: [gausiaGazaAidShipment, gausiaAlimCommittee],
+    rest: [gausiaGazaAidShipment, gausiaAlimCommittee, gausiaRabiulAwwalWelcomeRally],
   },
   {
     key: "research",
     label: { en: "Research Centre", bn: "রিসার্চ সেন্টার" },
-    featured: researchQiraatTraining,
-    rest: [
-      researchMiladOlympiad,
-      {
-        title: {
-          en: "Centre Hosts Roundtable on Community Welfare Policy",
-          bn: "কমিউনিটি কল্যাণ নীতি নিয়ে রাউন্ডটেবিল আয়োজন করল সেন্টার",
-        },
-        slug: "research-centre-roundtable-welfare-policy",
-        date: "Mar 30, 2026",
-        heroImage: stock("mosque-interior-2.jpg"),
-        gallery: [stock("mosque-interior-2.jpg"), stock("quran-manuscript.jpg")],
-        highlights: {
-          en: [
-            "Roundtable brought together researchers and chapter representatives",
-            "Discussed findings from the welfare trends study",
-          ],
-          bn: [
-            "রাউন্ডটেবিলে গবেষক ও চ্যাপ্টার প্রতিনিধিরা একত্রিত হন",
-            "কল্যাণ প্রবণতা সমীক্ষার ফলাফল নিয়ে আলোচনা হয়",
-          ],
-        },
-        body: {
-          en: [
-            "The Research Centre hosted a roundtable bringing together researchers and chapter representatives to discuss findings from its welfare trends study.",
-            "Participants exchanged views on how the findings could shape programme planning across affiliated institutions.",
-          ],
-          bn: [
-            "রিসার্চ সেন্টার একটি রাউন্ডটেবিল আয়োজন করে, যেখানে গবেষক ও চ্যাপ্টার প্রতিনিধিরা কল্যাণ প্রবণতা সমীক্ষার ফলাফল নিয়ে আলোচনা করেন।",
-            "অংশগ্রহণকারীরা এই ফলাফল কীভাবে অধিভুক্ত প্রতিষ্ঠানগুলোর কর্মসূচি পরিকল্পনাকে প্রভাবিত করতে পারে তা নিয়ে মতবিনিময় করেন।",
-          ],
-        },
-      },
-    ],
+    featured: anjumanResearchCentreAbout,
+    rest: [researchMiladOlympiad, researchWritingWorkshop, researchQiraatTraining],
   },
   {
     key: "education",
@@ -663,31 +752,38 @@ export const activityCategories: NewsCategory[] = [
       },
       {
         title: {
-          en: "Emergency Relief Deployed After Flash Floods",
-          bn: "আকস্মিক বন্যার পর জরুরি ত্রাণ বিতরণ",
+          en: "Dawate Khair Mahfil of Gausia Committee Bangladesh UAE Branch Held Under the Presidency of Huzur Qiblah",
+          bn: "গাউসিয়া কমিটি বাংলাদেশ আরব আমিরাত শাখার দাওয়াতে খাইর মাহফিল হুজুর কিবলাগনের সদারতে অনুষ্ঠিত",
         },
-        slug: "dawate-khair-emergency-relief-flash-floods",
-        date: "Apr 3, 2026",
-        heroImage: stock("water-well-pulley.jpg"),
-        gallery: [stock("water-well-pulley.jpg"), stock("mosque-exterior-sunset.jpg")],
+        slug: "dawate-khair-gausia-committee-uae-mahfil",
+        date: "Aug 14, 2026",
+        heroImage: "/images/activities/dawate-khair-uae-mahfil-1.png",
+        gallery: [
+          "/images/activities/dawate-khair-uae-mahfil-1.png",
+          "/images/activities/dawate-khair-uae-mahfil-2.png",
+        ],
         highlights: {
           en: [
-            "Emergency packages delivered within 48 hours of flooding",
-            "Coordinated with local union councils on the ground",
+            "Organised by Gausia Committee Bangladesh, United Arab Emirates branch",
+            "Mahfil held under the presidency (sadarat) of Huzur Qiblah",
+            "Large gathering of devotees attended the Dawate Khair mahfil",
           ],
           bn: [
-            "বন্যার ৪৮ ঘণ্টার মধ্যে জরুরি ত্রাণ প্যাকেজ পৌঁছে দেওয়া হয়",
-            "স্থানীয় ইউনিয়ন পরিষদের সঙ্গে সমন্বয় করা হয়",
+            "আয়োজনে গাউসিয়া কমিটি বাংলাদেশ, সংযুক্ত আরব আমিরাত শাখা",
+            "হুজুর কিবলাগণের সদারতে অনুষ্ঠিত মাহফিল",
+            "দাওয়াতে খায়র মাহফিলে বিপুল সংখ্যক ভক্তবৃন্দের উপস্থিতি",
           ],
         },
         body: {
           en: [
-            "Dawate Khair deployed emergency relief packages within 48 hours of flash flooding in low-lying districts, working with local union councils to reach affected households.",
-            "The rapid response drew on the programme's standing emergency relief fund, kept in reserve for situations exactly like this one.",
+            "A Dawate Khair Mahfil organised by Gausia Committee Bangladesh's United Arab Emirates branch was held under the presidency of Huzur Qiblah.",
+            "Huzur Qiblah addressed the gathering from among senior committee members, with devotees and attendees seated closely around him.",
+            "A large congregation of devotees filled the hall to take part in the mahfil, held under the Da'wat-E Khair banner among the Bangladeshi diaspora community in the UAE.",
           ],
           bn: [
-            "নিম্নাঞ্চলীয় জেলাগুলোতে আকস্মিক বন্যার ৪৮ ঘণ্টার মধ্যে দাওয়াতে খায়র জরুরি ত্রাণ প্যাকেজ বিতরণ করে, স্থানীয় ইউনিয়ন পরিষদের সঙ্গে মিলে ক্ষতিগ্রস্ত পরিবারগুলোর কাছে পৌঁছায়।",
-            "এই দ্রুত সাড়াদান কর্মসূচির স্থায়ী জরুরি ত্রাণ তহবিল থেকে সম্ভব হয়েছে, যা ঠিক এই ধরনের পরিস্থিতির জন্য সংরক্ষিত থাকে।",
+            "গাউসিয়া কমিটি বাংলাদেশ আরব আমিরাত শাখার আয়োজনে দাওয়াতে খায়র মাহফিল হুজুর কিবলাগণের সদারতে অনুষ্ঠিত হয়।",
+            "হুজুর কিবলাগণ কমিটির শীর্ষ নেতৃবৃন্দের মাঝে উপবিষ্ট হয়ে উপস্থিত ভক্তবৃন্দের উদ্দেশ্যে বক্তব্য রাখেন।",
+            "মাহফিলে অংশগ্রহণ করতে বিপুল সংখ্যক ভক্তবৃন্দ সমবেত হন, যা সংযুক্ত আরব আমিরাতে প্রবাসী বাংলাদেশি সম্প্রদায়ের মাঝে দাওয়াতে খায়রের ব্যানারে অনুষ্ঠিত হয়।",
           ],
         },
       },
