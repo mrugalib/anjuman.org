@@ -83,14 +83,9 @@ export default function StatsBar() {
           active ? "is-visible" : ""
         }`}
       >
-        <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-5">
-          {concerns.map((c, i) => (
-            <div
-              key={c.name}
-              className={`bg-white px-5 py-6 text-center sm:py-7 sm:col-span-1 ${
-                i === concerns.length - 1 && concerns.length % 2 !== 0 ? "col-span-2" : ""
-              }`}
-            >
+        <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-4">
+          {concerns.map((c) => (
+            <div key={c.name} className="bg-white px-5 py-6 text-center sm:py-7">
               <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
                 <CountUp value={c.stat} active={active} />
               </div>

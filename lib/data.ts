@@ -1001,13 +1001,6 @@ export const concerns: {
     statLabel: "stats_institutions",
   },
   {
-    name: "Anjuman Research Center",
-    logo: "/images/concerns/anjuman-research-center.png",
-    href: "https://anjumantrust.org/about-1/",
-    stat: "200+",
-    statLabel: "stats_books",
-  },
-  {
     name: "Da'wat-E Khair Implement Committee",
     logo: "/images/concerns/dawat-e-khair-implement-committee.png",
     href: "https://dawatekhair.com/",
