@@ -29,6 +29,17 @@ export default function FoundersGrid() {
 
   return (
     <div>
+      <div className="mb-8 flex h-[140px] w-full items-center justify-center sm:h-[190px] md:h-[230px]">
+        <video
+          className="h-full w-full object-contain"
+          src="/videos/anjuman-flag-wave.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
+      </div>
+
       <div className="mb-8 text-center">
         <h2 className="text-2xl font-extrabold text-deep">
           <T k="founders_heading" />
