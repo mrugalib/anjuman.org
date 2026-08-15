@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { concerns } from "@/lib/data";
+import { statsBar } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 
 function formatIndian(num: number) {
@@ -84,7 +84,7 @@ export default function StatsBar() {
         }`}
       >
         <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-4">
-          {concerns.map((c) => (
+          {statsBar.map((c) => (
             <div key={c.name} className="bg-white px-5 py-6 text-center sm:py-7">
               <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
                 <CountUp value={c.stat} active={active} />

@@ -1001,6 +1001,13 @@ export const concerns: {
     statLabel: "stats_institutions",
   },
   {
+    name: "Anjuman Research Center",
+    logo: "/images/concerns/anjuman-research-center.png",
+    href: "https://anjumantrust.org/about-1/",
+    stat: "200+",
+    statLabel: "stats_books",
+  },
+  {
     name: "Da'wat-E Khair Implement Committee",
     logo: "/images/concerns/dawat-e-khair-implement-committee.png",
     href: "https://dawatekhair.com/",
@@ -1014,6 +1021,13 @@ export const concerns: {
     stat: "10,00,000+",
     statLabel: "stats_humbleAttendant",
   },
+];
+
+export const statsBar: { name: string; stat: string; statLabel: TranslationKey }[] = [
+  { name: "Publications", stat: "60+", statLabel: "stats_publications" },
+  { name: "Institutions", stat: "200+", statLabel: "stats_institutions" },
+  { name: "Dawah", stat: "20000+", statLabel: "stats_dawah" },
+  { name: "Humble Attendant", stat: "10,00,000+", statLabel: "stats_humbleAttendant" },
 ];
 
 export const concernLogos = [
