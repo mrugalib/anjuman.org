@@ -1,7 +1,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Hero from "@/components/Hero";
-import StatsBar from "@/components/StatsBar";
 import DonatePanel from "@/components/DonatePanel";
 import FoundersGrid from "@/components/FoundersGrid";
 import NewsTabs from "@/components/NewsTabs";
@@ -19,7 +18,6 @@ export default function Home() {
 
       <main id="top" className="flex-1">
         <Hero />
-        <StatsBar />
 
         <div className="mx-auto max-w-[1180px] px-5 pb-16 md:px-10 md:pb-24">
           <Reveal className="mt-16 md:mt-24">

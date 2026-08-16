@@ -1,12 +1,13 @@
 import Link from "next/link";
 import HeroSlideshow from "./HeroSlideshow";
+import StatsBar from "./StatsBar";
 import T from "./T";
 
 export default function Hero() {
   return (
     <section
       aria-label="Introduction"
-      className="relative flex min-h-[560px] items-center sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] xl:min-h-[800px]"
+      className="relative flex min-h-[560px] flex-col sm:min-h-[620px] md:min-h-[680px] lg:min-h-[740px] xl:min-h-[800px]"
     >
       <HeroSlideshow />
       <div
@@ -17,7 +18,7 @@ export default function Hero() {
             "linear-gradient(0deg, rgba(6,20,12,0.55) 0%, rgba(6,20,12,0.1) 32%, rgba(6,20,12,0) 55%)",
         }}
       />
-      <div className="relative mx-auto w-full max-w-[1180px] px-5 py-18 pb-22 md:px-10 md:pt-24 md:pb-27">
+      <div className="relative mx-auto flex w-full max-w-[1180px] flex-1 flex-col justify-center px-5 md:px-10">
         <div className="hero-in mb-4 text-[13px] font-bold tracking-[0.06em] text-[#8fe0b4] [animation-delay:0ms]">
           <T k="hero_eyebrow" />
         </div>
@@ -60,6 +61,9 @@ export default function Hero() {
               </span>
             </span>
           </Link>
+        </div>
+        <div className="pt-4 pb-10 md:pb-20">
+          <StatsBar />
         </div>
       </div>
     </section>

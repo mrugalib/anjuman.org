@@ -76,7 +76,7 @@ export default function StatsBar() {
   }, []);
 
   return (
-    <section aria-label="Trust at a glance" className="relative z-3 mx-auto -mt-24 max-w-[1180px] px-5 sm:-mt-14 md:px-10">
+    <section aria-label="Trust at a glance" className="relative z-3 mx-auto w-full max-w-[1180px]">
       <div
         ref={ref}
         className={`stagger-grid overflow-hidden rounded-card shadow-[0_18px_44px_rgba(15,53,31,0.16)] ${
@@ -85,7 +85,7 @@ export default function StatsBar() {
       >
         <div className="grid grid-cols-2 gap-px bg-hairline sm:grid-cols-4">
           {statsBar.map((c) => (
-            <div key={c.name} className="bg-white px-5 py-6 text-center sm:py-7">
+            <div key={c.name} className="bg-white px-5 py-2 md:py-6 text-center sm:py-7">
               <div className="text-[19px] leading-tight font-extrabold break-words text-brand tabular-nums sm:text-[23px] md:text-[27px]">
                 <CountUp value={c.stat} active={active} />
               </div>
